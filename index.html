@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutrition Hub - Dinh Dưỡng & Sức Khỏe</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head> 
+<body>
+
+  <!-- Header & Chuyển đổi ngôn ngữ -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">🌿 Nutri<span>Wise</span></div>
+      <div class="lang-switch">
+        <button id="btn-vi" class="lang-btn active" onclick="setLanguage('vi')">🇻🇳 Tiếng Việt</button>
+        <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">🇬🇧 English</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1 data-i18n="hero_title">Kiến Thức Dinh Dưỡng & Lối Sống Khỏe Mạnh</h1>
+      <p data-i18n="hero_desc">Khám phá nguồn dinh dưỡng thiết yếu và theo dõi chỉ số cơ thể chuẩn khoa học.</p>
+    </section>
+
+    <!-- Công cụ tính BMI -->
+    <section class="calculator-card">
+      <h2 data-i18n="calc_title">Công Cụ Tính Chỉ Số BMI</h2>
+      <div class="form-grid">
+        <div class="input-group">
+          <label data-i18n="label_height">Chiều cao (cm):</label>
+          <input type="number" id="height" placeholder="Ví dụ: 170">
+        </div>
+        <div class="input-group">
+          <label data-i18n="label_weight">Cân nặng (kg):</label>
+          <input type="number" id="weight" placeholder="Ví dụ: 65">
+        </div>
+      </div>
+      <button class="primary-btn" onclick="calculateBMI()" data-i18n="btn_calc">Tính BMI</button>
+      
+      <div id="result" class="result-box hidden">
+        <p><span data-i18n="res_score">Chỉ số BMI của bạn là:</span> <strong id="bmi-val">-</strong></p>
+        <p><span data-i18n="res_status">Tình trạng:</span> <strong id="bmi-status">-</strong></p>
+        <p id="bmi-advice" class="advice-text"></p>
+      </div>
+    </section>
+
+    <!-- Phân loại thực phẩm dinh dưỡng -->
+    <section class="food-categories">
+      <h2 data-i18n="food_section_title">Các nhóm dinh dưỡng thiết yếu</h2>
+      <div class="grid-cards">
+        <div class="card">
+          <div class="card-icon">🥩</div>
+          <h3 data-i18n="cat_protein_title">Đạm (Protein)</h3>
+          <p data-i18n="cat_protein_desc">Thịt đỏ, thịt trắng, cá, trứng và các loại đậu giúp xây dựng và tái tạo cơ bắp.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🥑</div>
+          <h3 data-i18n="cat_fat_title">Chất béo tốt (Healthy Fats)</h3>
+          <p data-i18n="cat_fat_desc">Bơ, dầu ô-liu và các loại hạt cung cấp năng lượng và hỗ trợ hấp thu vitamin.</p>
+        </div>
+        <div class="card">  
+          <div class="card-icon">🥦</div>
+          <h3 data-i18n="cat_fiber_title">Chất xơ & Vi chất</h3>
+          <p data-i18n="cat_fiber_desc">Rau xanh và hoa quả tươi tăng cường hệ tiêu hóa và hệ miễn dịch.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
