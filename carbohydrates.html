@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NutriWise - Carbohydrates</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container navbar">
+
+        <a href="index.html" class="logo">
+          🌿 Nutri<span>Wise</span>
+        </a>
+
+        <nav class="nav-menu">
+
+          <a href="index.html" data-i18n="nav_home">Home</a>
+
+          <a href="#" data-i18n="nav_about">About Us</a>
+
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_topics">Topics</a>
+
+            <div class="dropdown-menu">
+              <a
+                href="basic-nutrition.html"
+                data-i18n="nav_basic_nutrition"
+              >
+                Basic Nutrition
+              </a>
+
+              <a href="#">Nutrition Needs</a>
+
+              <a href="#">Healthy Eating</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_food">Food & Diets</a>
+
+            <div class="dropdown-menu">
+              <a href="#">Nutritious Foods</a>
+              <a href="#">Popular Diets</a>
+              <a href="#">Meal Plans</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_health">Health</a>
+
+            <div class="dropdown-menu">
+              <a href="#">Heart Health</a>
+              <a href="#">Diabetes</a>
+              <a href="#">Bone Health</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_tools">Tools</a>
+
+            <div class="dropdown-menu">
+              <a href="bmi.html" data-i18n="tool_bmi_title">
+                BMI Calculator
+              </a>
+
+              <a href="#" data-i18n="tool_nutrition_title">
+                Nutrition Calculator
+              </a>
+            </div>
+          </div>
+
+          <a href="#" data-i18n="nav_resources">Resources</a>
+
+        </nav>
+
+        <div class="lang-switch">
+
+          <button
+            id="btn-vi"
+            class="lang-btn active"
+            onclick="setLanguage('vi')"
+          >
+            🇻🇳 VI
+          </button>
+
+          <button
+            id="btn-en"
+            class="lang-btn"
+            onclick="setLanguage('en')"
+          >
+            🇬🇧 EN
+          </button>
+
+        </div>
+
+      </div>
+    </header>
+
+    <main class="container">
+
+      <!-- HERO -->
+
+      <section class="basic-nutrition-hero">
+
+        <div class="section-heading">
+
+          <p class="section-label" data-i18n="basic_label">
+            BASIC NUTRITION
+          </p>
+
+          <h1 data-i18n="carbs_title">
+            Carbohydrates
+          </h1>
+
+          <p data-i18n="carbs_desc">
+            Tìm hiểu về carbohydrate, vai trò của carbohydrate và các nguồn thực phẩm cung cấp carbohydrate.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- WHAT ARE CARBOHYDRATES? -->
+
+      <section class="nutrition-introduction">
+
+        <div class="nutrition-intro-card">
+
+          <div class="nutrition-intro-icon">
+            🍚
+          </div>
+
+          <div>
+
+            <h2 data-i18n="carbs_what_title">
+              Carbohydrate là gì?
+            </h2>
+
+            <p data-i18n="carbs_what_desc">
+              Carbohydrate là một nhóm chất dinh dưỡng cung cấp năng lượng
+              cho cơ thể và có mặt trong nhiều loại thực phẩm.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- FOOD SOURCES -->
+
+      <section class="essential-nutrients">
+
+        <div class="section-heading">
+
+          <p class="section-label" data-i18n="carbs_label">
+            CARBOHYDRATES
+          </p>
+
+          <h2 data-i18n="carbs_sources_title">
+            Các nguồn thực phẩm giàu carbohydrate
+          </h2>
+
+          <p data-i18n="carbs_sources_desc">
+            Carbohydrate có thể được cung cấp từ nhiều loại thực phẩm khác nhau.
+          </p>
+
+        </div>
+
+
+        <div class="nutrient-grid">
+
+          <!-- CARD 1 -->
+
+          <article class="nutrient-card">
+
+            <img
+              src="images/carbohydrates.jpg"
+              alt="Grains and rice"
+            />
+
+            <div class="nutrient-card-content">
+
+              <h3 data-i18n="carbs_grains_title">
+                Ngũ cốc và gạo
+              </h3>
+
+              <p data-i18n="carbs_grains_desc">
+                Gạo, bánh mì, yến mạch và các loại ngũ cốc là những
+                nguồn carbohydrate phổ biến.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 2 -->
+
+          <article class="nutrient-card">
+
+            <img
+              src="images/carbs_fruits.jpg"
+              alt="Fruits"
+            />
+
+            <div class="nutrient-card-content">
+
+              <h3 data-i18n="carbs_fruits_title">
+                Trái cây
+              </h3>
+
+              <p data-i18n="carbs_fruits_desc">
+                Trái cây cung cấp carbohydrate cùng với nhiều vitamin,
+                khoáng chất và chất xơ.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 3 -->
+
+          <article class="nutrient-card">
+
+            <img
+              src="images/carbs_vegetables.jpg"
+              alt="Vegetables"
+            />
+
+            <div class="nutrient-card-content">
+
+              <h3 data-i18n="carbs_vegetables_title">
+                Rau củ
+              </h3>
+
+              <p data-i18n="carbs_vegetables_desc">
+                Một số loại rau củ như khoai tây, khoai lang và ngô
+                cũng cung cấp carbohydrate.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+      <div class="container footer-grid">
+
+        <div class="footer-column">
+
+          <a href="index.html" class="footer-logo">
+            🌿 Nutri<span>Wise</span>
+          </a>
+
+          <p data-i18n="footer_desc">
+            Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3 data-i18n="footer_quick_links">
+            Quick Links
+          </h3>
+
+          <a href="index.html" data-i18n="nav_home">
+            Home
+          </a>
+
+          <a
+            href="basic-nutrition.html"
+            data-i18n="nav_basic_nutrition"
+          >
+            Basic Nutrition
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <p data-i18n="footer_copyright">
+          © 2026 NutriWise. All rights reserved.
+        </p>
+
+      </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+  </body>
+</html>

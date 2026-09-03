@@ -1,77 +1,503 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nutrition Hub - Dinh Dưỡng & Sức Khỏe</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-</head> 
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Header & Chuyển đổi ngôn ngữ -->
-  <header>
-    <div class="container navbar">
-      <div class="logo">🌿 Nutri<span>Wise</span></div>
-      <div class="lang-switch">
-        <button id="btn-vi" class="lang-btn active" onclick="setLanguage('vi')">🇻🇳 Tiếng Việt</button>
-        <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">🇬🇧 English</button>
+    <title>NutriWise - Dinh Dưỡng & Sức Khỏe</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- =========================
+       HEADER
+  ========================== -->
+
+    <header>
+      <div class="container navbar">
+        <!-- Logo -->
+        <a href="#" class="logo"> 🌿 Nutri<span>Wise</span> </a>
+
+        <!-- Navigation -->
+        <nav class="nav-menu">
+          <a href="#" data-i18n="nav_home"> Home </a>
+
+          <a href="#" data-i18n="nav_about"> About Us </a>
+
+          <!-- Topics -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_topics"> Topics </a>
+
+            <div class="dropdown-menu">
+              <a href="#" data-i18n="nav_basic_nutrition"> Basic Nutrition </a>
+
+              <a href="#" data-i18n="nav_nutrition_needs"> Nutrition Needs </a>
+
+              <a href="#" data-i18n="nav_healthy_eating"> Healthy Eating </a>
+            </div>
+          </div>
+
+          <!-- Food & Diets -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_food"> Food & Diets </a>
+
+            <div class="dropdown-menu">
+              <a href="#" data-i18n="nav_foods"> Nutritious Foods </a>
+
+              <a href="#" data-i18n="nav_diets"> Popular Diets </a>
+
+              <a href="#" data-i18n="nav_meals"> Meal Plans </a>
+            </div>
+          </div>
+
+          <!-- Health -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_health"> Health </a>
+
+            <div class="dropdown-menu">
+              <a href="#" data-i18n="nav_heart"> Heart Health </a>
+
+              <a href="#" data-i18n="nav_diabetes"> Diabetes </a>
+
+              <a href="#" data-i18n="nav_bone"> Bone Health </a>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_tools">Tools</a>
+
+            <div class="dropdown-menu">
+              <a href="bmi.html" data-i18n="tool_bmi"> BMI Calculator </a>
+
+              <a href="#" data-i18n="tool_nutrition"> Nutrition Calculator </a>
+            </div>
+          </div>
+
+          <a href="#" data-i18n="nav_resources"> Resources </a>
+        </nav>
+
+        <!-- Language Switch -->
+        <div class="lang-switch">
+          <button
+            id="btn-vi"
+            class="lang-btn active"
+            onclick="setLanguage('vi')"
+          >
+            🇻🇳 VI
+          </button>
+
+          <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">
+            🇬🇧 EN
+          </button>
+        </div>
       </div>
+    </header>
+
+    <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
+    <main class="container">
+      <!-- HERO -->
+
+      <section class="hero">
+        <div class="hero-content">
+          <p class="hero-label" data-i18n="hero_label">HIỂU VỀ DINH DƯỠNG</p>
+
+          <h1 data-i18n="hero_title">
+            Kiến Thức Dinh Dưỡng & Lối Sống Khỏe Mạnh
+          </h1>
+
+          <p class="hero-description" data-i18n="hero_desc">
+            Khám phá nguồn dinh dưỡng thiết yếu và theo dõi chỉ số cơ thể chuẩn
+            khoa học.
+          </p>
+
+          <a href="#topics" class="hero-btn" data-i18n="hero_button">
+            Khám phá chủ đề
+          </a>
+        </div>
+
+        <div class="hero-image">
+          <img src="images/hero_food.jpg" alt="Healthy nutritious food" />
+        </div>
+      </section>
+      <section class="topics" id="topics">
+        <div class="section-heading">
+          <p class="section-label" data-i18n="topics_label">EXPLORE TOPICS</p>
+
+          <h2 data-i18n="topics_title">Khám phá các chủ đề dinh dưỡng</h2>
+
+          <p data-i18n="topics_desc">
+            Tìm hiểu những nhóm chất dinh dưỡng cơ bản và vai trò của chúng đối
+            với cơ thể.
+          </p>
+        </div>
+
+        <div class="topic-grid">
+          <!-- Protein -->
+          <div class="topic-card">
+            <img src="images/protein.jpg" alt="Protein foods" />
+
+            <div class="topic-card-content">
+              <h3 data-i18n="topic_protein">Protein</h3>
+
+              <p data-i18n="topic_protein_desc">
+                Tìm hiểu về protein và các nguồn thực phẩm giàu đạm.
+              </p>
+
+              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
+            </div>
+          </div>
+
+          <!-- Carbohydrates -->
+          <div class="topic-card">
+            <img src="images/carbohydrates.jpg" alt="Carbohydrate foods" />
+
+            <div class="topic-card-content">
+              <h3 data-i18n="topic_carbs">Carbohydrates</h3>
+
+              <p data-i18n="topic_carbs_desc">
+                Tìm hiểu về carbohydrate và vai trò cung cấp năng lượng.
+              </p>
+
+              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
+            </div>
+          </div>
+
+          <!-- Healthy Fats -->
+          <div class="topic-card">
+            <img src="images/healthy_fats.jpg" alt="Healthy fats foods" />
+
+            <div class="topic-card-content">
+              <h3 data-i18n="topic_fats">Healthy Fats</h3>
+
+              <p data-i18n="topic_fats_desc">
+                Tìm hiểu về chất béo lành mạnh và nguồn thực phẩm phù hợp.
+              </p>
+
+              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
+            </div>
+          </div>
+
+          <!-- Vitamins -->
+          <div class="topic-card">
+            <img src="images/vitamins.jpg" alt="Vitamins foods" />
+
+            <div class="topic-card-content">
+              <h3 data-i18n="topic_vitamins">Vitamins</h3>
+
+              <p data-i18n="topic_vitamins_desc">
+                Tìm hiểu về vitamin và vai trò của chúng trong cơ thể.
+              </p>
+
+              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
+            </div>
+          </div>
+
+          <!-- Minerals -->
+          <div class="topic-card">
+            <img src="images/minerals.jpg" alt="Mineral rich foods" />
+
+            <div class="topic-card-content">
+              <h3 data-i18n="topic_minerals">Minerals</h3>
+
+              <p data-i18n="topic_minerals_desc">
+                Tìm hiểu về các khoáng chất thiết yếu trong chế độ ăn.
+              </p>
+
+              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
+            </div>
+          </div>
+
+          <!-- Water -->
+          <div class="topic-card">
+            <img src="images/water.jpg" alt="Water and hydration" />
+
+            <div class="topic-card-content">
+              <h3 data-i18n="topic_water">Water</h3>
+
+              <p data-i18n="topic_water_desc">
+                Tìm hiểu về nước và vai trò của việc duy trì đủ nước.
+              </p>
+
+              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- =========================
+   FEATURED NUTRITION
+========================== -->
+
+      <section class="featured-nutrition">
+        <div class="section-heading">
+          <p class="section-label" data-i18n="featured_label">
+            FEATURED NUTRITION
+          </p>
+
+          <h2 data-i18n="featured_title">Kiến thức dinh dưỡng nổi bật</h2>
+
+          <p data-i18n="featured_desc">
+            Khám phá những kiến thức cơ bản giúp bạn hiểu rõ hơn về dinh dưỡng
+            và sức khỏe.
+          </p>
+        </div>
+
+        <div class="featured-grid">
+          <!-- Card 1 -->
+          <article class="featured-card">
+            <div class="featured-icon">🥗</div>
+
+            <h3 data-i18n="featured_1_title">Ăn uống cân bằng</h3>
+
+            <p data-i18n="featured_1_desc">
+              Tìm hiểu cách xây dựng một chế độ ăn đa dạng với nhiều nhóm thực
+              phẩm.
+            </p>
+
+            <a href="#" data-i18n="featured_read_more"> Đọc thêm → </a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="featured-card">
+            <div class="featured-icon">🍎</div>
+
+            <h3 data-i18n="featured_2_title">Hiểu về chất dinh dưỡng</h3>
+
+            <p data-i18n="featured_2_desc">
+              Khám phá vai trò của các chất dinh dưỡng thiết yếu đối với cơ thể.
+            </p>
+
+            <a href="#" data-i18n="featured_read_more"> Đọc thêm → </a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="featured-card">
+            <div class="featured-icon">💡</div>
+
+            <h3 data-i18n="featured_3_title">Thói quen lành mạnh</h3>
+
+            <p data-i18n="featured_3_desc">
+              Tìm hiểu những thói quen đơn giản có thể hỗ trợ một lối sống lành
+              mạnh.
+            </p>
+
+            <a href="#" data-i18n="featured_read_more"> Đọc thêm → </a>
+          </article>
+        </div>
+      </section>
+      <!-- =========================
+   HEALTH & LIFESTYLE
+========================== -->
+
+      <section class="health-lifestyle">
+        <div class="section-heading">
+          <p class="section-label" data-i18n="health_label">
+            HEALTH & LIFESTYLE
+          </p>
+
+          <h2 data-i18n="health_title">Dinh dưỡng & Lối sống lành mạnh</h2>
+
+          <p data-i18n="health_desc">
+            Tìm hiểu cách dinh dưỡng có thể đồng hành cùng sức khỏe và lối sống
+            hàng ngày.
+          </p>
+        </div>
+
+        <div class="health-grid">
+          <!-- Heart Health -->
+          <article class="health-card">
+            <div class="health-icon">❤️</div>
+
+            <h3 data-i18n="health_heart_title">Sức khỏe tim mạch</h3>
+
+            <p data-i18n="health_heart_desc">
+              Tìm hiểu những kiến thức dinh dưỡng liên quan đến sức khỏe tim
+              mạch.
+            </p>
+
+            <a href="#" data-i18n="health_read_more"> Tìm hiểu thêm → </a>
+          </article>
+
+          <!-- Bone Health -->
+          <article class="health-card">
+            <div class="health-icon">🦴</div>
+
+            <h3 data-i18n="health_bone_title">Sức khỏe xương</h3>
+
+            <p data-i18n="health_bone_desc">
+              Khám phá vai trò của các chất dinh dưỡng đối với xương và cơ thể.
+            </p>
+
+            <a href="#" data-i18n="health_read_more"> Tìm hiểu thêm → </a>
+          </article>
+
+          <!-- Healthy Lifestyle -->
+          <article class="health-card">
+            <div class="health-icon">🌱</div>
+
+            <h3 data-i18n="health_lifestyle_title">Lối sống lành mạnh</h3>
+
+            <p data-i18n="health_lifestyle_desc">
+              Tìm hiểu những thói quen đơn giản giúp xây dựng lối sống cân bằng.
+            </p>
+
+            <a href="#" data-i18n="health_read_more"> Tìm hiểu thêm → </a>
+          </article>
+        </div>
+      </section>
+      <!-- =========================
+   TOOLS
+========================== -->
+
+      <section class="tools-section">
+        <div class="section-heading">
+          <p class="section-label" data-i18n="tools_label">NUTRIWISE TOOLS</p>
+
+          <h2 data-i18n="tools_title">Công cụ dinh dưỡng</h2>
+
+          <p data-i18n="tools_desc">
+            Sử dụng các công cụ đơn giản để tìm hiểu thêm về sức khỏe và dinh
+            dưỡng.
+          </p>
+        </div>
+
+        <div class="tools-grid">
+          <!-- BMI -->
+          <article class="tool-card">
+            <div class="tool-icon">📊</div>
+
+            <h3 data-i18n="tool_bmi_title">BMI Calculator</h3>
+
+            <p data-i18n="tool_bmi_desc">
+              Tìm hiểu chỉ số BMI dựa trên chiều cao và cân nặng.
+            </p>
+
+            <a href="bmi.html" data-i18n="tool_use"> Sử dụng công cụ → </a>
+          </article>
+
+          <!-- Nutrition Calculator -->
+          <article class="tool-card">
+            <div class="tool-icon">🧮</div>
+
+            <h3 data-i18n="tool_nutrition_title">Nutrition Calculator</h3>
+
+            <p data-i18n="tool_nutrition_desc">
+              Công cụ giúp bạn khám phá thông tin dinh dưỡng của thực phẩm.
+            </p>
+
+            <a href="#" data-i18n="tool_coming_soon"> Sắp ra mắt </a>
+          </article>
+
+          <!-- Food Guide -->
+          <article class="tool-card">
+            <div class="tool-icon">🍽️</div>
+
+            <h3 data-i18n="tool_food_title">Food Guide</h3>
+
+            <p data-i18n="tool_food_desc">
+              Khám phá các nhóm thực phẩm và lựa chọn thực phẩm đa dạng.
+            </p>
+
+            <a href="#" data-i18n="tool_explore"> Khám phá → </a>
+          </article>
+        </div>
+      </section>
+    </main>
+    <!-- =========================
+   FOOTER
+========================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <!-- About -->
+        <div class="footer-column">
+
+            <a href="#" class="footer-logo">
+                🌿 Nutri<span>Wise</span>
+            </a>
+
+            <p data-i18n="footer_desc">
+                Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh.
+            </p>
+
+        </div>
+
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+
+            <h3 data-i18n="footer_quick_links">
+                Quick Links
+            </h3>
+
+            <a href="#" data-i18n="nav_home">Home</a>
+            <a href="#" data-i18n="nav_about">About Us</a>
+            <a href="#topics" data-i18n="nav_topics">Topics</a>
+            <a href="#" data-i18n="nav_resources">Resources</a>
+
+        </div>
+
+
+        <!-- Topics -->
+        <div class="footer-column">
+
+            <h3 data-i18n="footer_topics">
+                Topics
+            </h3>
+
+            <a href="#" data-i18n="topic_protein">Protein</a>
+            <a href="#" data-i18n="topic_carbs">Carbohydrates</a>
+            <a href="#" data-i18n="topic_vitamins">Vitamins</a>
+            <a href="#" data-i18n="topic_minerals">Minerals</a>
+
+        </div>
+
+
+        <!-- Tools -->
+        <div class="footer-column">
+
+            <h3 data-i18n="footer_tools">
+                Tools
+            </h3>
+
+            <a href="bmi.html" data-i18n="tool_bmi_title">
+                BMI Calculator
+            </a>
+
+            <a href="#" data-i18n="tool_nutrition_title">
+                Nutrition Calculator
+            </a>
+
+            <a href="#" data-i18n="tool_food_title">
+                Food Guide
+            </a>
+
+        </div>
+
     </div>
-  </header>
 
-  <main class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <h1 data-i18n="hero_title">Kiến Thức Dinh Dưỡng & Lối Sống Khỏe Mạnh</h1>
-      <p data-i18n="hero_desc">Khám phá nguồn dinh dưỡng thiết yếu và theo dõi chỉ số cơ thể chuẩn khoa học.</p>
-    </section>
 
-    <!-- Công cụ tính BMI -->
-    <section class="calculator-card">
-      <h2 data-i18n="calc_title">Công Cụ Tính Chỉ Số BMI</h2>
-      <div class="form-grid">
-        <div class="input-group">
-          <label data-i18n="label_height">Chiều cao (cm):</label>
-          <input type="number" id="height" placeholder="Ví dụ: 170">
-        </div>
-        <div class="input-group">
-          <label data-i18n="label_weight">Cân nặng (kg):</label>
-          <input type="number" id="weight" placeholder="Ví dụ: 65">
-        </div>
-      </div>
-      <button class="primary-btn" onclick="calculateBMI()" data-i18n="btn_calc">Tính BMI</button>
-      
-      <div id="result" class="result-box hidden">
-        <p><span data-i18n="res_score">Chỉ số BMI của bạn là:</span> <strong id="bmi-val">-</strong></p>
-        <p><span data-i18n="res_status">Tình trạng:</span> <strong id="bmi-status">-</strong></p>
-        <p id="bmi-advice" class="advice-text"></p>
-      </div>
-    </section>
+    <div class="footer-bottom">
 
-    <!-- Phân loại thực phẩm dinh dưỡng -->
-    <section class="food-categories">
-      <h2 data-i18n="food_section_title">Các nhóm dinh dưỡng thiết yếu</h2>
-      <div class="grid-cards">
-        <div class="card">
-          <div class="card-icon">🥩</div>
-          <h3 data-i18n="cat_protein_title">Đạm (Protein)</h3>
-          <p data-i18n="cat_protein_desc">Thịt đỏ, thịt trắng, cá, trứng và các loại đậu giúp xây dựng và tái tạo cơ bắp.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🥑</div>
-          <h3 data-i18n="cat_fat_title">Chất béo tốt (Healthy Fats)</h3>
-          <p data-i18n="cat_fat_desc">Bơ, dầu ô-liu và các loại hạt cung cấp năng lượng và hỗ trợ hấp thu vitamin.</p>
-        </div>
-        <div class="card">  
-          <div class="card-icon">🥦</div>
-          <h3 data-i18n="cat_fiber_title">Chất xơ & Vi chất</h3>
-          <p data-i18n="cat_fiber_desc">Rau xanh và hoa quả tươi tăng cường hệ tiêu hóa và hệ miễn dịch.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+        <p data-i18n="footer_copyright">
+            © 2026 NutriWise. All rights reserved.
+        </p>
 
-  <script src="script.js"></script>
-</body>
+    </div>
+
+</footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -66,8 +66,77 @@ header {
 }
 
 .hero {
-  text-align: center;
-  margin: 3rem 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  margin: 3rem 0 5rem;
+  padding: 3rem 0;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero-label {
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.hero-description {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(16, 185, 129, 0.2);
+    transition: all 0.2s ease;
+}
+
+.hero-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(16, 185, 129, 0.3);
+}
+
+.hero-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.hero-image {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.03);
 }
 
 .hero h1 {
@@ -83,7 +152,7 @@ header {
   background: var(--card-bg);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   margin-bottom: 3rem;
   border: 1px solid var(--border);
 }
@@ -188,4 +257,767 @@ header {
 .card p {
   font-size: 0.9rem;
   color: var(--text-muted);
+}
+/* Custom Form Elements */
+select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  background-color: white;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+select:focus {
+  border-color: var(--primary);
+}
+
+/* Food Table Styling */
+.food-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 500px;
+}
+
+.food-table th,
+.food-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.food-table th {
+  background-color: var(--bg);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.food-table tbody tr:hover {
+  background-color: #f1fdf7;
+}
+/* =========================
+    NAVIGATION
+  ========================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.logo {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-menu > a,
+.nav-dropdown > a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.2s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu > a:hover,
+.nav-dropdown > a:hover {
+  color: var(--primary);
+}
+
+/* Dropdown */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 210px;
+
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  padding: 10px 0;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  display: none;
+  z-index: 100;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+
+  text-decoration: none;
+  color: var(--text);
+
+  font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+  background: var(--bg);
+  color: var(--primary);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-dropdown > a::after {
+  content: " ▾";
+  font-size: 0.85rem;
+  margin-left: 6px;
+  opacity: 0.8;
+}
+@media (max-width: 768px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 2rem 0 4rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 2rem 0 4rem;
+        padding: 1rem 0;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+
+}
+.hero-content {
+    animation: heroText 0.7s ease;
+}
+
+.hero-image {
+    animation: heroImage 0.7s ease;
+}
+
+@keyframes heroText {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes heroImage {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* =========================
+   EXPLORE TOPICS
+========================= */
+
+.topics {
+    margin-bottom: 5rem;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 2.5rem;
+}
+
+.section-label {
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.6rem;
+}
+
+.section-heading h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.section-heading > p:last-child {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.topic-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.topic-card > img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.topic-card-content {
+    padding: 1.3rem;
+}
+
+.topic-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.topic-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.topic-card a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.topic-card a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 900px) {
+
+    .topic-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 1.7rem;
+    }
+
+}
+/* =========================
+   FEATURED NUTRITION
+========================= */
+
+.featured-nutrition {
+    margin-bottom: 5rem;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.featured-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+.featured-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.featured-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+}
+
+.featured-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.featured-card a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.featured-card a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 900px) {
+
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   HEALTH & LIFESTYLE
+========================== */
+
+.health-lifestyle {
+    margin-bottom: 5rem;
+}
+
+.health-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.health-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.health-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+.health-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.health-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+}
+
+.health-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.health-card a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.health-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .health-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .health-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.health-card a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.health-card a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .health-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .health-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   TOOLS
+========================== */
+
+.tools-section {
+    margin-bottom: 5rem;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.tool-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+.tool-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.tool-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+}
+
+.tool-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.tool-card a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.tool-card a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   FOOTER
+========================== */
+
+.site-footer {
+    background: #ffffff;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-logo {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo span {
+    color: var(--primary);
+}
+
+.footer-column p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    max-width: 280px;
+}
+
+.footer-column h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-column > a:not(.footer-logo) {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-column > a:not(.footer-logo):hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 1.2rem 20px;
+}
+
+.footer-bottom p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   BASIC NUTRITION PAGE
+========================== */
+
+.basic-nutrition-hero {
+    padding: 4rem 0 2rem;
+}
+
+.basic-nutrition-hero .section-heading {
+    max-width: 750px;
+}
+
+
+/* Nutrition Introduction */
+
+.nutrition-introduction {
+    margin-bottom: 5rem;
+}
+
+.nutrition-intro-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    padding: 2rem;
+}
+
+.nutrition-intro-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.nutrition-intro-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+}
+
+.nutrition-intro-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+
+/* Essential Nutrients */
+
+.essential-nutrients {
+    margin-bottom: 5rem;
+}
+
+.nutrient-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.nutrient-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.nutrient-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.nutrient-card > img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.nutrient-card-content {
+    padding: 1.3rem;
+}
+
+.nutrient-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.nutrient-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.nutrient-card a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.nutrient-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .nutrient-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .basic-nutrition-hero {
+        padding: 2.5rem 0 1rem;
+    }
+
+    .nutrition-intro-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nutrient-grid {
+        grid-template-columns: 1fr;
+    }
+
 }

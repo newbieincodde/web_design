@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NutriWise - BMI Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+                🌿 Nutri<span>Wise</span>
+            </a>
+
+            <nav class="nav-menu">
+
+                <a href="index.html" data-i18n="nav_home">
+                    Home
+                </a>
+
+                <a href="#" data-i18n="nav_about">
+                    About Us
+                </a>
+
+                <div class="nav-dropdown">
+
+                    <a href="#" data-i18n="nav_topics">
+                        Topics
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="#" data-i18n="nav_basic_nutrition">
+                            Basic Nutrition
+                        </a>
+
+                        <a href="#" data-i18n="nav_nutrition_needs">
+                            Nutrition Needs
+                        </a>
+
+                        <a href="#" data-i18n="nav_healthy_eating">
+                            Healthy Eating
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="nav-dropdown">
+
+                    <a href="#" data-i18n="nav_food">
+                        Food & Diets
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="#" data-i18n="nav_foods">
+                            Nutritious Foods
+                        </a>
+
+                        <a href="#" data-i18n="nav_diets">
+                            Popular Diets
+                        </a>
+
+                        <a href="#" data-i18n="nav_meals">
+                            Meal Plans
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="nav-dropdown">
+
+                    <a href="#" data-i18n="nav_health">
+                        Health
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="#" data-i18n="nav_heart">
+                            Heart Health
+                        </a>
+
+                        <a href="#" data-i18n="nav_diabetes">
+                            Diabetes
+                        </a>
+
+                        <a href="#" data-i18n="nav_bone">
+                            Bone Health
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="nav-dropdown">
+
+                    <a href="#" data-i18n="nav_tools">
+                        Tools
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="bmi.html">
+                            BMI Calculator
+                        </a>
+
+                        <a href="#">
+                            Nutrition Calculator
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <a href="#" data-i18n="nav_resources">
+                    Resources
+                </a>
+
+            </nav>
+
+            <div class="lang-switch">
+
+                <button
+                    id="btn-vi"
+                    class="lang-btn active"
+                    onclick="setLanguage('vi')"
+                >
+                    🇻🇳 VI
+                </button>
+
+                <button
+                    id="btn-en"
+                    class="lang-btn"
+                    onclick="setLanguage('en')"
+                >
+                    🇬🇧 EN
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         BMI CONTENT
+    ========================== -->
+
+    <main class="container">
+
+        <section class="calculator-card">
+
+            <h1 data-i18n="calc_title">
+                Công Cụ Tính Chỉ Số BMI
+            </h1>
+
+            <p class="bmi-intro" data-i18n="bmi_intro">
+                Công cụ này cung cấp thông tin tham khảo về chỉ số BMI.
+            </p>
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label data-i18n="label_height">
+                        Chiều cao (cm):
+                    </label>
+
+                    <input
+                        type="number"
+                        id="height"
+                        placeholder="Ví dụ: 170"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label data-i18n="label_weight">
+                        Cân nặng (kg):
+                    </label>
+
+                    <input
+                        type="number"
+                        id="weight"
+                        placeholder="Ví dụ: 65"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                onclick="calculateBMI()"
+                data-i18n="btn_calc"
+            >
+                Tính BMI
+            </button>
+
+
+            <div id="result" class="result-box hidden">
+
+                <p>
+
+                    <span data-i18n="res_score">
+                        Chỉ số BMI:
+                    </span>
+
+                    <strong id="bmi-val">
+                        -
+                    </strong>
+
+                </p>
+
+
+                <p>
+
+                    <span data-i18n="res_status">
+                        Thông tin tham khảo:
+                    </span>
+
+                    <strong id="bmi-status">
+                        -
+                    </strong>
+
+                </p>
+
+
+                <p
+                    id="bmi-advice"
+                    class="advice-text"
+                ></p>
+
+            </div>
+
+        </section>
+
+
+        <section class="bmi-info">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    BMI
+                </p>
+
+                <h2 data-i18n="bmi_info_title">
+                    BMI là gì?
+                </h2>
+
+                <p data-i18n="bmi_info_desc">
+                    BMI là một chỉ số được tính từ chiều cao và cân nặng,
+                    thường được sử dụng như một công cụ sàng lọc sức khỏe.
+                    Chỉ số này không phản ánh đầy đủ tình trạng sức khỏe
+                    của mỗi người.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

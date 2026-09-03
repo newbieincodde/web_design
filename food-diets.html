@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food & Diets | NutriWise</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+
+        <a href="index.html" class="logo">
+            <strong>NutriWise</strong>
+        </a>
+
+        <nav class="nav-menu">
+
+            <a href="index.html" data-i18n="nav_home">Home</a>
+
+            <a href="#" data-i18n="nav_about">About Us</a>
+
+            <!-- TOPICS -->
+            <div class="nav-dropdown">
+
+                <a href="#" data-i18n="nav_topics">
+                    Topics ▾
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="basic-nutrition.html"
+                       data-i18n="nav_basic_nutrition">
+                        Basic Nutrition
+                    </a>
+
+                    <a href="nutrition-needs.html"
+                       data-i18n="nav_nutrition_needs">
+                        Nutrition Needs
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD & DIETS -->
+            <div class="nav-dropdown">
+
+                <a href="food-diets.html"
+                   data-i18n="nav_food_diets">
+                    Food & Diets ▾
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="food-diets.html"
+                       data-i18n="food_groups_title">
+                        Food Groups
+                    </a>
+
+                    <a href="food-diets.html"
+                       data-i18n="balanced_diet_title">
+                        Balanced Diet
+                    </a>
+
+                    <a href="food-diets.html"
+                       data-i18n="healthy_food_choices_title">
+                        Healthy Food Choices
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HEALTH -->
+            <div class="nav-dropdown">
+
+                <a href="#" data-i18n="nav_health">
+                    Health ▾
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="#" data-i18n="health_overview">
+                        Health & Lifestyle
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLS -->
+            <div class="nav-dropdown">
+
+                <a href="#" data-i18n="nav_tools">
+                    Tools ▾
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="bmi.html"
+                       data-i18n="tool_bmi_title">
+                        BMI Calculator
+                    </a>
+
+                    <a href="#"
+                       data-i18n="tool_nutrition_title">
+                        Nutrition Calculator
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESOURCES -->
+            <div class="nav-dropdown">
+
+                <a href="#" data-i18n="nav_resources">
+                    Resources ▾
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="#"
+                       data-i18n="resource_guides">
+                        Guides
+                    </a>
+
+                    <a href="#"
+                       data-i18n="resource_articles">
+                        Articles
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- LANGUAGE -->
+            <button
+                class="lang-btn"
+                id="btn-vi"
+                onclick="setLanguage('vi')">
+                VI
+            </button>
+
+            <button
+                class="lang-btn"
+                id="btn-en"
+                onclick="setLanguage('en')">
+                EN
+            </button>
+
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+    <section class="basic-nutrition-hero">
+
+        <div class="container">
+
+            <p class="section-label"
+               data-i18n="food_diets_label">
+                FOOD & DIETS
+            </p>
+
+            <h1 data-i18n="food_diets_title">
+                Food & Diets
+            </h1>
+
+            <p data-i18n="food_diets_desc">
+                Learn about food groups, balanced diets,
+                and healthy food choices.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="content-section">
+
+        <div class="container">
+
+            <h2 data-i18n="food_diets_what_title">
+                What are Food & Diets?
+            </h2>
+
+            <p data-i18n="food_diets_what_desc">
+                Food and diet choices play an important role
+                in providing the nutrients the body needs for
+                growth, development, and normal daily activities.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- TOPICS -->
+    <section class="content-section">
+
+        <div class="container">
+
+            <p class="section-label"
+               data-i18n="food_diets_label">
+                FOOD & DIETS
+            </p>
+
+            <h2 data-i18n="food_diets_topics_title">
+                Explore Food & Diets
+            </h2>
+
+            <p data-i18n="food_diets_topics_desc">
+                Explore some basic concepts that can help you
+                understand food and build balanced eating habits.
+            </p>
+
+
+            <!-- CARDS -->
+            <div class="card-grid">
+
+
+                <!-- FOOD GROUPS -->
+                <div class="card">
+
+                    <img
+                        src="images/food_groups.jpg"
+                        alt="Food Groups">
+
+                    <div class="card-content">
+
+                        <h3 data-i18n="food_groups_title">
+                            Food Groups
+                        </h3>
+
+                        <p data-i18n="food_groups_desc">
+                            Learn about different food groups
+                            and the nutrients they can provide.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BALANCED DIET -->
+                <div class="card">
+
+                    <img
+                        src="images/balanced_diet.jpg"
+                        alt="Balanced Diet">
+
+                    <div class="card-content">
+
+                        <h3 data-i18n="balanced_diet_title">
+                            Balanced Diet
+                        </h3>
+
+                        <p data-i18n="balanced_diet_desc">
+                            Learn about the importance of variety
+                            and balance in a healthy diet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HEALTHY FOOD CHOICES -->
+                <div class="card">
+
+                    <img
+                        src="images/healthy_food_choices.jpg"
+                        alt="Healthy Food Choices">
+
+                    <div class="card-content">
+
+                        <h3 data-i18n="healthy_food_choices_title">
+                            Healthy Food Choices
+                        </h3>
+
+                        <p data-i18n="healthy_food_choices_desc">
+                            Explore simple principles for making
+                            nutritious food choices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container">
+
+        <p data-i18n="footer_desc">
+            NutriWise — Simple and reliable nutrition information.
+        </p>
+
+        <p data-i18n="footer_copyright">
+            © 2026 NutriWise. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

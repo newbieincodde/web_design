@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NutriWise - Protein</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container navbar">
+        <a href="index.html" class="logo"> 🌿 Nutri<span>Wise</span> </a>
+
+        <nav class="nav-menu">
+          <a href="index.html" data-i18n="nav_home"> Home </a>
+
+          <a href="#" data-i18n="nav_about"> About Us </a>
+
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_topics"> Topics </a>
+
+            <div class="dropdown-menu">
+              <a href="basic-nutrition.html" data-i18n="nav_basic_nutrition">
+                Basic Nutrition
+              </a>
+
+              <a href="#"> Nutrition Needs </a>
+
+              <a href="#"> Healthy Eating </a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_food"> Food & Diets </a>
+
+            <div class="dropdown-menu">
+              <a href="#">Nutritious Foods</a>
+              <a href="#">Popular Diets</a>
+              <a href="#">Meal Plans</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_health"> Health </a>
+
+            <div class="dropdown-menu">
+              <a href="#">Heart Health</a>
+              <a href="#">Diabetes</a>
+              <a href="#">Bone Health</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_tools"> Tools </a>
+
+            <div class="dropdown-menu">
+              <a href="bmi.html"> BMI Calculator </a>
+
+              <a href="#"> Nutrition Calculator </a>
+            </div>
+          </div>
+
+          <a href="#" data-i18n="nav_resources"> Resources </a>
+        </nav>
+
+        <div class="lang-switch">
+          <button
+            id="btn-vi"
+            class="lang-btn active"
+            onclick="setLanguage('vi')"
+          >
+            🇻🇳 VI
+          </button>
+
+          <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">
+            🇬🇧 EN
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="basic-nutrition-hero">
+    <div class="section-heading">
+        <p class="section-label" data-i18n="basic_label">BASIC NUTRITION</p>
+
+        <h1 data-i18n="protein_title">Protein</h1>
+
+        <p data-i18n="protein_desc">
+            Tìm hiểu về protein, vai trò của protein và các nguồn thực phẩm cung cấp protein.
+        </p>
+    </div>
+</section> 
+        <section class="essential-nutrients">
+    <div class="section-heading">
+        <p class="section-label" data-i18n="protein_label">PROTEIN</p>
+
+        <h2 data-i18n="protein_sources_title">
+            Các nguồn thực phẩm giàu protein
+        </h2>
+
+        <p data-i18n="protein_sources_desc">
+            Protein có thể được cung cấp từ nhiều loại thực phẩm khác nhau.
+        </p>
+    </div>
+       
+
+      <section class="nutrition-introduction">
+        <div class="nutrition-intro-card">
+          <div class="nutrition-intro-icon">🥩</div>
+
+          <div>
+            <h2 data-i18n="protein_what_title">Protein là gì?</h2>
+            <p data-i18n="protein_what_desc">
+              Protein là một nhóm chất dinh dưỡng quan trọng được tạo thành từ
+              các axit amin. Protein có mặt trong nhiều loại thực phẩm và tham
+              gia vào nhiều chức năng của cơ thể.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="essential-nutrients">
+        <div class="section-heading">
+          <p class="section-label">PROTEIN</p>
+
+          <h2>Các nguồn thực phẩm giàu protein</h2>
+
+          <p>Protein có thể được cung cấp từ nhiều loại thực phẩm khác nhau.</p>
+        </div>
+
+        <div class="nutrient-grid">
+          <article class="nutrient-card">
+            <img src="images/meat and fish.jpg" alt="Meat and fish" />
+            <div class="nutrient-card-content">
+              <h3 data-i18n="protein_meat_fish_title">Thịt và cá</h3>
+
+              <p  data-i18n="protein_meat_fish_desc">
+                Thịt, cá và các loại hải sản là những nguồn thực phẩm cung cấp
+                protein.
+              </p>
+            </div>
+          </article>
+
+          <article class="nutrient-card">
+            <img src="images/Eggs and dairy.jpg" alt="Eggs and dairy" />
+            <div class="nutrient-card-content">
+              <h3 data-i18n="protein_eggs_dairy_title">Trứng và sữa</h3>
+
+              <p  data-i18n="protein_eggs_dairy_desc">
+                Trứng và các sản phẩm từ sữa cũng có thể cung cấp protein trong
+                chế độ ăn.
+              </p>
+            </div>
+          </article>
+
+          <article class="nutrient-card">
+            <img src="images/legumes.jpg" 
+            alt="Legumes" 
+            />
+            <div class="nutrient-card-content">
+              <h3 data-i18n="protein_legumes_title">Các loại đậu</h3>
+
+              <p  data-i18n="protein_legumes_desc">
+                Đậu và các loại thực phẩm từ thực vật cũng là nguồn cung cấp
+                protein.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-column">
+          <a href="index.html" class="footer-logo">
+            🌿 Nutri<span>Wise</span>
+          </a>
+
+          <p data-i18n="footer_desc">
+            Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3 data-i18n="footer_quick_links">Quick Links</h3>
+
+          <a href="index.html" data-i18n="nav_home"> Home </a>
+
+          <a href="basic-nutrition.html" data-i18n="nav_basic_nutrition">
+            Basic Nutrition
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer_copyright">
+          © 2026 NutriWise. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
