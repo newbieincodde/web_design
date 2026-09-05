@@ -15,75 +15,138 @@
   </head>
 
   <body>
-    <header>
+   <header>
       <div class="container navbar">
+        <!-- Logo -->
+        <a href="#" class="logo"> 🌿 Nutri<span>Wise</span> </a>
 
-        <a href="index.html" class="logo">
-          🌿 Nutri<span>Wise</span>
-        </a>
-
+        <!-- Navigation -->
         <nav class="nav-menu">
+          <!-- HOME -->
+          <a href="index.html" data-i18n="nav_home"> Home </a>
 
-          <a href="index.html" data-i18n="nav_home">Home</a>
+          <!-- ABOUT US -->
+          <a href="#" data-i18n="nav_about"> About Us </a>
 
-          <a href="#" data-i18n="nav_about">About Us</a>
-
+          <!-- TOPICS -->
           <div class="nav-dropdown">
-            <a href="#" data-i18n="nav_topics">Topics</a>
+            <a href="#" data-i18n="nav_topics"> Topics </a>
+
+            <div class="dropdown-menu mega-menu">
+              <!-- BASIC NUTRITION -->
+              <div class="dropdown-group">
+                <a
+                  href="basic-nutrition.html"
+                  class="group-title"
+                  data-i18n="nav_basic_nutrition"
+                >
+                  Basic Nutrition
+                </a>
+
+                <a href="protein.html" data-i18n="topic_protein"> Protein </a>
+
+                <a href="carbohydrates.html" data-i18n="topic_carbs">
+                  Carbohydrates
+                </a>
+
+                <a href="healthy-fats.html" data-i18n="topic_fats">
+                  Healthy Fats
+                </a>
+
+                <a href="vitamins.html" data-i18n="topic_vitamins">
+                  Vitamins
+                </a>
+
+                <a href="minerals.html" data-i18n="topic_minerals">
+                  Minerals
+                </a>
+
+                <a href="water.html" data-i18n="topic_water"> Water </a>
+              </div>
+
+              <!-- NUTRITION NEEDS -->
+              <div class="dropdown-group">
+                <span class="group-title" data-i18n="nav_nutrition_needs">
+                  Nutrition Needs
+                </span>
+
+                <a href="nutrition-needs.html" data-i18n="nutrition_age_title">
+                  Age & Development
+                </a>
+
+                <a
+                  href="nutrition-needs.html"
+                  data-i18n="nutrition_activity_title"
+                >
+                  Physical Activity
+                </a>
+
+                <a
+                  href="nutrition-needs.html"
+                  data-i18n="nutrition_lifestyle_title"
+                >
+                  Lifestyle
+                </a>
+              </div>
+
+              <!-- SPECIAL NUTRITION NEEDS -->
+              <div class="dropdown-group">
+                <span class="group-title" data-i18n="nav_special_needs">
+                  Special Nutrition Needs
+                </span>
+
+                <a href="#" data-i18n="nav_pregnancy"> Pregnancy </a>
+
+                <a href="#" data-i18n="nav_athletes"> Athletes </a>
+
+                <a href="#" data-i18n="nav_conditions"> Health Conditions </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOD & DIETS -->
+          <div class="nav-dropdown">
+            <a href="food-diets.html" data-i18n="nav_food"> Food & Diets </a>
 
             <div class="dropdown-menu">
-              <a
-                href="basic-nutrition.html"
-                data-i18n="nav_basic_nutrition"
-              >
-                Basic Nutrition
+              <a href="food-diets.html" data-i18n="food_groups_title">
+                Food Groups
               </a>
 
-              <a href="#">Nutrition Needs</a>
-              <a href="#">Healthy Eating</a>
-            </div>
-          </div>
-
-          <div class="nav-dropdown">
-            <a href="#" data-i18n="nav_food">Food & Diets</a>
-
-            <div class="dropdown-menu">
-              <a href="#">Nutritious Foods</a>
-              <a href="#">Popular Diets</a>
-              <a href="#">Meal Plans</a>
-            </div>
-          </div>
-
-          <div class="nav-dropdown">
-            <a href="#" data-i18n="nav_health">Health</a>
-
-            <div class="dropdown-menu">
-              <a href="#">Heart Health</a>
-              <a href="#">Diabetes</a>
-              <a href="#">Bone Health</a>
-            </div>
-          </div>
-
-          <div class="nav-dropdown">
-            <a href="#" data-i18n="nav_tools">Tools</a>
-
-            <div class="dropdown-menu">
-              <a href="bmi.html" data-i18n="tool_bmi_title">
-                BMI Calculator
+              <a href="food-diets.html" data-i18n="balanced_diet_title">
+                Balanced Diet
               </a>
 
-              <a href="#" data-i18n="tool_nutrition_title">
-                Nutrition Calculator
+              <a href="food-diets.html" data-i18n="healthy_food_choices_title">
+                Healthy Food Choices
               </a>
             </div>
           </div>
 
-          <a href="#" data-i18n="nav_resources">Resources</a>
+          <!-- HEALTH -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_health"> Health </a>
 
+            <div class="dropdown-menu">
+              <a href="#" data-i18n="nav_heart"> Heart Health </a>
+
+              <a href="#" data-i18n="nav_diabetes"> Diabetes </a>
+
+              <a href="#" data-i18n="nav_bone"> Bone Health </a>
+            </div>
+          </div>
+
+          <!-- TOOLS -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_tools"> Tools </a>
+
+            <div class="dropdown-menu">
+              <a href="bmi.html" data-i18n="tool_bmi_title"> BMI Calculator </a>
+            </div>
+          </div>
         </nav>
-
+        <!-- Language Switch -->
         <div class="lang-switch">
-
           <button
             id="btn-vi"
             class="lang-btn active"
@@ -92,83 +155,50 @@
             🇻🇳 VI
           </button>
 
-          <button
-            id="btn-en"
-            class="lang-btn"
-            onclick="setLanguage('en')"
-          >
+          <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">
             🇬🇧 EN
           </button>
-
         </div>
-
       </div>
     </header>
-
-
     <main class="container">
-
       <!-- HERO -->
 
       <section class="basic-nutrition-hero">
-
         <div class="section-heading">
+          <p class="section-label" data-i18n="basic_label">BASIC NUTRITION</p>
 
-          <p class="section-label" data-i18n="basic_label">
-            BASIC NUTRITION
-          </p>
-
-          <h1 data-i18n="fats_title">
-            Healthy Fats
-          </h1>
+          <h1 data-i18n="fats_title">Healthy Fats</h1>
 
           <p data-i18n="fats_desc">
-            Tìm hiểu về chất béo lành mạnh, vai trò của chất béo và
-            các nguồn thực phẩm cung cấp chất béo.
+            Tìm hiểu về chất béo lành mạnh, vai trò của chất béo và các nguồn
+            thực phẩm cung cấp chất béo.
           </p>
-
         </div>
-
       </section>
-
 
       <!-- WHAT ARE HEALTHY FATS? -->
 
       <section class="nutrition-introduction">
-
         <div class="nutrition-intro-card">
-
-          <div class="nutrition-intro-icon">
-            🥑
-          </div>
+          <div class="nutrition-intro-icon">🥑</div>
 
           <div>
-
-            <h2 data-i18n="fats_what_title">
-              Chất béo lành mạnh là gì?
-            </h2>
+            <h2 data-i18n="fats_what_title">Chất béo lành mạnh là gì?</h2>
 
             <p data-i18n="fats_what_desc">
-              Chất béo là một chất dinh dưỡng cần thiết cho cơ thể,
-              cung cấp năng lượng và hỗ trợ nhiều chức năng quan trọng.
+              Chất béo là một chất dinh dưỡng cần thiết cho cơ thể, cung cấp
+              năng lượng và hỗ trợ nhiều chức năng quan trọng.
             </p>
-
           </div>
-
         </div>
-
       </section>
-
 
       <!-- FOOD SOURCES -->
 
       <section class="essential-nutrients">
-
         <div class="section-heading">
-
-          <p class="section-label" data-i18n="fats_label">
-            HEALTHY FATS
-          </p>
+          <p class="section-label" data-i18n="fats_label">HEALTHY FATS</p>
 
           <h2 data-i18n="fats_sources_title">
             Các nguồn thực phẩm giàu chất béo lành mạnh
@@ -177,101 +207,61 @@
           <p data-i18n="fats_sources_desc">
             Chất béo có thể được cung cấp từ nhiều loại thực phẩm khác nhau.
           </p>
-
         </div>
 
-
         <div class="nutrient-grid">
-
           <!-- CARD 1 -->
 
           <article class="nutrient-card">
-
-            <img
-              src="images/healthy_fats.jpg"
-              alt="Avocado and plant oils"
-            />
+            <img src="images/healthy_fats.jpg" alt="Avocado and plant oils" />
 
             <div class="nutrient-card-content">
-
-              <h3 data-i18n="fats_avocado_title">
-                Bơ và dầu thực vật
-              </h3>
+              <h3 data-i18n="fats_avocado_title">Bơ và dầu thực vật</h3>
 
               <p data-i18n="fats_avocado_desc">
-                Quả bơ và các loại dầu thực vật như dầu ô liu
-                cung cấp chất béo không bão hòa.
+                Quả bơ và các loại dầu thực vật như dầu ô liu cung cấp chất béo
+                không bão hòa.
               </p>
-
             </div>
-
           </article>
-
 
           <!-- CARD 2 -->
 
           <article class="nutrient-card">
-
-            <img
-              src="images/nuts_seeds.jpg"
-              alt="Nuts and seeds"
-            />
+            <img src="images/nuts_seeds.jpg" alt="Nuts and seeds" />
 
             <div class="nutrient-card-content">
-
-              <h3 data-i18n="fats_nuts_title">
-                Các loại hạt
-              </h3>
+              <h3 data-i18n="fats_nuts_title">Các loại hạt</h3>
 
               <p data-i18n="fats_nuts_desc">
-                Các loại hạt như hạnh nhân, óc chó và hạt chia
-                cung cấp chất béo cùng nhiều chất dinh dưỡng khác.
+                Các loại hạt như hạnh nhân, óc chó và hạt chia cung cấp chất béo
+                cùng nhiều chất dinh dưỡng khác.
               </p>
-
             </div>
-
           </article>
-
 
           <!-- CARD 3 -->
 
           <article class="nutrient-card">
-
-            <img
-              src="images/fatty_fish.jpg"
-              alt="Fatty fish"
-            />
+            <img src="images/fatty_fish.jpg" alt="Fatty fish" />
 
             <div class="nutrient-card-content">
-
-              <h3 data-i18n="fats_fish_title">
-                Cá béo
-              </h3>
+              <h3 data-i18n="fats_fish_title">Cá béo</h3>
 
               <p data-i18n="fats_fish_desc">
-                Các loại cá béo như cá hồi và cá thu cung cấp
-                chất béo omega-3.
+                Các loại cá béo như cá hồi và cá thu cung cấp chất béo omega-3.
               </p>
-
             </div>
-
           </article>
-
         </div>
-
       </section>
-
     </main>
-
 
     <!-- FOOTER -->
 
     <footer class="site-footer">
-
       <div class="container footer-grid">
-
         <div class="footer-column">
-
           <a href="index.html" class="footer-logo">
             🌿 Nutri<span>Wise</span>
           </a>
@@ -279,44 +269,26 @@
           <p data-i18n="footer_desc">
             Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh.
           </p>
-
         </div>
-
 
         <div class="footer-column">
+          <h3 data-i18n="footer_quick_links">Quick Links</h3>
 
-          <h3 data-i18n="footer_quick_links">
-            Quick Links
-          </h3>
+          <a href="index.html" data-i18n="nav_home"> Home </a>
 
-          <a href="index.html" data-i18n="nav_home">
-            Home
-          </a>
-
-          <a
-            href="basic-nutrition.html"
-            data-i18n="nav_basic_nutrition"
-          >
+          <a href="basic-nutrition.html" data-i18n="nav_basic_nutrition">
             Basic Nutrition
           </a>
-
         </div>
-
       </div>
 
-
       <div class="footer-bottom">
-
         <p data-i18n="footer_copyright">
           © 2026 NutriWise. All rights reserved.
         </p>
-
       </div>
-
     </footer>
 
-
     <script src="script.js"></script>
-
   </body>
 </html>

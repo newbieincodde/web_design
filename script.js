@@ -342,6 +342,62 @@ const translations = {
     health_overview: "Sức khỏe & Lối sống",
     resource_guides: "Hướng dẫn",
     resource_articles: "Bài viết",
+    nav_special_needs: "Nhu cầu dinh dưỡng đặc biệt",
+
+    nav_pregnancy: "Phụ nữ mang thai",
+    nav_athletes: "Vận động viên",
+    nav_conditions: "Người có bệnh lý",
+
+    nutrition_age_title: "Tuổi & giai đoạn phát triển",
+    nutrition_activity_title: "Hoạt động thể chất",
+    nutrition_lifestyle_title: "Lối sống",
+    nutrition_needs_factors_label: "CÁC YẾU TỐ CHÍNH",
+
+    nutrition_needs_what_desc_2:
+      "Cơ thể cần nhiều nhóm chất khác nhau, bao gồm carbohydrate, protein, chất béo, vitamin, khoáng chất và nước. Mỗi nhóm có vai trò riêng, vì vậy một chế độ ăn đa dạng giúp cung cấp nhiều loại chất dinh dưỡng cần thiết.",
+
+    nutrition_needs_importance_label: "VÌ SAO ĐIỀU NÀY QUAN TRỌNG",
+    nutrition_needs_importance_title:
+      "Tại sao nhu cầu dinh dưỡng lại quan trọng?",
+    nutrition_needs_importance_desc:
+      "Hiểu về nhu cầu dinh dưỡng giúp chúng ta nhận biết vai trò của nhiều nhóm chất và xây dựng thói quen ăn uống đa dạng hơn.",
+
+    nutrition_growth_title: "Tăng trưởng và phát triển",
+    nutrition_growth_desc:
+      "Dinh dưỡng cung cấp các chất cần thiết cho quá trình tăng trưởng và phát triển bình thường, đặc biệt trong những giai đoạn cơ thể phát triển nhanh.",
+
+    nutrition_energy_title: "Năng lượng và hoạt động hằng ngày",
+    nutrition_energy_desc:
+      "Các chất dinh dưỡng giúp cung cấp năng lượng và hỗ trợ cơ thể trong các hoạt động hằng ngày.",
+
+    nutrition_body_functions_title: "Chức năng bình thường của cơ thể",
+    nutrition_body_functions_desc:
+      "Vitamin, khoáng chất, protein, chất béo, carbohydrate và nước đều có những vai trò khác nhau trong các chức năng bình thường của cơ thể.",
+
+    nutrition_overall_health_title: "Sức khỏe tổng thể",
+    nutrition_overall_health_desc:
+      "Một chế độ ăn cân bằng và đa dạng có thể góp phần hỗ trợ sức khỏe tổng thể khi kết hợp với lối sống lành mạnh.",
+
+    nutrition_balanced_label: "CHẾ ĐỘ ĂN CÂN BẰNG",
+    nutrition_balanced_title: "Xây dựng một chế độ ăn cân bằng",
+    nutrition_balanced_desc:
+      "Hiểu nhu cầu dinh dưỡng là bước đầu tiên. Một chế độ ăn cân bằng nên kết hợp nhiều loại thực phẩm để cung cấp đa dạng chất dinh dưỡng.",
+
+    nutrition_macronutrients_title: "Các chất dinh dưỡng đa lượng",
+    nutrition_macronutrients_desc:
+      "Carbohydrate, protein và chất béo là những nhóm chất đa lượng. Chúng có vai trò cung cấp năng lượng và hỗ trợ nhiều chức năng của cơ thể.",
+
+    nutrition_micronutrients_title: "Các vi chất dinh dưỡng",
+    nutrition_micronutrients_desc:
+      "Vitamin và khoáng chất cần thiết với lượng nhỏ hơn nhưng vẫn đóng vai trò quan trọng trong nhiều quá trình của cơ thể.",
+
+    nutrition_hydration_title: "Nước và sự hydrat hóa",
+    nutrition_hydration_desc:
+      "Nước là một phần thiết yếu của dinh dưỡng và tham gia vào nhiều quá trình bình thường của cơ thể.",
+
+    nutrition_takeaways_title: "Điểm cần nhớ",
+    nutrition_takeaways_desc:
+      "Nhu cầu dinh dưỡng có thể thay đổi theo tuổi, mức độ hoạt động và lối sống. Thay vì tập trung vào một chất dinh dưỡng duy nhất, hãy hướng đến sự đa dạng và cân bằng trong chế độ ăn.",
 
     // Đánh giá BMI (Chuẩn Châu Á - IDI & WPRO)
     bmi_underweight: "Gầy / Thiếu cân",
@@ -694,6 +750,61 @@ const translations = {
     health_overview: "Health & Lifestyle",
     resource_guides: "Guides",
     resource_articles: "Articles",
+    nav_special_needs: "Special Nutrition Needs",
+
+    nav_pregnancy: "Pregnancy",
+    nav_athletes: "Athletes",
+    nav_conditions: "People with Health Conditions",
+
+    nutrition_age_title: "Age & Development",
+    nutrition_activity_title: "Physical Activity",
+    nutrition_lifestyle_title: "Lifestyle",
+    nutrition_needs_factors_label: "KEY FACTORS",
+
+    nutrition_needs_what_desc_2:
+      "The body needs different groups of nutrients, including carbohydrates, proteins, fats, vitamins, minerals, and water. Each group has its own role, so a varied diet helps provide a range of essential nutrients.",
+
+    nutrition_needs_importance_label: "WHY IT MATTERS",
+    nutrition_needs_importance_title: "Why Do Nutrition Needs Matter?",
+    nutrition_needs_importance_desc:
+      "Understanding nutrition needs helps us recognize the roles of different nutrients and build more varied eating habits.",
+
+    nutrition_growth_title: "Growth & Development",
+    nutrition_growth_desc:
+      "Nutrition provides nutrients needed for normal growth and development, especially during periods when the body is developing rapidly.",
+
+    nutrition_energy_title: "Energy & Daily Activities",
+    nutrition_energy_desc:
+      "Nutrients help provide energy and support the body during everyday activities.",
+
+    nutrition_body_functions_title: "Normal Body Functions",
+    nutrition_body_functions_desc:
+      "Vitamins, minerals, protein, fats, carbohydrates, and water each have different roles in supporting normal body functions.",
+
+    nutrition_overall_health_title: "Overall Health",
+    nutrition_overall_health_desc:
+      "A balanced and varied diet can contribute to overall health when combined with a healthy lifestyle.",
+
+    nutrition_balanced_label: "BALANCED DIET",
+    nutrition_balanced_title: "Building a Balanced Diet",
+    nutrition_balanced_desc:
+      "Understanding nutrition needs is only the first step. A balanced diet should include a variety of foods to provide a range of nutrients.",
+
+    nutrition_macronutrients_title: "Macronutrients",
+    nutrition_macronutrients_desc:
+      "Carbohydrates, proteins, and fats are the three main macronutrients. They provide energy and support many functions of the body.",
+
+    nutrition_micronutrients_title: "Micronutrients",
+    nutrition_micronutrients_desc:
+      "Vitamins and minerals are needed in smaller amounts but still play important roles in many processes in the body.",
+
+    nutrition_hydration_title: "Hydration",
+    nutrition_hydration_desc:
+      "Water is an essential part of nutrition and is involved in many normal processes in the body.",
+
+    nutrition_takeaways_title: "Key Takeaways",
+    nutrition_takeaways_desc:
+      "Nutrition needs can change with age, activity level, and lifestyle. Instead of focusing on one nutrient alone, aim for variety and balance in the diet.",
     // BMI Evaluation
     bmi_underweight: "Underweight",
     bmi_normal: "Normal weight",

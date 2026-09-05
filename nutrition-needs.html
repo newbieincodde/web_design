@@ -15,143 +15,140 @@
   </head>
 
   <body>
-
     <!-- HEADER -->
 
     <header>
       <div class="container navbar">
+        <!-- Logo -->
+        <a href="#" class="logo"> 🌿 Nutri<span>Wise</span> </a>
 
-        <a href="index.html" class="logo">
-          🌿 Nutri<span>Wise</span>
-        </a>
-
+        <!-- Navigation -->
         <nav class="nav-menu">
+          <!-- HOME -->
+          <a href="index.html" data-i18n="nav_home"> Home </a>
 
-          <a href="index.html" data-i18n="nav_home">
-            Home
-          </a>
+          <!-- ABOUT US -->
+          <a href="#" data-i18n="nav_about"> About Us </a>
 
-          <a href="#" data-i18n="nav_about">
-            About Us
-          </a>
-
+          <!-- TOPICS -->
           <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_topics"> Topics </a>
 
-            <a href="#" data-i18n="nav_topics">
-              Topics
-            </a>
+            <div class="dropdown-menu mega-menu">
+              <!-- BASIC NUTRITION -->
+              <div class="dropdown-group">
+                <a
+                  href="basic-nutrition.html"
+                  class="group-title"
+                  data-i18n="nav_basic_nutrition"
+                >
+                  Basic Nutrition
+                </a>
 
-            <div class="dropdown-menu">
+                <a href="protein.html" data-i18n="topic_protein"> Protein </a>
 
-              <a
-                href="basic-nutrition.html"
-                data-i18n="nav_basic_nutrition"
-              >
-                Basic Nutrition
-              </a>
+                <a href="carbohydrates.html" data-i18n="topic_carbs">
+                  Carbohydrates
+                </a>
 
-              <a
-                href="nutrition-needs.html"
-                data-i18n="nav_nutrition_needs"
-              >
-                Nutrition Needs
-              </a>
+                <a href="healthy-fats.html" data-i18n="topic_fats">
+                  Healthy Fats
+                </a>
 
-              <a href="#" data-i18n="nav_healthy_eating">
-                Healthy Eating
-              </a>
+                <a href="vitamins.html" data-i18n="topic_vitamins">
+                  Vitamins
+                </a>
 
+                <a href="minerals.html" data-i18n="topic_minerals">
+                  Minerals
+                </a>
+
+                <a href="water.html" data-i18n="topic_water"> Water </a>
+              </div>
+
+              <!-- NUTRITION NEEDS -->
+              <div class="dropdown-group">
+                <span class="group-title" data-i18n="nav_nutrition_needs">
+                  Nutrition Needs
+                </span>
+
+                <a href="nutrition-needs.html" data-i18n="nutrition_age_title">
+                  Age & Development
+                </a>
+
+                <a
+                  href="nutrition-needs.html"
+                  data-i18n="nutrition_activity_title"
+                >
+                  Physical Activity
+                </a>
+
+                <a
+                  href="nutrition-needs.html"
+                  data-i18n="nutrition_lifestyle_title"
+                >
+                  Lifestyle
+                </a>
+              </div>
+
+              <!-- SPECIAL NUTRITION NEEDS -->
+              <div class="dropdown-group">
+                <span class="group-title" data-i18n="nav_special_needs">
+                  Special Nutrition Needs
+                </span>
+
+                <a href="#" data-i18n="nav_pregnancy"> Pregnancy </a>
+
+                <a href="#" data-i18n="nav_athletes"> Athletes </a>
+
+                <a href="#" data-i18n="nav_conditions"> Health Conditions </a>
+              </div>
             </div>
-
           </div>
 
-
+          <!-- FOOD & DIETS -->
           <div class="nav-dropdown">
-
-            <a href="#" data-i18n="nav_food">
-              Food & Diets
-            </a>
+            <a href="food-diets.html" data-i18n="nav_food"> Food & Diets </a>
 
             <div class="dropdown-menu">
-
-              <a href="#" data-i18n="nav_foods">
-                Foods
+              <a href="food-diets.html" data-i18n="food_groups_title">
+                Food Groups
               </a>
 
-              <a href="#" data-i18n="nav_diets">
-                Diets
+              <a href="food-diets.html" data-i18n="balanced_diet_title">
+                Balanced Diet
               </a>
 
-              <a href="#" data-i18n="nav_meals">
-                Meals
+              <a href="food-diets.html" data-i18n="healthy_food_choices_title">
+                Healthy Food Choices
               </a>
-
             </div>
-
           </div>
 
-
+          <!-- HEALTH -->
           <div class="nav-dropdown">
-
-            <a href="#" data-i18n="nav_health">
-              Health
-            </a>
+            <a href="#" data-i18n="nav_health"> Health </a>
 
             <div class="dropdown-menu">
+              <a href="#" data-i18n="nav_heart"> Heart Health </a>
 
-              <a href="#" data-i18n="nav_heart">
-                Heart Health
-              </a>
+              <a href="#" data-i18n="nav_diabetes"> Diabetes </a>
 
-              <a href="#" data-i18n="nav_diabetes">
-                Diabetes
-              </a>
-
-              <a href="#" data-i18n="nav_bone">
-                Bone Health
-              </a>
-
+              <a href="#" data-i18n="nav_bone"> Bone Health </a>
             </div>
-
           </div>
 
-
+          <!-- TOOLS -->
           <div class="nav-dropdown">
-
-            <a href="#" data-i18n="nav_tools">
-              Tools
-            </a>
+            <a href="#" data-i18n="nav_tools"> Tools </a>
 
             <div class="dropdown-menu">
-
-              <a
-                href="bmi.html"
-                data-i18n="tool_bmi_title"
-              >
-                BMI Calculator
-              </a>
-
-              <a
-                href="#"
-                data-i18n="tool_nutrition_title"
-              >
-                Nutrition Calculator
-              </a>
-
+              <a href="bmi.html" data-i18n="tool_bmi_title"> BMI Calculator </a>
             </div>
-
           </div>
-
-
-          <a href="#" data-i18n="nav_resources">
-            Resources
-          </a>
-
         </nav>
-
-
+        <!-- Language Switch -->
         <div class="lang-switch">
-
           <button
             id="btn-vi"
             class="lang-btn active"
@@ -160,35 +157,22 @@
             🇻🇳 VI
           </button>
 
-          <button
-            id="btn-en"
-            class="lang-btn"
-            onclick="setLanguage('en')"
-          >
+          <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">
             🇬🇧 EN
           </button>
-
         </div>
-
       </div>
     </header>
-
 
     <!-- MAIN -->
 
     <main class="container">
 
-
       <!-- HERO -->
-
       <section class="basic-nutrition-hero">
-
         <div class="section-heading">
 
-          <p
-            class="section-label"
-            data-i18n="nutrition_needs_label"
-          >
+          <p class="section-label" data-i18n="nutrition_needs_label">
             NUTRITION NEEDS
           </p>
 
@@ -197,17 +181,16 @@
           </h1>
 
           <p data-i18n="nutrition_needs_desc">
-            Tìm hiểu về các yếu tố ảnh hưởng đến nhu cầu dinh dưỡng
-            và cách xây dựng chế độ ăn phù hợp.
+            Tìm hiểu những yếu tố ảnh hưởng đến nhu cầu dinh dưỡng và cách xây
+            dựng một chế độ ăn cân bằng, đa dạng và phù hợp với từng giai đoạn
+            của cuộc sống.
           </p>
 
         </div>
-
       </section>
 
 
-      <!-- INTRODUCTION -->
-
+      <!-- WHAT ARE NUTRITION NEEDS? -->
       <section class="nutrition-introduction">
 
         <div class="nutrition-intro-card">
@@ -223,9 +206,16 @@
             </h2>
 
             <p data-i18n="nutrition_needs_what_desc">
-              Nhu cầu dinh dưỡng đề cập đến lượng và loại chất dinh dưỡng
-              mà cơ thể cần để hỗ trợ tăng trưởng, phát triển và các
-              hoạt động bình thường.
+              Nhu cầu dinh dưỡng là lượng và loại chất dinh dưỡng mà cơ thể cần
+              để hỗ trợ tăng trưởng, phát triển, cung cấp năng lượng và duy trì
+              các chức năng bình thường.
+            </p>
+
+            <p data-i18n="nutrition_needs_what_desc_2">
+              Cơ thể cần nhiều nhóm chất khác nhau, bao gồm carbohydrate,
+              protein, chất béo, vitamin, khoáng chất và nước. Mỗi nhóm có vai
+              trò riêng, vì vậy một chế độ ăn đa dạng giúp cung cấp nhiều loại
+              chất dinh dưỡng cần thiết.
             </p>
 
           </div>
@@ -235,25 +225,22 @@
       </section>
 
 
-      <!-- NUTRITION NEEDS TOPICS -->
-
+      <!-- FACTORS -->
       <section class="essential-nutrients">
 
         <div class="section-heading">
 
-          <p
-            class="section-label"
-            data-i18n="nutrition_needs_label"
-          >
-            NUTRITION NEEDS
+          <p class="section-label" data-i18n="nutrition_needs_factors_label">
+            KEY FACTORS
           </p>
 
           <h2 data-i18n="nutrition_needs_topics_title">
-            Các yếu tố ảnh hưởng đến nhu cầu dinh dưỡng
+            Những yếu tố ảnh hưởng đến nhu cầu dinh dưỡng
           </h2>
 
           <p data-i18n="nutrition_needs_topics_desc">
-            Nhu cầu dinh dưỡng có thể khác nhau tùy thuộc vào nhiều yếu tố.
+            Nhu cầu dinh dưỡng không giống nhau ở tất cả mọi người. Một số yếu
+            tố quan trọng có thể ảnh hưởng đến nhu cầu của mỗi người.
           </p>
 
         </div>
@@ -261,15 +248,13 @@
 
         <div class="nutrient-grid">
 
-
           <!-- AGE -->
-
           <article class="nutrient-card">
 
             <img
               src="images/nutrition_age.jpg"
               alt="Age and nutrition"
-            />
+            >
 
             <div class="nutrient-card-content">
 
@@ -278,8 +263,10 @@
               </h3>
 
               <p data-i18n="nutrition_age_desc">
-                Nhu cầu dinh dưỡng có thể thay đổi theo độ tuổi
-                và từng giai đoạn phát triển của cơ thể.
+                Nhu cầu dinh dưỡng thay đổi trong suốt cuộc đời. Trẻ em và
+                thanh thiếu niên cần dinh dưỡng hỗ trợ tăng trưởng và phát
+                triển, trong khi nhu cầu ở người trưởng thành và người lớn
+                tuổi có thể có những đặc điểm khác.
               </p>
 
             </div>
@@ -288,13 +275,12 @@
 
 
           <!-- ACTIVITY -->
-
           <article class="nutrient-card">
 
             <img
               src="images/nutrition_activity.jpg"
               alt="Physical activity and nutrition"
-            />
+            >
 
             <div class="nutrient-card-content">
 
@@ -303,8 +289,9 @@
               </h3>
 
               <p data-i18n="nutrition_activity_desc">
-                Mức độ hoạt động thể chất là một trong những yếu tố
-                có thể ảnh hưởng đến nhu cầu năng lượng và dinh dưỡng.
+                Hoạt động thể chất ảnh hưởng đến lượng năng lượng mà cơ thể sử
+                dụng trong ngày. Mức độ và loại hoạt động khác nhau có thể làm
+                thay đổi nhu cầu về năng lượng và một số chất dinh dưỡng.
               </p>
 
             </div>
@@ -313,13 +300,12 @@
 
 
           <!-- LIFESTYLE -->
-
           <article class="nutrient-card">
 
             <img
               src="images/nutrition_lifestyle.jpg"
               alt="Lifestyle and nutrition"
-            />
+            >
 
             <div class="nutrient-card-content">
 
@@ -328,14 +314,211 @@
               </h3>
 
               <p data-i18n="nutrition_lifestyle_desc">
-                Thói quen sinh hoạt và lựa chọn thực phẩm có thể
-                ảnh hưởng đến chất lượng chế độ ăn uống.
+                Thói quen ăn uống, lịch sinh hoạt, giấc ngủ và lựa chọn thực
+                phẩm đều có thể ảnh hưởng đến chất lượng chế độ ăn. Những thói
+                quen lành mạnh giúp hỗ trợ một lối sống cân bằng hơn.
               </p>
 
             </div>
 
           </article>
 
+        </div>
+
+      </section>
+
+
+      <!-- WHY IT MATTERS -->
+      <section class="content-section">
+
+        <div class="section-heading">
+
+          <p class="section-label" data-i18n="nutrition_needs_importance_label">
+            WHY IT MATTERS
+          </p>
+
+          <h2 data-i18n="nutrition_needs_importance_title">
+            Tại sao nhu cầu dinh dưỡng lại quan trọng?
+          </h2>
+
+          <p data-i18n="nutrition_needs_importance_desc">
+            Hiểu về nhu cầu dinh dưỡng giúp chúng ta nhận biết vai trò của
+            nhiều nhóm chất và xây dựng thói quen ăn uống đa dạng hơn.
+          </p>
+
+        </div>
+
+
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-content">
+
+              <h3 data-i18n="nutrition_growth_title">
+                Growth & Development
+              </h3>
+
+              <p data-i18n="nutrition_growth_desc">
+                Dinh dưỡng cung cấp các chất cần thiết cho quá trình tăng
+                trưởng và phát triển bình thường, đặc biệt trong những giai
+                đoạn cơ thể phát triển nhanh.
+              </p>
+
+            </div>
+          </article>
+
+
+          <article class="card">
+            <div class="card-content">
+
+              <h3 data-i18n="nutrition_energy_title">
+                Energy & Daily Activities
+              </h3>
+
+              <p data-i18n="nutrition_energy_desc">
+                Các chất dinh dưỡng giúp cung cấp năng lượng và hỗ trợ cơ thể
+                trong các hoạt động hằng ngày.
+              </p>
+
+            </div>
+          </article>
+
+
+          <article class="card">
+            <div class="card-content">
+
+              <h3 data-i18n="nutrition_body_functions_title">
+                Normal Body Functions
+              </h3>
+
+              <p data-i18n="nutrition_body_functions_desc">
+                Vitamin, khoáng chất, protein, chất béo, carbohydrate và nước
+                đều có những vai trò khác nhau trong các chức năng bình thường
+                của cơ thể.
+              </p>
+
+            </div>
+          </article>
+
+
+          <article class="card">
+            <div class="card-content">
+
+              <h3 data-i18n="nutrition_overall_health_title">
+                Overall Health
+              </h3>
+
+              <p data-i18n="nutrition_overall_health_desc">
+                Một chế độ ăn cân bằng và đa dạng có thể góp phần hỗ trợ sức
+                khỏe tổng thể khi kết hợp với lối sống lành mạnh.
+              </p>
+
+            </div>
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- BALANCED DIET -->
+      <section class="content-section">
+
+        <div class="section-heading">
+
+          <p class="section-label" data-i18n="nutrition_balanced_label">
+            BALANCED DIET
+          </p>
+
+          <h2 data-i18n="nutrition_balanced_title">
+            Xây dựng một chế độ ăn cân bằng
+          </h2>
+
+          <p data-i18n="nutrition_balanced_desc">
+            Hiểu nhu cầu dinh dưỡng là bước đầu tiên. Một chế độ ăn cân bằng
+            nên kết hợp nhiều loại thực phẩm để cung cấp đa dạng chất dinh dưỡng.
+          </p>
+
+        </div>
+
+
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-content">
+
+              <h3 data-i18n="nutrition_macronutrients_title">
+                Macronutrients
+              </h3>
+
+              <p data-i18n="nutrition_macronutrients_desc">
+                Carbohydrate, protein và chất béo là những nhóm chất đa lượng.
+                Chúng có vai trò cung cấp năng lượng và hỗ trợ nhiều chức năng
+                của cơ thể.
+              </p>
+
+            </div>
+          </article>
+
+
+          <article class="card">
+            <div class="card-content">
+
+              <h3 data-i18n="nutrition_micronutrients_title">
+                Micronutrients
+              </h3>
+
+              <p data-i18n="nutrition_micronutrients_desc">
+                Vitamin và khoáng chất cần thiết với lượng nhỏ hơn nhưng vẫn
+                đóng vai trò quan trọng trong nhiều quá trình của cơ thể.
+              </p>
+
+            </div>
+          </article>
+
+
+          <article class="card">
+            <div class="card-content">
+
+              <h3 data-i18n="nutrition_hydration_title">
+                Hydration
+              </h3>
+
+              <p data-i18n="nutrition_hydration_desc">
+                Nước là một phần thiết yếu của dinh dưỡng và tham gia vào nhiều
+                quá trình bình thường của cơ thể.
+              </p>
+
+            </div>
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- KEY TAKEAWAYS -->
+      <section class="nutrition-introduction">
+
+        <div class="nutrition-intro-card">
+
+          <div class="nutrition-intro-icon">
+            🌿
+          </div>
+
+          <div>
+
+            <h2 data-i18n="nutrition_takeaways_title">
+              Key Takeaways
+            </h2>
+
+            <p data-i18n="nutrition_takeaways_desc">
+              Nhu cầu dinh dưỡng có thể thay đổi theo tuổi, mức độ hoạt động
+              và lối sống. Thay vì tập trung vào một chất dinh dưỡng duy nhất,
+              hãy hướng đến sự đa dạng và cân bằng trong chế độ ăn.
+            </p>
+
+          </div>
 
         </div>
 
@@ -343,66 +526,38 @@
 
     </main>
 
-
     <!-- FOOTER -->
 
     <footer class="site-footer">
-
       <div class="container footer-grid">
-
         <div class="footer-column">
-
-          <a
-            href="index.html"
-            class="footer-logo"
-          >
+          <a href="index.html" class="footer-logo">
             🌿 Nutri<span>Wise</span>
           </a>
 
           <p data-i18n="footer_desc">
             Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh.
           </p>
-
         </div>
-
 
         <div class="footer-column">
+          <h3 data-i18n="footer_quick_links">Quick Links</h3>
 
-          <h3 data-i18n="footer_quick_links">
-            Quick Links
-          </h3>
+          <a href="index.html" data-i18n="nav_home"> Home </a>
 
-          <a
-            href="index.html"
-            data-i18n="nav_home"
-          >
-            Home
-          </a>
-
-          <a
-            href="basic-nutrition.html"
-            data-i18n="nav_basic_nutrition"
-          >
+          <a href="basic-nutrition.html" data-i18n="nav_basic_nutrition">
             Basic Nutrition
           </a>
-
         </div>
-
       </div>
 
-
       <div class="footer-bottom">
-
         <p data-i18n="footer_copyright">
           © 2026 NutriWise. All rights reserved.
         </p>
-
       </div>
-
     </footer>
 
-
     <script src="script.js"></script>
-
   </body>
 </html>

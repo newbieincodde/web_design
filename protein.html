@@ -15,62 +15,137 @@
   </head>
 
   <body>
-    <header>
+     <header>
       <div class="container navbar">
-        <a href="index.html" class="logo"> 🌿 Nutri<span>Wise</span> </a>
+        <!-- Logo -->
+        <a href="#" class="logo"> 🌿 Nutri<span>Wise</span> </a>
 
+        <!-- Navigation -->
         <nav class="nav-menu">
+          <!-- HOME -->
           <a href="index.html" data-i18n="nav_home"> Home </a>
 
+          <!-- ABOUT US -->
           <a href="#" data-i18n="nav_about"> About Us </a>
 
+          <!-- TOPICS -->
           <div class="nav-dropdown">
             <a href="#" data-i18n="nav_topics"> Topics </a>
 
+            <div class="dropdown-menu mega-menu">
+              <!-- BASIC NUTRITION -->
+              <div class="dropdown-group">
+                <a
+                  href="basic-nutrition.html"
+                  class="group-title"
+                  data-i18n="nav_basic_nutrition"
+                >
+                  Basic Nutrition
+                </a>
+
+                <a href="protein.html" data-i18n="topic_protein"> Protein </a>
+
+                <a href="carbohydrates.html" data-i18n="topic_carbs">
+                  Carbohydrates
+                </a>
+
+                <a href="healthy-fats.html" data-i18n="topic_fats">
+                  Healthy Fats
+                </a>
+
+                <a href="vitamins.html" data-i18n="topic_vitamins">
+                  Vitamins
+                </a>
+
+                <a href="minerals.html" data-i18n="topic_minerals">
+                  Minerals
+                </a>
+
+                <a href="water.html" data-i18n="topic_water"> Water </a>
+              </div>
+
+              <!-- NUTRITION NEEDS -->
+              <div class="dropdown-group">
+                <span class="group-title" data-i18n="nav_nutrition_needs">
+                  Nutrition Needs
+                </span>
+
+                <a href="nutrition-needs.html" data-i18n="nutrition_age_title">
+                  Age & Development
+                </a>
+
+                <a
+                  href="nutrition-needs.html"
+                  data-i18n="nutrition_activity_title"
+                >
+                  Physical Activity
+                </a>
+
+                <a
+                  href="nutrition-needs.html"
+                  data-i18n="nutrition_lifestyle_title"
+                >
+                  Lifestyle
+                </a>
+              </div>
+
+              <!-- SPECIAL NUTRITION NEEDS -->
+              <div class="dropdown-group">
+                <span class="group-title" data-i18n="nav_special_needs">
+                  Special Nutrition Needs
+                </span>
+
+                <a href="#" data-i18n="nav_pregnancy"> Pregnancy </a>
+
+                <a href="#" data-i18n="nav_athletes"> Athletes </a>
+
+                <a href="#" data-i18n="nav_conditions"> Health Conditions </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOD & DIETS -->
+          <div class="nav-dropdown">
+            <a href="food-diets.html" data-i18n="nav_food"> Food & Diets </a>
+
             <div class="dropdown-menu">
-              <a href="basic-nutrition.html" data-i18n="nav_basic_nutrition">
-                Basic Nutrition
+              <a href="food-diets.html" data-i18n="food_groups_title">
+                Food Groups
               </a>
 
-              <a href="#"> Nutrition Needs </a>
+              <a href="food-diets.html" data-i18n="balanced_diet_title">
+                Balanced Diet
+              </a>
 
-              <a href="#"> Healthy Eating </a>
+              <a href="food-diets.html" data-i18n="healthy_food_choices_title">
+                Healthy Food Choices
+              </a>
             </div>
           </div>
 
-          <div class="nav-dropdown">
-            <a href="#" data-i18n="nav_food"> Food & Diets </a>
-
-            <div class="dropdown-menu">
-              <a href="#">Nutritious Foods</a>
-              <a href="#">Popular Diets</a>
-              <a href="#">Meal Plans</a>
-            </div>
-          </div>
-
+          <!-- HEALTH -->
           <div class="nav-dropdown">
             <a href="#" data-i18n="nav_health"> Health </a>
 
             <div class="dropdown-menu">
-              <a href="#">Heart Health</a>
-              <a href="#">Diabetes</a>
-              <a href="#">Bone Health</a>
+              <a href="#" data-i18n="nav_heart"> Heart Health </a>
+
+              <a href="#" data-i18n="nav_diabetes"> Diabetes </a>
+
+              <a href="#" data-i18n="nav_bone"> Bone Health </a>
             </div>
           </div>
 
+          <!-- TOOLS -->
           <div class="nav-dropdown">
             <a href="#" data-i18n="nav_tools"> Tools </a>
 
             <div class="dropdown-menu">
-              <a href="bmi.html"> BMI Calculator </a>
-
-              <a href="#"> Nutrition Calculator </a>
+              <a href="bmi.html" data-i18n="tool_bmi_title"> BMI Calculator </a>
             </div>
           </div>
-
-          <a href="#" data-i18n="nav_resources"> Resources </a>
         </nav>
-
+        <!-- Language Switch -->
         <div class="lang-switch">
           <button
             id="btn-vi"
