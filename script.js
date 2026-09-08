@@ -457,25 +457,70 @@ const translations = {
     source_3_title: "Tính Khách quan",
     source_3_desc:
       "Website hoạt động độc lập, phi lợi nhuận và không bị chi phối bởi bất kỳ nhãn hàng thực phẩm chức năng nào.",
-      about_title: "Biến kiến thức dinh dưỡng trở nên đơn giản.",
-    about_subtitle: "Chúng tôi xây dựng NutriWise để giúp bạn vượt qua 'ma trận' thông tin sức khỏe bằng những kiến thức đã được chọn lọc và kiểm chứng.",
-    
+    about_title: "Biến kiến thức dinh dưỡng trở nên đơn giản.",
+    about_subtitle:
+      "Chúng tôi xây dựng NutriWise để giúp bạn vượt qua 'ma trận' thông tin sức khỏe bằng những kiến thức đã được chọn lọc và kiểm chứng.",
+
     bento_mission: "Our Mission",
-    bento_mission_desc: "Cung cấp một nền tảng giáo dục sức khỏe hoàn toàn miễn phí, trực quan và an toàn. NutriWise tin rằng một lối sống lành mạnh bắt đầu từ sự thấu hiểu cơ thể chính mình.",
-    
+    bento_mission_desc:
+      "Cung cấp một nền tảng giáo dục sức khỏe hoàn toàn miễn phí, trực quan và an toàn. NutriWise tin rằng một lối sống lành mạnh bắt đầu từ sự thấu hiểu cơ thể chính mình.",
+
     bento_science: "Chuẩn khoa học",
-    bento_science_desc: "Nội dung xây dựng dựa trên nền tảng nghiên cứu y khoa, không cung cấp lời khuyên vô căn cứ.",
-    
+    bento_science_desc:
+      "Nội dung xây dựng dựa trên nền tảng nghiên cứu y khoa, không cung cấp lời khuyên vô căn cứ.",
+
     bento_practical: "Tính thực tiễn",
-    bento_practical_desc: "Cung cấp công cụ đo lường BMI và tính toán dinh dưỡng để bạn áp dụng ngay vào đời sống.",
-    
+    bento_practical_desc:
+      "Cung cấp công cụ đo lường BMI và tính toán dinh dưỡng để bạn áp dụng ngay vào đời sống.",
+
     about_creator: "Meet the Creator",
-    about_creator_desc: "Được phát triển với niềm đam mê kết hợp giữa lập trình Web và sức khỏe cộng đồng. NutriWise là một dự án tâm huyết nhằm mang lại giá trị thực cho người dùng.",
+    about_creator_desc:
+      "Được phát triển với niềm đam mê kết hợp giữa lập trình Web và sức khỏe cộng đồng. NutriWise là một dự án tâm huyết nhằm mang lại giá trị thực cho người dùng.",
     about_contact: "Liên hệ với chúng tôi",
 
     about_process_title: "Quy trình biên tập chuẩn khoa học",
-    about_process_desc: "Mọi bài viết trên NutriWise không dựa trên xu hướng mạng xã hội hay các chế độ ăn kiêng truyền miệng. Chúng tôi tổng hợp dữ liệu từ các tổ chức y tế uy tín (như WHO, FAO) và được rà soát chéo bởi các chuyên gia có chuyên môn. Mục tiêu của chúng tôi là dịch những thuật ngữ y khoa phức tạp thành ngôn ngữ dễ hiểu, giúp bạn tự tin đưa ra quyết định cho bữa ăn hàng ngày.",
-
+    about_process_desc:
+      "Mọi bài viết trên NutriWise không dựa trên xu hướng mạng xã hội hay các chế độ ăn kiêng truyền miệng. Chúng tôi tổng hợp dữ liệu từ các tổ chức y tế uy tín (như WHO, FAO) và được rà soát chéo bởi các chuyên gia có chuyên môn. Mục tiêu của chúng tôi là dịch những thuật ngữ y khoa phức tạp thành ngôn ngữ dễ hiểu, giúp bạn tự tin đưa ra quyết định cho bữa ăn hàng ngày.",
+    activity_label: "HOẠT ĐỘNG THỂ CHẤT",
+    activity_hero_title: "Dinh dưỡng trong Thể thao",
+    activity_hero_desc:
+      "Cho dù bạn đi bộ nhẹ nhàng hay tập luyện cường độ cao, việc nạp đúng nhiên liệu vào đúng thời điểm sẽ quyết định hiệu suất và khả năng phục hồi của cơ thể.",
+    activity_pre_title: "Trước khi tập: Nạp năng lượng",
+    activity_pre_desc:
+      "Carbohydrate là nguồn nhiên liệu vàng. Hãy ăn nhẹ từ 1-2 tiếng trước khi tập với các thực phẩm dễ tiêu hóa như chuối, yến mạch để cơ thể có đủ sức bền mà không bị nặng bụng.",
+    activity_during_title: "Trong khi tập: Bù nước liên tục",
+    activity_during_desc:
+      "Mất nước làm giảm đáng kể hiệu suất và gây chuột rút. Hãy uống từng ngụm nhỏ cứ mỗi 15-20 phút. Nếu tập nặng trên 60 phút, cần bổ sung thêm đồ uống chứa điện giải để bù đắp khoáng chất thất thoát qua mồ hôi.",
+    activity_post_title: "Sau khi tập: Phục hồi & Xây dựng",
+    activity_post_desc:
+      "Cơ bắp cần Protein để sửa chữa các vi tổn thương và Carbohydrate để bù đắp lượng glycogen đã tiêu hao. Khung giờ vàng để nạp dinh dưỡng là trong vòng 45-60 phút sau khi kết thúc buổi tập.",
+    lifestyle_label: "LỐI SỐNG & THÓI QUEN",
+    lifestyle_hero_title: "Sức Khỏe Khởi Nguồn Từ Thói Quen",
+    lifestyle_hero_desc:
+      "Dinh dưỡng không chỉ nằm ở những gì bạn đặt lên đĩa, mà còn phụ thuộc vào cách bạn sinh hoạt, ngủ nghỉ và quản lý căng thẳng mỗi ngày.",
+    lifestyle_eat_title: "Thói quen ăn uống chánh niệm",
+    lifestyle_eat_desc:
+      "Ăn trong lúc xem điện thoại hoặc làm việc khiến não bộ không ghi nhận cảm giác no, dẫn đến việc nạp dư thừa calo. Tập trung vào bữa ăn giúp cải thiện tiêu hóa và kiểm soát cân nặng tự nhiên.",
+    lifestyle_sleep_title: "Giấc ngủ & Nhịp sinh học",
+    lifestyle_sleep_desc:
+      "Thiếu ngủ làm tăng hormone Ghrelin (gây đói) và giảm Leptin (gây no), khiến bạn thèm đồ ngọt và thức ăn nhanh. Một giấc ngủ sâu 7-8 tiếng là 'liều thuốc' trao đổi chất tốt nhất.",
+    lifestyle_stress_title: "Kiểm soát căng thẳng (Stress)",
+    lifestyle_stress_desc:
+      "Căng thẳng mãn tính giải phóng Cortisol, làm tăng tích tụ mỡ nội tạng và cản trở quá trình hấp thụ vi chất. Vận động nhẹ nhàng hoặc thiền định giúp cơ thể duy trì trạng thái hấp thu tối ưu.",
+    lifestyle_eat_tip1: "Nhai chậm giúp dạ dày báo tín hiệu no kịp thời.",
+    lifestyle_eat_tip2: "Hạn chế thiết bị điện tử trong bữa ăn.",
+    lifestyle_sleep_tip1: "Giấc ngủ phục hồi hệ thống trao đổi chất.",
+    lifestyle_sleep_tip2: "Tránh nạp caffeine ít nhất 6 tiếng trước khi ngủ.",
+    lifestyle_stress_tip1: "Cortisol cao làm tăng cảm giác thèm đường.",
+    lifestyle_stress_tip2: "Kết hợp Yoga hoặc thiền 15 phút mỗi ngày.",
+    activity_pre_tip_1: "Tuyệt đối không nhịn đói trước bài tập nặng.",
+    activity_pre_tip_2: "Hạn chế thực phẩm nhiều dầu mỡ để tránh đầy hơi.",
+    activity_during_tip_1: "Đừng đợi đến khi khát khô cổ mới uống nước.",
+    activity_during_tip_2:
+      "Nước dừa tươi là nguồn điện giải tự nhiên tuyệt vời.",
+    activity_post_tip_1: "Trứng, ức gà hoặc Whey protein là lựa chọn hoàn hảo.",
+    activity_post_tip_2:
+      "Đừng quên kéo giãn cơ (stretching) để máu lưu thông tốt.",
     // Đánh giá BMI (Chuẩn Châu Á - IDI & WPRO)
     bmi_underweight: "Gầy / Thiếu cân",
     bmi_normal: "Bình thường / Thể trạng chuẩn",
@@ -941,24 +986,80 @@ const translations = {
     source_3_title: "Objectivity & Independence",
     source_3_desc:
       "The website operates independently, non-profit, and is not influenced by any dietary supplement brands.",
-      about_title: "Making nutrition knowledge simple.",
-    about_subtitle: "We built NutriWise to help you navigate the 'maze' of health information with curated and verified knowledge.",
-    
+    about_title: "Making nutrition knowledge simple.",
+    about_subtitle:
+      "We built NutriWise to help you navigate the 'maze' of health information with curated and verified knowledge.",
+
     bento_mission: "Our Mission",
-    bento_mission_desc: "Providing a completely free, intuitive, and safe health education platform. NutriWise believes a healthy lifestyle starts with understanding your own body.",
-    
+    bento_mission_desc:
+      "Providing a completely free, intuitive, and safe health education platform. NutriWise believes a healthy lifestyle starts with understanding your own body.",
+
     bento_science: "Science-Backed",
-    bento_science_desc: "Content is built on a foundation of medical research, never offering baseless advice.",
-    
+    bento_science_desc:
+      "Content is built on a foundation of medical research, never offering baseless advice.",
+
     bento_practical: "Practicality",
-    bento_practical_desc: "Providing BMI measurement and nutrition calculation tools for you to apply immediately to your daily life.",
-    
+    bento_practical_desc:
+      "Providing BMI measurement and nutrition calculation tools for you to apply immediately to your daily life.",
+
     about_creator: "Meet the Creator",
-    about_creator_desc: "Developed with a passion for combining Web programming and public health. NutriWise is a passion project aimed at bringing real value to users.",
+    about_creator_desc:
+      "Developed with a passion for combining Web programming and public health. NutriWise is a passion project aimed at bringing real value to users.",
     about_contact: "Contact Us",
 
     about_process_title: "Science-Based Editorial Process",
-    about_process_desc: "Every article on NutriWise is not based on social media trends or word-of-mouth diets. We synthesize data from reputable health organizations (like WHO, FAO) and cross-review it with qualified experts. Our goal is to translate complex medical jargon into easy-to-understand language, helping you confidently make decisions for your daily meals.",
+    about_process_desc:
+      "Every article on NutriWise is not based on social media trends or word-of-mouth diets. We synthesize data from reputable health organizations (like WHO, FAO) and cross-review it with qualified experts. Our goal is to translate complex medical jargon into easy-to-understand language, helping you confidently make decisions for your daily meals.",
+    activity_label: "PHYSICAL ACTIVITY",
+    activity_hero_title: "Nutrition for Sports & Exercise",
+    activity_hero_desc:
+      "Whether you are taking a light walk or doing high-intensity training, fueling your body with the right nutrients at the right time determines your performance and recovery.",
+    activity_pre_title: "Pre-workout: Fuel up",
+    activity_pre_desc:
+      "Carbohydrates are your golden fuel. Eat a light, easy-to-digest snack like a banana or oatmeal 1-2 hours before exercising to ensure your body has enough stamina without feeling bloated.",
+    activity_during_title: "During workout: Stay hydrated",
+    activity_during_desc:
+      "Dehydration significantly reduces performance and causes cramps. Take small sips every 15-20 minutes. If exercising intensely for over 60 minutes, add an electrolyte drink to replenish lost minerals.",
+    activity_post_title: "Post-workout: Recover & Rebuild",
+    activity_post_desc:
+      "Muscles need Protein to repair micro-tears and Carbohydrates to replenish depleted glycogen. The golden window for nutrition is within 45-60 minutes after finishing your workout.",
+    lifestyle_label: "LIFESTYLE & HABITS",
+    lifestyle_hero_title: "Health Starts with Daily Habits",
+    lifestyle_hero_desc:
+      "Nutrition isn't just about what's on your plate; it's deeply connected to how you live, sleep, and manage stress every single day.",
+    lifestyle_eat_title: "Mindful Eating Habits",
+    lifestyle_eat_desc:
+      "Eating while distracted prevents your brain from registering fullness, leading to overeating. Focusing on your meal improves digestion and naturally supports weight management.",
+    lifestyle_sleep_title: "Sleep & Circadian Rhythm",
+    lifestyle_sleep_desc:
+      "Sleep deprivation spikes Ghrelin (hunger hormone) and lowers Leptin (fullness hormone), causing sugar cravings. A deep 7-8 hour sleep is the best metabolic 'medicine'.",
+    lifestyle_stress_title: "Stress Management",
+    lifestyle_stress_desc:
+      "Chronic stress releases Cortisol, increasing visceral fat and hindering nutrient absorption. Light activity or meditation helps keep your body in an optimal state for digestion.",
+    lifestyle_eat_tip1:
+      "Eating slowly gives your stomach time to signal fullness.",
+    lifestyle_eat_tip2: "Limit the use of electronic devices during meals.",
+    lifestyle_sleep_tip1: "Deep sleep restores the metabolic system.",
+    lifestyle_sleep_tip2: "Avoid caffeine for at least 6 hours before bedtime.",
+    lifestyle_stress_tip1: "High cortisol increases sugar cravings.",
+    lifestyle_stress_tip2:
+      "Incorporate 15 minutes of Yoga or meditation daily.",
+    activity_pre_tip_1: "Never exercise intensely on an empty stomach.",
+
+    activity_pre_tip_2:
+      "Limit high-fat foods before exercise to avoid bloating.",
+
+    activity_during_tip_1:
+      "Do not wait until you are very thirsty before drinking water.",
+
+    activity_during_tip_2:
+      "Fresh coconut water is an excellent natural source of electrolytes.",
+
+    activity_post_tip_1:
+      "Eggs, chicken breast, or whey protein are excellent choices.",
+
+    activity_post_tip_2:
+      "Don't forget to stretch to help improve blood circulation.",
     // BMI Evaluation
     bmi_underweight: "Underweight",
     bmi_normal: "Normal weight",
@@ -1073,11 +1174,9 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================= */
 
 if (typeof translations !== "undefined") {
-
   /* ---------- ENGLISH ---------- */
 
   Object.assign(translations.en, {
-
     age_development_label: "NUTRITION BY AGE",
     age_development_title: "Age & Development",
     age_development_desc:
@@ -1094,8 +1193,7 @@ if (typeof translations !== "undefined") {
       "A balanced and varied diet can provide important nutrients that support growth, maintain the body, and promote healthy development.",
 
     age_stages_label: "LIFE STAGES",
-    age_stages_title:
-      "Nutrition Through Different Stages of Life",
+    age_stages_title: "Nutrition Through Different Stages of Life",
 
     age_stages_desc:
       "Each stage of life has different nutritional priorities. Learning about these differences can help us make informed food choices.",
@@ -1143,15 +1241,12 @@ if (typeof translations !== "undefined") {
     age_takeaway_title: "Nutrition Needs Change With Age",
 
     age_takeaway_desc:
-      "There is no single approach to nutrition that works exactly the same way for everyone. Age, growth, development, activity, and lifestyle can all influence nutritional needs."
-
+      "There is no single approach to nutrition that works exactly the same way for everyone. Age, growth, development, activity, and lifestyle can all influence nutritional needs.",
   });
-
 
   /* ---------- VIETNAMESE ---------- */
 
   Object.assign(translations.vi, {
-
     age_development_label: "DINH DƯỠNG THEO ĐỘ TUỔI",
     age_development_title: "Độ tuổi & Phát triển",
 
@@ -1161,8 +1256,7 @@ if (typeof translations !== "undefined") {
     age_intro_label: "HIỂU VỀ NHU CẦU DINH DƯỠNG",
     age_intro_title: "Nhu Cầu Dinh Dưỡng Thay Đổi Khi Chúng Ta Lớn Lên",
 
-    age_intro_card_title:
-      "Mỗi giai đoạn có những nhu cầu khác nhau",
+    age_intro_card_title: "Mỗi giai đoạn có những nhu cầu khác nhau",
 
     age_intro_desc_1:
       "Cơ thể trải qua nhiều thay đổi khi chúng ta lớn lên và già đi. Vì vậy, lượng và loại chất dinh dưỡng mà cơ thể cần cũng có thể thay đổi.",
@@ -1172,8 +1266,7 @@ if (typeof translations !== "undefined") {
 
     age_stages_label: "CÁC GIAI ĐOẠN CUỘC ĐỜI",
 
-    age_stages_title:
-      "Dinh Dưỡng Qua Các Giai Đoạn Khác Nhau Của Cuộc Sống",
+    age_stages_title: "Dinh Dưỡng Qua Các Giai Đoạn Khác Nhau Của Cuộc Sống",
 
     age_stages_desc:
       "Mỗi giai đoạn của cuộc đời có những ưu tiên dinh dưỡng khác nhau. Tìm hiểu những khác biệt này giúp chúng ta đưa ra lựa chọn thực phẩm phù hợp.",
@@ -1205,8 +1298,7 @@ if (typeof translations !== "undefined") {
 
     age_why_label: "TẠI SAO ĐIỀU NÀY QUAN TRỌNG",
 
-    age_why_title:
-      "Tại Sao Dinh Dưỡng Quan Trọng Ở Mọi Độ Tuổi",
+    age_why_title: "Tại Sao Dinh Dưỡng Quan Trọng Ở Mọi Độ Tuổi",
 
     age_growth_title: "Tăng trưởng & Phát triển",
 
@@ -1230,11 +1322,9 @@ if (typeof translations !== "undefined") {
 
     age_takeaway_label: "ĐIỂM CẦN NHỚ",
 
-    age_takeaway_title:
-      "Nhu Cầu Dinh Dưỡng Thay Đổi Theo Độ Tuổi",
+    age_takeaway_title: "Nhu Cầu Dinh Dưỡng Thay Đổi Theo Độ Tuổi",
 
     age_takeaway_desc:
-      "Không có một cách tiếp cận dinh dưỡng duy nhất phù hợp hoàn toàn với tất cả mọi người. Độ tuổi, sự tăng trưởng, phát triển, hoạt động thể chất và lối sống đều có thể ảnh hưởng đến nhu cầu dinh dưỡng."
+      "Không có một cách tiếp cận dinh dưỡng duy nhất phù hợp hoàn toàn với tất cả mọi người. Độ tuổi, sự tăng trưởng, phát triển, hoạt động thể chất và lối sống đều có thể ảnh hưởng đến nhu cầu dinh dưỡng.",
   });
-
 }

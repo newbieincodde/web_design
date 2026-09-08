@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NutriWise - Nhu Cầu Dinh Dưỡng</title>
+  <title>NutriWise - Lifestyle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  
+  <link rel="stylesheet" href="style.css" />
   <style>
     /* ===================================================
        DESIGN TOKENS & BASE
@@ -32,35 +32,22 @@
     img { max-width: 100%; display: block; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
-    /* ===================================================
-       HEADER & NAVIGATION (Đồng bộ trang Home)
-    =================================================== */
-    header {
-      position: sticky; top: 0; z-index: 100; height: var(--header-h);
-      background: rgba(245,247,250,0.82); backdrop-filter: blur(20px) saturate(180%);
-      border-bottom: 1px solid var(--border); transition: box-shadow 0.3s ease;
-    }
+    /* HEADER */
+    header { position: sticky; top: 0; z-index: 100; height: var(--header-h); background: rgba(245,247,250,0.82); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s ease; }
     header.scrolled { box-shadow: var(--shadow-md); background: rgba(245,247,250,0.95); }
     .navbar { height: var(--header-h); display: flex; align-items: center; gap: 32px; }
     .logo { font-family: var(--font-heading); font-size: 1.375rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 6px; }
-    .logo-icon { width: 34px; height: 34px; }
-    .logo span { color: var(--accent); }
+    .logo-icon { width: 34px; height: 34px; } .logo span { color: var(--accent); }
     
     .nav-menu { display: flex; align-items: center; gap: 4px; flex: 1; }
     .nav-menu > a, .nav-dropdown > a { font-size: 0.875rem; font-weight: 500; color: var(--fg-muted); padding: 8px 12px; border-radius: var(--radius-sm); transition: 0.2s; }
     .nav-menu > a:hover, .nav-dropdown > a:hover { color: var(--primary); background: var(--muted-bg); }
     .nav-dropdown { position: relative; }
-    .nav-dropdown > a::after {
-      content: ''; display: inline-block; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); margin-left: 6px;
-    }
-    .dropdown-menu {
-      position: absolute; top: 100%; left: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-lg);
-      min-width: 180px; padding: 8px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: 0.2s; z-index: 1000;
-    }
+    .nav-dropdown > a::after { content: ''; display: inline-block; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); margin-left: 6px; }
+    .dropdown-menu { position: absolute; top: 100%; left: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); min-width: 180px; padding: 8px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: 0.2s; z-index: 1000; }
     .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-menu a { display: block; font-size: 0.8125rem; font-weight: 500; color: var(--fg-muted); padding: 7px 12px; border-radius: var(--radius-sm); }
     .dropdown-menu a:hover { color: var(--primary); background: var(--muted-bg); }
-    
     .mega-menu { min-width: 480px; display: flex; gap: 0; padding: 16px; }
     .dropdown-group { flex: 1; padding: 0 8px; }
     .dropdown-group + .dropdown-group { border-left: 1px solid var(--border); }
@@ -76,17 +63,14 @@
     .mobile-nav.open { display: block; }
     .mobile-nav a { display: block; padding: 10px 4px; font-size: 0.9375rem; font-weight: 500; color: var(--fg-muted); border-bottom: 1px solid var(--muted-bg); }
 
-    /* ===================================================
-       COMPONENTS (Zigzag, Reveal, Topics)
-    =================================================== */
+    /* COMPONENTS (Zigzag, Reveal, Topics) */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; }
     
     .section-heading { text-align: center; max-width: 600px; margin: 0 auto 56px; }
-    .section-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-    
     .hero-section { padding: 80px 0 60px; text-align: center; }
+    .hero-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
     .hero-title { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--fg); margin-bottom: 20px; letter-spacing: -1px; }
     .hero-desc { font-size: 1.0625rem; color: var(--fg-muted); max-width: 650px; margin: 0 auto; line-height: 1.75; }
 
@@ -101,10 +85,11 @@
     .takeaway-list { list-style-type: none; }
     .takeaway-list li { position: relative; padding-left: 30px; margin-bottom: 10px; font-size: 1rem; color: var(--fg); }
     .takeaway-list li::before { content: "💡"; position: absolute; left: 0; top: 0; }
-    .topic-zigzag.reverse .takeaway-list li::before { content: "🏃"; }
-    .topic-zigzag:last-of-type .takeaway-list li::before { content: "💤"; }
+    .topic-zigzag:nth-of-type(1) .takeaway-list li::before { content: "🍽️"; }
+    .topic-zigzag:nth-of-type(2) .takeaway-list li::before { content: "💤"; }
+    .topic-zigzag:nth-of-type(3) .takeaway-list li::before { content: "🧘"; }
 
-    /* Topic Grid (Cuối trang) */
+    /* Topic Grid */
     .topics-section { padding: 40px 0 100px; background: linear-gradient(180deg, transparent, rgba(58,95,77,0.03) 30%); }
     .topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .topic-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: 0.3s; }
@@ -141,10 +126,8 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header id="site-header">
   <div class="container navbar">
-    <!-- Logo -->
     <a href="index.html" class="logo">
       <svg class="logo-icon" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="17" cy="17" r="16" fill="rgba(58,95,77,0.1)" stroke="rgba(58,95,77,0.2)" stroke-width="1"/>
@@ -154,7 +137,6 @@
       Nutri<span>Wise</span>
     </a>
 
-    <!-- Desktop Nav -->
     <nav class="nav-menu">
       <a href="index.html" data-i18n="nav_home">Home</a>
       <a href="aboutus.html" data-i18n="nav_about">About Us</a>
@@ -173,9 +155,9 @@
           </div>
           <div class="dropdown-group">
             <span class="group-title" data-i18n="nav_nutrition_needs">Nutrition Needs</span>
-            <a href="#age" data-i18n="nutrition_age_title">Age & Development</a>
-            <a href="#activity" data-i18n="nutrition_activity_title">Physical Activity</a>
-            <a href="#lifestyle" data-i18n="nutrition_lifestyle_title">Lifestyle</a>
+            <a href="nutrition-needs.html" data-i18n="nutrition_age_title">Age & Development</a>
+            <a href="physical-activity.html" data-i18n="nutrition_activity_title">Physical Activity</a>
+            <a href="lifestyle.html" data-i18n="nutrition_lifestyle_title">Lifestyle</a>
           </div>
           <div class="dropdown-group">
             <span class="group-title" data-i18n="nav_special_needs">Special Needs</span>
@@ -191,6 +173,7 @@
         <div class="dropdown-menu">
           <a href="food-diets.html" data-i18n="food_groups_title">Food Groups</a>
           <a href="food-diets.html" data-i18n="balanced_diet_title">Balanced Diet</a>
+          <a href="food-diets.html" data-i18n="healthy_food_choices_title">Healthy Food Choices</a>
         </div>
       </div>
 
@@ -204,26 +187,36 @@
       </div>
     </nav>
 
-    <!-- Language switch -->
     <div class="lang-switch">
-      <button id="btn-vi" class="lang-btn active" onclick="setLanguage('vi')">🇻🇳 VI</button>
-      <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">🇬🇧 EN</button>
+      <button class="lang-btn active" onclick="setLanguage('vi')">🇻🇳 VI</button>
+      <button class="lang-btn" onclick="setLanguage('en')">🇬🇧 EN</button>
     </div>
 
-    <!-- Hamburger -->
     <button class="hamburger" id="hamburgerBtn">
       <span></span><span></span><span></span>
     </button>
   </div>
 
-  <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html" data-i18n="nav_home">Home</a>
     <a href="aboutus.html" data-i18n="nav_about">About Us</a>
+    <span class="group-title" data-i18n="nav_basic_nutrition">Basic Nutrition</span>
+    <a href="protein.html" data-i18n="topic_protein">Protein</a>
+    <a href="carbohydrates.html" data-i18n="topic_carbs">Carbohydrates</a>
+    <a href="healthy-fats.html" data-i18n="topic_fats">Healthy Fats</a>
     <span class="group-title" data-i18n="nav_nutrition_needs">Nutrition Needs</span>
-    <a href="#age" data-i18n="nutrition_age_title">Age & Development</a>
-    <a href="#activity" data-i18n="nutrition_activity_title">Physical Activity</a>
-    <a href="#lifestyle" data-i18n="nutrition_lifestyle_title">Lifestyle</a>
+    <a href="nutrition-needs.html" data-i18n="nutrition_age_title">Age & Development</a>
+    <a href="physical-activity.html" data-i18n="nutrition_activity_title">Physical Activity</a>
+    <a href="lifestyle.html" data-i18n="nutrition_lifestyle_title">Lifestyle</a>
+    <span class="group-title" data-i18n="nav_special_needs">Special Needs</span>
+    <a href="special-nutrition-needs.html#pregnancy" data-i18n="nav_pregnancy">Pregnancy</a>
+    <a href="special-nutrition-needs.html#athletes" data-i18n="nav_athletes">Athletes</a>
+    <span class="group-title" data-i18n="nav_food">Food & Diets</span>
+    <a href="food-diets.html" data-i18n="food_groups_title">Food Groups</a>
+    <a href="food-diets.html" data-i18n="balanced_diet_title">Balanced Diet</a>
+    <span class="group-title" data-i18n="nav_health">Health</span>
+    <a href="health.html#heart" data-i18n="nav_heart">Heart Health</a>
+    <a href="health.html#diabetes" data-i18n="nav_diabetes">Diabetes</a>
     <div class="mobile-lang" style="margin-top: 15px; display: flex; gap: 10px;">
       <button class="lang-btn active" onclick="setLanguage('vi')">🇻🇳 VI</button>
       <button class="lang-btn" onclick="setLanguage('en')">🇬🇧 EN</button>
@@ -232,63 +225,63 @@
 </header>
 
 <main class="container">
-  <!-- HERO: Giới thiệu chung -->
-  <section class="hero-section">
-    <div class="section-label reveal" data-i18n="nutrition_needs_label">NUTRITION NEEDS</div>
-    <h1 class="hero-title reveal reveal-delay-1" data-i18n="nutrition_needs_what_title">Nhu cầu dinh dưỡng là gì?</h1>
-    <p class="hero-desc reveal reveal-delay-2" data-i18n="nutrition_needs_what_desc_2">
-      Cơ thể cần nhiều nhóm chất khác nhau, bao gồm carbohydrate, protein, chất béo, vitamin, khoáng chất và nước. Mỗi nhóm có vai trò riêng, vì vậy một chế độ ăn đa dạng giúp cung cấp nhiều loại chất dinh dưỡng cần thiết.
+  <!-- HERO -->
+  <section class="hero-section text-center" style="padding: 60px 0 80px;">
+    <div class="hero-label reveal" data-i18n="lifestyle_label">LỐI SỐNG & THÓI QUEN</div>
+    <h1 class="hero-title reveal reveal-delay-1" data-i18n="lifestyle_hero_title">Sức Khỏe Khởi Nguồn Từ Thói Quen</h1>
+    <p class="hero-desc reveal reveal-delay-2" data-i18n="lifestyle_hero_desc">
+      Dinh dưỡng không chỉ nằm ở những gì bạn đặt lên đĩa, mà còn phụ thuộc vào cách bạn sinh hoạt, ngủ nghỉ và quản lý căng thẳng mỗi ngày.
     </p>
   </section>
 
-  <!-- 1. AGE & DEVELOPMENT (ZIG-ZAG THUẬN) -->
-  <section class="topic-zigzag reveal" id="age">
+  <!-- 1. EATING HABITS -->
+  <section class="topic-zigzag reveal">
     <div class="zigzag-content">
-      <h2 data-i18n="nutrition_age_title">Tuổi & Giai đoạn phát triển</h2>
-      <p data-i18n="nutrition_age_desc">
-        Nhu cầu dinh dưỡng thay đổi liên tục trong suốt cuộc đời. Trẻ em cần dồi dào canxi và protein để xây dựng khung xương và não bộ. Trong khi đó, người lớn tuổi cần tập trung vào chất xơ, vitamin D và B12 để duy trì chức năng tiêu hóa và làm chậm quá trình lão hóa.
+      <h2 data-i18n="lifestyle_eat_title">Thói quen ăn uống chánh niệm</h2>
+      <p data-i18n="lifestyle_eat_desc">
+        Ăn trong lúc xem điện thoại hoặc làm việc khiến não bộ không ghi nhận cảm giác no, dẫn đến việc nạp dư thừa calo. Tập trung vào bữa ăn giúp cải thiện tiêu hóa và kiểm soát cân nặng tự nhiên.
       </p>
       <ul class="takeaway-list">
-        <li>Nhu cầu dưỡng chất tăng vọt ở tuổi dậy thì.</li>
-        <li>Người lớn tuổi cần tăng cường Canxi & Vitamin D.</li>
+        <li><span data-i18n="lifestyle_eat_tip1">Nhai chậm giúp dạ dày báo tín hiệu no kịp thời.<span></span></li>
+        <li><span data-i18n="lifestyle_eat_tip2">Hạn chế thiết bị điện tử trong bữa ăn.</span></li>
       </ul>
     </div>
     <div class="zigzag-image">
-      <img src="images/nutrition_age.jpg" alt="Age & Development" />
+      <img src="images/lifestyle_eat.jpg" alt="Mindful Eating" />
     </div>
   </section>
 
-  <!-- 2. PHYSICAL ACTIVITY (ZIG-ZAG ĐẢO NGƯỢC) -->
-  <section class="topic-zigzag reverse reveal" id="activity">
+  <!-- 2. SLEEP -->
+  <section class="topic-zigzag reverse reveal">
     <div class="zigzag-content">
-      <h2 data-i18n="nutrition_activity_title">Hoạt động thể chất</h2>
-      <p data-i18n="nutrition_activity_desc">
-        Hoạt động thể chất ảnh hưởng trực tiếp đến lượng năng lượng mà cơ thể sử dụng. Người vận động nhiều cần nạp đủ carbohydrate phức hợp để dự trữ năng lượng và protein để phục hồi các vi tổn thương của cơ bắp sau tập luyện.
+      <h2 data-i18n="lifestyle_sleep_title">Giấc ngủ & Nhịp sinh học</h2>
+      <p data-i18n="lifestyle_sleep_desc">
+        Thiếu ngủ làm tăng hormone Ghrelin (gây đói) và giảm Leptin (gây no), khiến bạn thèm đồ ngọt và thức ăn nhanh. Một giấc ngủ sâu 7-8 tiếng là "liều thuốc" trao đổi chất tốt nhất.
       </p>
       <ul class="takeaway-list">
-        <li>Nạp đủ tinh bột trước khi tập bài cường độ cao.</li>
-        <li>Bù nước và điện giải là yếu tố sống còn khi vận động.</li>
+        <li> <span data-i18n="lifestyle_sleep_tip1">Giấc ngủ phục hồi hệ thống trao đổi chất.</span></li>
+        <li> <span data-i18n="lifestyle_sleep_tip2">Tránh nạp caffeine ít nhất 6 tiếng trước khi ngủ.</span></li>
       </ul>
     </div>
     <div class="zigzag-image">
-      <img src="images/nutrition_activity.jpg" alt="Physical Activity" />
+      <img src="images/lifestyle_sleep.jpg" alt="Sleep and Recovery" />
     </div>
   </section>
 
-  <!-- 3. LIFESTYLE (ZIG-ZAG THUẬN) -->
-  <section class="topic-zigzag reveal" id="lifestyle">
+  <!-- 3. STRESS -->
+  <section class="topic-zigzag reveal">
     <div class="zigzag-content">
-      <h2 data-i18n="nutrition_lifestyle_title">Lối sống & Thói quen</h2>
-      <p data-i18n="nutrition_lifestyle_desc">
-        Môi trường làm việc, chất lượng giấc ngủ và mức độ căng thẳng (stress) tác động trực tiếp đến cách cơ thể hấp thụ dinh dưỡng. Thiếu ngủ làm tăng hormone thèm ăn, trong khi stress kéo dài làm cạn kiệt nguồn vitamin C và Magie.
+      <h2 data-i18n="lifestyle_stress_title">Kiểm soát căng thẳng</h2>
+      <p data-i18n="lifestyle_stress_desc">
+        Căng thẳng mãn tính giải phóng Cortisol, làm tăng tích tụ mỡ nội tạng và cản trở quá trình hấp thụ vi chất. Vận động nhẹ nhàng hoặc thiền định giúp cơ thể duy trì trạng thái hấp thu tối ưu.
       </p>
       <ul class="takeaway-list">
-        <li>Giấc ngủ sâu hỗ trợ quá trình trao đổi chất.</li>
-        <li>Thói quen ăn uống chánh niệm giúp kiểm soát calo tự nhiên.</li>
+        <li> <span data-i18n="lifestyle_stress_tip1">Cortisol cao làm tăng cảm giác thèm đường.</span></li>
+        <li> <span data-i18n="lifestyle_stress_tip2">Kết hợp Yoga hoặc thiền 15 phút mỗi ngày.</span></li>
       </ul>
     </div>
     <div class="zigzag-image">
-      <img src="images/nutrition_lifestyle.jpg" alt="Lifestyle & Habits" />
+      <img src="images/lifestyle_stress.jpg" alt="Stress Management" />
     </div>
   </section>
 
@@ -298,36 +291,35 @@
       <h2 data-i18n="food_explore_button">Khám phá chi tiết</h2>
     </div>
     <div class="topic-grid">
-      <!-- Card 1 -->
       <div class="topic-card reveal reveal-delay-1">
         <div class="topic-card-img">
           <img src="images/nutrition_age.jpg" alt="Age & Development" />
         </div>
         <div class="topic-card-body">
           <h3 data-i18n="nutrition_age_title">Age & Development</h3>
-          <p data-i18n="nutrition_age_desc">Tìm hiểu sâu về dinh dưỡng từ sơ sinh đến tuổi già.</p>
-          <a href="age-development.html" data-i18n="learn_more">Read more →</a>
+          <p data-i18n="nutrition_age_desc">Nhu cầu dinh dưỡng thay đổi trong suốt cuộc đời...</p>
+          <a href="nutrition-needs.html" data-i18n="learn_more">Read more →</a>
         </div>
       </div>
-      <!-- Card 2 -->
+
       <div class="topic-card reveal reveal-delay-2">
         <div class="topic-card-img">
           <img src="images/nutrition_activity.jpg" alt="Physical Activity" />
         </div>
         <div class="topic-card-body">
           <h3 data-i18n="nutrition_activity_title">Physical Activity</h3>
-          <p data-i18n="nutrition_activity_desc">Khám phá tháp dinh dưỡng cho người ưa vận động.</p>
+          <p data-i18n="nutrition_activity_desc">Hoạt động thể chất ảnh hưởng đến lượng năng lượng...</p>
           <a href="physical-activity.html" data-i18n="learn_more">Read more →</a>
         </div>
       </div>
-      <!-- Card 3 -->
+
       <div class="topic-card reveal reveal-delay-3">
         <div class="topic-card-img">
           <img src="images/nutrition_lifestyle.jpg" alt="Lifestyle" />
         </div>
         <div class="topic-card-body">
           <h3 data-i18n="nutrition_lifestyle_title">Lifestyle</h3>
-          <p data-i18n="nutrition_lifestyle_desc">Cách thiết lập thói quen sinh hoạt khoa học mỗi ngày.</p>
+          <p data-i18n="nutrition_lifestyle_desc">Thói quen ăn uống, lịch sinh hoạt, giấc ngủ...</p>
           <a href="lifestyle.html" data-i18n="learn_more">Read more →</a>
         </div>
       </div>
@@ -350,14 +342,6 @@
         <a href="basic-nutrition.html" data-i18n="nav_topics">Topics</a>
       </div>
     </div>
-    <div class="footer-col">
-      <h3 data-i18n="footer_topics">Topics</h3>
-      <div class="footer-links">
-        <a href="protein.html" data-i18n="topic_protein">Protein</a>
-        <a href="carbohydrates.html" data-i18n="topic_carbs">Carbohydrates</a>
-        <a href="vitamins.html" data-i18n="topic_vitamins">Vitamins</a>
-      </div>
-    </div>
   </div>
   <div class="footer-bottom">
     <p data-i18n="footer_copyright">© 2026 NutriWise. All rights reserved.</p>
@@ -366,7 +350,6 @@
 
 <script src="script.js"></script>
 <script>
-  /* KÍCH HOẠT HIỆU ỨNG VÀ HAMBURGER RIÊNG NẾU SCRIPT CHÍNH THIẾT LẬP LỖI */
   const header = document.getElementById("site-header");
   window.addEventListener("scroll", () => header.classList.toggle("scrolled", window.scrollY > 20));
   
