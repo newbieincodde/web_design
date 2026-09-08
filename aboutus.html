@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NutriWise - Dinh Dưỡng & Sức Khỏe</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- =========================
+       HEADER
+  ========================== -->
+
+    <header>
+      <div class="container navbar">
+        <!-- Logo -->
+        <a href="#" class="logo"> 🌿 Nutri<span>Wise</span> </a>
+
+        <!-- Navigation -->
+        <nav class="nav-menu">
+          <!-- HOME -->
+          <a href="index.html" data-i18n="nav_home"> Home </a>
+
+          <!-- ABOUT US -->
+          <a href="#" data-i18n="nav_about"> About Us </a>
+
+          <!-- TOPICS -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_topics"> Topics </a>
+
+            <div class="dropdown-menu mega-menu">
+              <!-- BASIC NUTRITION -->
+              <div class="dropdown-group">
+                <a
+                  href="basic-nutrition.html"
+                  class="group-title"
+                  data-i18n="nav_basic_nutrition"
+                >
+                  Basic Nutrition
+                </a>
+
+                <a href="protein.html" data-i18n="topic_protein"> Protein </a>
+
+                <a href="carbohydrates.html" data-i18n="topic_carbs">
+                  Carbohydrates
+                </a>
+
+                <a href="healthy-fats.html" data-i18n="topic_fats">
+                  Healthy Fats
+                </a>
+
+                <a href="vitamins.html" data-i18n="topic_vitamins">
+                  Vitamins
+                </a>
+
+                <a href="minerals.html" data-i18n="topic_minerals">
+                  Minerals
+                </a>
+
+                <a href="water.html" data-i18n="topic_water"> Water </a>
+              </div>
+
+              <!-- NUTRITION NEEDS -->
+              <div class="dropdown-group">
+                <span class="group-title" data-i18n="nav_nutrition_needs">
+                  Nutrition Needs
+                </span>
+
+                <a href="nutrition-needs.html" data-i18n="nutrition_age_title">
+                  Age & Development
+                </a>
+
+                <a
+                  href="nutrition-needs.html"
+                  data-i18n="nutrition_activity_title"
+                >
+                  Physical Activity
+                </a>
+
+                <a
+                  href="nutrition-needs.html"
+                  data-i18n="nutrition_lifestyle_title"
+                >
+                  Lifestyle
+                </a>
+              </div>
+
+              <!-- SPECIAL NUTRITION NEEDS -->
+              <div class="dropdown-group">
+                <span class="group-title" data-i18n="nav_special_needs">
+                  Special Nutrition Needs
+                </span>
+
+                <a href="special-nutrition-needs.html#pregnancy" data-i18n="nav_pregnancy"> Pregnancy </a>
+
+                <a href="special-nutrition-needs.html#athletes" data-i18n="nav_athletes"> Athletes </a>
+
+                <a href="special-nutrition-needs.html#conditions" data-i18n="nav_conditions"> Health Conditions </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOD & DIETS -->
+          <div class="nav-dropdown">
+            <a href="food-diets.html" data-i18n="nav_food"> Food & Diets </a>
+
+            <div class="dropdown-menu">
+              <a href="food-diets.html" data-i18n="food_groups_title">
+                Food Groups
+              </a>
+
+              <a href="food-diets.html" data-i18n="balanced_diet_title">
+                Balanced Diet
+              </a>
+
+              <a href="food-diets.html" data-i18n="healthy_food_choices_title">
+                Healthy Food Choices
+              </a>
+            </div>
+          </div>
+
+          <!-- HEALTH -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_health"> Health </a>
+
+            <div class="dropdown-menu">
+              <a href="#" data-i18n="nav_heart"> Heart Health </a>
+
+              <a href="#" data-i18n="nav_diabetes"> Diabetes </a>
+
+              <a href="#" data-i18n="nav_bone"> Bone Health </a>
+            </div>
+          </div>
+
+          <!-- TOOLS -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_tools"> Tools </a>
+
+            <div class="dropdown-menu">
+              <a href="bmi.html" data-i18n="tool_bmi_title"> BMI Calculator </a>
+            </div>
+          </div>
+        </nav>
+        <!-- Language Switch -->
+        <div class="lang-switch">
+          <button
+            id="btn-vi"
+            class="lang-btn active"
+            onclick="setLanguage('vi')"
+          >
+            🇻🇳 VI
+          </button>
+
+          <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">
+            🇬🇧 EN
+          </button>
+        </div>
+      </div>
+    </header>
+<!-- =========================
+   ABOUT US - BENTO BOX LAYOUT
+========================== -->
+<main class="container">
+  
+  <!-- HERO ABOUT -->
+  <section class="about-hero text-center">
+    <h1 data-i18n="about_title">Biến kiến thức dinh dưỡng trở nên đơn giản.</h1>
+    <p class="about-subtitle" data-i18n="about_subtitle">
+      Chúng tôi xây dựng NutriWise để giúp bạn vượt qua "ma trận" thông tin sức khỏe bằng những kiến thức đã được chọn lọc và kiểm chứng.
+    </p>
+  </section>
+
+  <!-- BENTO GRID -->
+  <section class="bento-grid">
+    
+    <!-- Khối 1: Sứ mệnh (To bự, chiếm 2 cột) -->
+    <div class="bento-item bento-large mission-box">
+      <div class="bento-icon">🎯</div>
+      <h2 data-i18n="bento_mission">Our Mission</h2>
+      <p data-i18n="bento_mission_desc">
+        Cung cấp một nền tảng giáo dục sức khỏe hoàn toàn miễn phí, trực quan và an toàn. NutriWise tin rằng một lối sống lành mạnh bắt đầu từ sự thấu hiểu cơ thể chính mình.
+      </p>
+    </div>
+
+    <!-- Khối 2: Chuẩn khoa học -->
+    <div class="bento-item">
+      <div class="bento-icon">🔬</div>
+      <h3 data-i18n="bento_science">Chuẩn khoa học</h3>
+      <p data-i18n="bento_science_desc">Nội dung xây dựng dựa trên nền tảng nghiên cứu y khoa, không cung cấp lời khuyên vô căn cứ.</p>
+    </div>
+
+    <!-- Khối 3: Thực tiễn -->
+    <div class="bento-item bento-highlight">
+      <div class="bento-icon">🛠️</div>
+      <h3 data-i18n="bento_practical">Tính thực tiễn</h3>
+      <p data-i18n="bento_practical_desc">Cung cấp công cụ đo lường BMI và tính toán dinh dưỡng để bạn áp dụng ngay vào đời sống.</p>
+    </div>
+
+    <!-- Khối 4: Tác giả (Dài ngang, chiếm 2 cột) -->
+    <div class="bento-item bento-wide creator-box">
+      <div class="creator-content">
+        <h2 data-i18n="about_creator">Meet the Creator</h2>
+        <p data-i18n="about_creator_desc">
+          Được phát triển với niềm đam mê kết hợp giữa lập trình Web và sức khỏe cộng đồng. NutriWise là một dự án tâm huyết nhằm mang lại giá trị thực cho người dùng.
+        </p>
+        <a href="mailto:your.email@example.com" class="hero-btn mt-3" data-i18n="about_contact">Liên hệ với chúng tôi</a>
+      </div>
+      <div class="creator-image">
+        <!-- Có thể dùng avatar của bạn hoặc logo -->
+        <img src="images/creator_avatar.png" alt="Creator Avatar">
+      </div>
+    </div>
+
+  </section>
+  <!-- =========================
+     OUR PHILOSOPHY & PROCESS
+  ========================== -->
+  <section class="topic-zigzag">
+    <div class="zigzag-image">
+      <img src="images/research_process.jpg" alt="Our Editorial Process" />
+    </div>
+    <div class="zigzag-content">
+      <h2 data-i18n="about_process_title">Quy trình biên tập chuẩn khoa học</h2>
+      <p data-i18n="about_process_desc">
+        Mọi bài viết trên NutriWise không dựa trên xu hướng mạng xã hội hay các chế độ ăn kiêng truyền miệng. Chúng tôi tổng hợp dữ liệu từ các tổ chức y tế uy tín (như WHO, FAO) và được rà soát chéo bởi các chuyên gia có chuyên môn. 
+        <br><br>
+        Mục tiêu của chúng tôi là dịch những thuật ngữ y khoa phức tạp thành ngôn ngữ dễ hiểu, giúp bạn tự tin đưa ra quyết định cho bữa ăn hàng ngày.
+      </p>
+    </div>
+  </section>
+<!-- =========================
+     OUR STORY
+  ========================== -->
+  <section class="our-story">
+    <div class="story-container">
+      <div class="story-text">
+        <h2 data-i18n="about_story_title">Câu chuyện của NutriWise</h2>
+        <p data-i18n="about_story_1">
+          Giữa thời đại bùng nổ thông tin, việc tìm kiếm một chế độ ăn phù hợp thường đi kèm với sự hoang mang. Các trào lưu ăn kiêng xuất hiện chớp nhoáng, những lời khuyên mâu thuẫn nhau tràn lan trên mạng xã hội khiến việc hiểu đúng về dinh dưỡng trở nên khó khăn hơn bao giờ hết.
+        </p>
+        <p data-i18n="about_story_2">
+          Đó là lý do NutriWise ra đời. Chúng tôi đóng vai trò là một "bộ lọc" thông tin, dọn dẹp những thuật ngữ y khoa phức tạp và loại bỏ những lầm tưởng tai hại. Mục tiêu của dự án là xây dựng một từ điển dinh dưỡng số — nơi mọi kiến thức đều minh bạch, dễ hiểu và hoàn toàn miễn phí cho cộng đồng.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+     TRUSTED SOURCES (Thay thế hình người)
+  ========================== -->
+  <section class="trusted-sources">
+    <div class="section-heading">
+      <p class="section-label" data-i18n="sources_label">TIÊU CHUẨN NỘI DUNG</p>
+      <h2 data-i18n="sources_title">Nền tảng dữ liệu đáng tin cậy</h2>
+      <p data-i18n="sources_desc">Chúng tôi không tự tạo ra lời khuyên y tế. Mọi thông tin trên NutriWise đều được tham chiếu từ các nguồn chuẩn mực.</p>
+    </div>
+    
+    <div class="source-grid">
+      <!-- Nguồn 1 -->
+      <div class="source-card">
+        <div class="source-icon">🌐</div>
+        <h3 data-i18n="source_1_title">Tổ chức Y tế Toàn cầu</h3>
+        <p data-i18n="source_1_desc">Dữ liệu tiêu chuẩn được cập nhật từ Tổ chức Y tế Thế giới (WHO) và Tổ chức Lương thực & Nông nghiệp Liên Hợp Quốc (FAO).</p>
+      </div>
+
+      <!-- Nguồn 2 -->
+      <div class="source-card">
+        <div class="source-icon">📚</div>
+        <h3 data-i18n="source_2_title">Nghiên cứu Lâm sàng</h3>
+        <p data-i18n="source_2_desc">Tham chiếu các bài báo cáo khoa học từ những tạp chí y khoa và viện dinh dưỡng quốc gia.</p>
+      </div>
+
+      <!-- Nguồn 3 -->
+      <div class="source-card">
+        <div class="source-icon">⚖️</div>
+        <h3 data-i18n="source_3_title">Tính Khách quan</h3>
+        <p data-i18n="source_3_desc">Website hoạt động độc lập, phi lợi nhuận và không bị chi phối bởi bất kỳ nhãn hàng thực phẩm chức năng nào.</p>
+      </div>
+    </div>
+  </section>
+ 
+</main>
+
+<!-- =========================
+ FOOTER
+========================== -->
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <!-- About -->
+        <div class="footer-column">
+          <a href="#" class="footer-logo"> 🌿 Nutri<span>Wise</span> </a>
+
+          <p data-i18n="footer_desc">
+            Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h3 data-i18n="footer_quick_links">Quick Links</h3>
+
+          <a href="#" data-i18n="nav_home">Home</a>
+          <a href="#" data-i18n="nav_about">About Us</a>
+          <a href="#topics" data-i18n="nav_topics">Topics</a>
+          <a href="#" data-i18n="nav_resources">Resources</a>
+        </div>
+
+        <!-- Topics -->
+        <div class="footer-column">
+          <h3 data-i18n="footer_topics">Topics</h3>
+
+          <a href="#" data-i18n="topic_protein">Protein</a>
+          <a href="#" data-i18n="topic_carbs">Carbohydrates</a>
+          <a href="#" data-i18n="topic_vitamins">Vitamins</a>
+          <a href="#" data-i18n="topic_minerals">Minerals</a>
+        </div>
+
+        <!-- Tools -->
+        <div class="footer-column">
+          <h3 data-i18n="footer_tools">Tools</h3>
+
+          <a href="bmi.html" data-i18n="tool_bmi_title"> BMI Calculator </a>
+
+          <a href="#" data-i18n="tool_nutrition_title">
+            Nutrition Calculator
+          </a>
+
+          <a href="#" data-i18n="tool_food_title"> Food Guide </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer_copyright">
+          © 2026 NutriWise. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

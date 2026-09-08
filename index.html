@@ -1,539 +1,1499 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <link rel="stylesheet" href="style.css" />.
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriWise - Dinh Dưỡng & Sức Khỏe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===================================================
+       DESIGN TOKENS — Natural Vibe
+    =================================================== */
+    :root {
+      --primary: #3A5F4D;
+      --primary-light: #4e7a64;
+      --primary-dark: #2c4a3a;
+      --on-primary: #ffffff;
+      --accent: #8DA4B0;
+      --on-accent: #ffffff;
+      --bg: #F5F7FA;
+      --bg-card: #ffffff;
+      --fg: #1e2d25;
+      --fg-muted: #5a6e65;
+      --border: #d4ddd8;
+      --muted: #D1D5D8;
+      --muted-bg: #eef1f0;
+      --secondary: #5a8a72;
+      --shadow-sm: 0 2px 8px rgba(58,95,77,0.08);
+      --shadow-md: 0 8px 32px rgba(58,95,77,0.12);
+      --shadow-lg: 0 20px 60px rgba(58,95,77,0.16);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+      --radius-xl: 48px;
+      --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --header-h: 72px;
+    }
 
-    <title>NutriWise - Dinh Dưỡng & Sức Khỏe</title>
+    /* ===================================================
+       RESET & BASE
+    =================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
 
-    <link rel="stylesheet" href="style.css" />
+    /* ===================================================
+       LOADING SCREEN
+    =================================================== */
+    #loading-screen {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 20px;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #loading-screen.hidden { opacity: 0; visibility: hidden; }
+    .loading-logo {
+      font-family: var(--font-heading);
+      font-size: 2rem; font-weight: 700;
+      color: white; letter-spacing: -0.5px;
+    }
+    .loading-logo span { color: rgba(255,255,255,0.6); }
+    .loading-bar {
+      width: 180px; height: 3px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 99px; overflow: hidden;
+    }
+    .loading-bar-fill {
+      height: 100%; width: 0;
+      background: white; border-radius: 99px;
+      animation: loadProgress 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
+    }
+    @keyframes loadProgress { to { width: 100%; } }
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    /* ===================================================
+       SCROLLBAR
+    =================================================== */
+    * { scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
 
-  <body>
-    <!-- =========================
+    /* ===================================================
+       FLOATING BACKGROUND BLOBS
+    =================================================== */
+    .bg-canvas {
+      position: fixed; inset: 0; z-index: 0;
+      pointer-events: none; overflow: hidden;
+    }
+    .blob {
+      position: absolute; border-radius: 50%;
+      filter: blur(80px); opacity: 0.18;
+      animation: blobFloat linear infinite;
+    }
+    .blob-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, #3A5F4D, transparent);
+      top: -200px; left: -200px;
+      animation-duration: 20s;
+    }
+    .blob-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, #8DA4B0, transparent);
+      top: 40%; right: -150px;
+      animation-duration: 25s;
+      animation-direction: reverse;
+    }
+    .blob-3 {
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, #5a8a72, transparent);
+      bottom: 20%; left: 10%;
+      animation-duration: 18s;
+    }
+    @keyframes blobFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(30px, -30px) scale(1.05); }
+      66%       { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    /* ===================================================
+       LAYOUT WRAPPER
+    =================================================== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative; z-index: 1;
+    }
+
+    /* ===================================================
        HEADER
-  ========================== -->
+    =================================================== */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      height: var(--header-h);
+      background: rgba(245,247,250,0.82);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+    header.scrolled {
+      box-shadow: var(--shadow-md);
+      background: rgba(245,247,250,0.95);
+    }
+    .navbar {
+      height: var(--header-h);
+      display: flex; align-items: center; gap: 32px;
+    }
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.375rem; font-weight: 700;
+      color: var(--primary); letter-spacing: -0.5px;
+      flex-shrink: 0;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .logo-icon {
+      width: 34px; height: 34px; flex-shrink: 0;
+    }
+    .logo span { color: var(--accent); }
 
-    <header>
-      <div class="container navbar">
-        <!-- Logo -->
-        <a href="#" class="logo"> 🌿 Nutri<span>Wise</span> </a>
+    .nav-menu {
+      display: flex; align-items: center; gap: 4px;
+      flex: 1;
+    }
+    .nav-menu > a,
+    .nav-dropdown > a {
+      font-size: 0.875rem; font-weight: 500;
+      color: var(--fg-muted);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-menu > a:hover,
+    .nav-dropdown > a:hover { color: var(--primary); background: var(--muted-bg); }
 
-        <!-- Navigation -->
-        <nav class="nav-menu">
-          <!-- HOME -->
-          <a href="index.html" data-i18n="nav_home"> Home </a>
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+    .nav-dropdown > a::after {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.2s;
+    }
+    .nav-dropdown:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
 
-          <!-- ABOUT US -->
-          <a href="#" data-i18n="nav_about"> About Us </a>
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 8px); left: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      min-width: 180px;
+      padding: 8px;
+      opacity: 0; visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+      pointer-events: none;
+    }
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1; visibility: visible;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    .dropdown-menu a {
+      display: block;
+      font-size: 0.8125rem; font-weight: 500;
+      color: var(--fg-muted);
+      padding: 7px 12px;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .dropdown-menu a:hover { color: var(--primary); background: var(--muted-bg); }
 
-          <!-- TOPICS -->
-          <div class="nav-dropdown">
-            <a href="#" data-i18n="nav_topics"> Topics </a>
+    /* Mega menu */
+    .mega-menu {
+      min-width: 480px;
+      display: flex; gap: 0;
+      padding: 16px;
+    }
+    .dropdown-group {
+      flex: 1; min-width: 0;
+      padding: 0 8px;
+    }
+    .dropdown-group + .dropdown-group { border-left: 1px solid var(--border); }
+    .group-title {
+      display: block;
+      font-size: 0.75rem; font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase; letter-spacing: 0.8px;
+      padding: 4px 12px 8px;
+      margin-bottom: 2px;
+    }
+    span.group-title { cursor: default; }
 
-            <div class="dropdown-menu mega-menu">
-              <!-- BASIC NUTRITION -->
-              <div class="dropdown-group">
-                <a
-                  href="basic-nutrition.html"
-                  class="group-title"
-                  data-i18n="nav_basic_nutrition"
-                >
-                  Basic Nutrition
-                </a>
+    /* Language switch */
+    .lang-switch { display: flex; gap: 6px; flex-shrink: 0; }
+    .lang-btn {
+      background: transparent;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 5px 10px;
+      font-size: 0.75rem; font-weight: 600;
+      cursor: pointer; color: var(--fg-muted);
+      transition: all 0.2s;
+    }
+    .lang-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .lang-btn.active {
+      background: var(--primary); color: white;
+      border-color: var(--primary);
+    }
 
-                <a href="protein.html" data-i18n="topic_protein"> Protein </a>
+    /* Mobile hamburger */
+    .hamburger {
+      display: none;
+      background: none; border: none;
+      cursor: pointer; padding: 8px;
+      flex-direction: column; gap: 5px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--fg); border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-                <a href="carbohydrates.html" data-i18n="topic_carbs">
-                  Carbohydrates
-                </a>
+    /* Mobile nav overlay */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: var(--header-h); left: 0; right: 0;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      padding: 16px 24px 24px;
+      z-index: 99;
+      max-height: calc(100vh - var(--header-h));
+      overflow-y: auto;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a, .mobile-nav span.group-title {
+      display: block;
+      padding: 10px 4px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--fg-muted);
+      border-bottom: 1px solid var(--muted-bg);
+    }
+    .mobile-nav a:hover { color: var(--primary); }
+    .mobile-nav span.group-title {
+      font-size: 0.75rem; font-weight: 700;
+      color: var(--primary); text-transform: uppercase;
+      letter-spacing: 0.6px; border-bottom: none;
+      padding-top: 16px; padding-bottom: 4px;
+    }
+    .mobile-lang { display: flex; gap: 8px; margin-top: 16px; }
 
-                <a href="healthy-fats.html" data-i18n="topic_fats">
-                  Healthy Fats
-                </a>
+    /* ===================================================
+       REVEAL ANIMATION
+    =================================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
 
-                <a href="vitamins.html" data-i18n="topic_vitamins">
-                  Vitamins
-                </a>
+    /* ===================================================
+       SECTION HEADINGS
+    =================================================== */
+    .section-heading {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 56px;
+    }
+    .section-label {
+      font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-heading h2 {
+      font-family: var(--font-heading);
+      font-size: 2rem; font-weight: 700;
+      color: var(--fg);
+      line-height: 1.25;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+    .section-heading p {
+      font-size: 1rem;
+      color: var(--fg-muted);
+      line-height: 1.7;
+    }
 
-                <a href="minerals.html" data-i18n="topic_minerals">
-                  Minerals
-                </a>
+    /* ===================================================
+       HERO
+    =================================================== */
+    .hero-section {
+      padding: 80px 0 100px;
+      position: relative; overflow: hidden;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse at center, rgba(58,95,77,0.08), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(58,95,77,0.08);
+      border: 1px solid rgba(58,95,77,0.15);
+      padding: 6px 14px;
+      border-radius: 99px;
+      margin-bottom: 24px;
+    }
+    .hero-label::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--primary); border-radius: 50%;
+    }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--fg);
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .hero-title .highlight {
+      color: var(--primary);
+      position: relative;
+    }
+    .hero-title .highlight::after {
+      content: '';
+      position: absolute; bottom: 2px; left: 0; right: 0;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 99px;
+      opacity: 0.3;
+    }
+    .hero-desc {
+      font-size: 1.0625rem;
+      color: var(--fg-muted);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 460px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--primary); color: white;
+      font-size: 0.9375rem; font-weight: 600;
+      padding: 14px 28px; border-radius: 99px;
+      border: none; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;
+      box-shadow: 0 4px 20px rgba(58,95,77,0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(58,95,77,0.4);
+      background: var(--primary-dark);
+    }
+    .hero-stats {
+      display: flex; gap: 32px; margin-top: 48px;
+    }
+    .hero-stat { text-align: left; }
+    .hero-stat strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.75rem; font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat span {
+      font-size: 0.8125rem; color: var(--fg-muted);
+    }
 
-                <a href="water.html" data-i18n="topic_water"> Water </a>
-              </div>
+    /* Hero image area */
+    .hero-image-wrap { position: relative; }
+    .hero-image-frame {
+      border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      box-shadow: var(--shadow-lg);
+      animation: morphShape 12s ease-in-out infinite;
+    }
+    @keyframes morphShape {
+      0%, 100% { border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%; }
+      25%       { border-radius: 55% 45% 40% 60% / 45% 55% 45% 55%; }
+      50%       { border-radius: 35% 65% 65% 35% / 60% 40% 60% 40%; }
+      75%       { border-radius: 60% 40% 45% 55% / 40% 60% 40% 60%; }
+    }
+    .hero-image-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .hero-image-frame:hover img { transform: scale(1.04); }
 
-              <!-- NUTRITION NEEDS -->
-              <div class="dropdown-group">
-                <span class="group-title" data-i18n="nav_nutrition_needs">
-                  Nutrition Needs
-                </span>
+    .hero-badge {
+      position: absolute;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      box-shadow: var(--shadow-md);
+      display: flex; align-items: center; gap: 10px;
+      animation: floatBadge 4s ease-in-out infinite;
+    }
+    .hero-badge-1 { bottom: 15%; left: -24px; animation-delay: 0s; }
+    .hero-badge-2 { top: 12%; right: -20px; animation-delay: 1.5s; }
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+    .hero-badge-icon {
+      width: 36px; height: 36px;
+      background: rgba(58,95,77,0.1);
+      border-radius: 50%; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .hero-badge-text strong {
+      display: block; font-size: 0.875rem; font-weight: 700; color: var(--fg);
+    }
+    .hero-badge-text span { font-size: 0.75rem; color: var(--fg-muted); }
+    .leaf-deco {
+      position: absolute; pointer-events: none; opacity: 0.12;
+    }
+    .leaf-deco svg { fill: var(--primary); }
 
-                <a href="nutrition-needs.html" data-i18n="nutrition_age_title">
-                  Age & Development
-                </a>
+    /* ===================================================
+       TOPICS SECTION
+    =================================================== */
+    .topics-section {
+      padding: 100px 0;
+      background: linear-gradient(180deg, transparent, rgba(58,95,77,0.03) 30%, rgba(58,95,77,0.03) 70%, transparent);
+    }
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .topic-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1),
+                  box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .topic-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .topic-card-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+    .topic-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .topic-card:hover .topic-card-img img { transform: scale(1.06); }
+    .topic-card-body {
+      padding: 20px 22px 22px;
+    }
+    .topic-card-body h3 {
+      font-family: var(--font-heading);
+      font-size: 1.0625rem; font-weight: 700;
+      color: var(--fg);
+      margin-bottom: 8px;
+    }
+    .topic-card-body p {
+      font-size: 0.875rem;
+      color: var(--fg-muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .topic-card-body a {
+      font-size: 0.8125rem; font-weight: 600;
+      color: var(--primary);
+      display: inline-flex; align-items: center; gap: 4px;
+      transition: gap 0.2s;
+    }
+    .topic-card-body a:hover { gap: 8px; }
 
-                <a
-                  href="nutrition-needs.html"
-                  data-i18n="nutrition_activity_title"
-                >
-                  Physical Activity
-                </a>
+    /* ===================================================
+       FEATURED NUTRITION
+    =================================================== */
+    .featured-section {
+      padding: 100px 0;
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .featured-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1),
+                  box-shadow 0.3s ease;
+    }
+    .featured-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 0 0 3px 3px;
+    }
+    .featured-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .featured-card-bg {
+      position: absolute; bottom: -20px; right: -20px;
+      width: 120px; height: 120px;
+      background: radial-gradient(circle, rgba(58,95,77,0.06), transparent);
+      border-radius: 50%; pointer-events: none;
+    }
+    .featured-icon-wrap {
+      width: 56px; height: 56px;
+      background: rgba(58,95,77,0.1);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      transition: background 0.3s;
+    }
+    .featured-card:hover .featured-icon-wrap { background: rgba(58,95,77,0.18); }
+    .featured-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.0625rem; font-weight: 700;
+      color: var(--fg); margin-bottom: 10px;
+    }
+    .featured-card p {
+      font-size: 0.875rem; color: var(--fg-muted);
+      line-height: 1.65; margin-bottom: 18px;
+    }
+    .featured-card a {
+      font-size: 0.8125rem; font-weight: 600;
+      color: var(--primary);
+      display: inline-flex; align-items: center; gap: 4px;
+      transition: gap 0.2s;
+    }
+    .featured-card a:hover { gap: 8px; }
 
-                <a
-                  href="nutrition-needs.html"
-                  data-i18n="nutrition_lifestyle_title"
-                >
-                  Lifestyle
-                </a>
-              </div>
+    /* ===================================================
+       HEALTH & LIFESTYLE
+    =================================================== */
+    .health-section {
+      padding: 100px 0;
+      background: linear-gradient(180deg, transparent, rgba(141,164,176,0.05) 30%, rgba(141,164,176,0.05) 70%, transparent);
+    }
+    .health-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .health-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      display: flex; flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1),
+                  box-shadow 0.3s ease;
+      position: relative; overflow: hidden;
+    }
+    .health-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .health-card-number {
+      position: absolute; top: 20px; right: 22px;
+      font-family: var(--font-heading);
+      font-size: 3.5rem; font-weight: 700;
+      color: rgba(58,95,77,0.06);
+      line-height: 1;
+      user-select: none;
+    }
+    .health-icon-wrap {
+      width: 60px; height: 60px;
+      background: linear-gradient(135deg, rgba(58,95,77,0.1), rgba(141,164,176,0.1));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.625rem;
+      margin-bottom: 22px;
+      flex-shrink: 0;
+    }
+    .health-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.0625rem; font-weight: 700;
+      color: var(--fg); margin-bottom: 10px;
+    }
+    .health-card p {
+      font-size: 0.875rem; color: var(--fg-muted);
+      line-height: 1.65; margin-bottom: 22px; flex: 1;
+    }
+    .health-card a {
+      font-size: 0.8125rem; font-weight: 600;
+      color: var(--primary);
+      display: inline-flex; align-items: center; gap: 4px;
+      transition: gap 0.2s; margin-top: auto;
+    }
+    .health-card a:hover { gap: 8px; }
 
-              <!-- SPECIAL NUTRITION NEEDS -->
-              <div class="dropdown-group">
-                <span class="group-title" data-i18n="nav_special_needs">
-                  Special Nutrition Needs
-                </span>
+    /* ===================================================
+       CTA BANNER
+    =================================================== */
+    .cta-section {
+      padding: 80px 0;
+    }
+    .cta-banner {
+      background: var(--primary);
+      border-radius: var(--radius-xl);
+      padding: 64px 72px;
+      display: flex; align-items: center; gap: 60px;
+      position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 60%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 200px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .cta-content { flex: 1; position: relative; z-index: 1; }
+    .cta-banner h2 {
+      font-family: var(--font-heading);
+      font-size: 1.875rem; font-weight: 700;
+      color: white; margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .cta-banner p {
+      font-size: 1rem; color: rgba(255,255,255,0.75);
+      line-height: 1.65;
+    }
+    .cta-actions { display: flex; gap: 12px; flex-shrink: 0; position: relative; z-index: 1; }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: white; color: var(--primary);
+      font-size: 0.9375rem; font-weight: 700;
+      padding: 14px 28px; border-radius: 99px;
+      border: none; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    }
 
-                <a href="#" data-i18n="nav_pregnancy"> Pregnancy </a>
+    /* ===================================================
+       FOOTER
+    =================================================== */
+    footer {
+      background: var(--fg);
+      color: rgba(255,255,255,0.7);
+      padding: 72px 0 0;
+      position: relative; overflow: hidden;
+    }
+    footer::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 56px;
+    }
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.375rem; font-weight: 700;
+      color: white;
+      display: flex; align-items: center; gap: 6px;
+      margin-bottom: 14px;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-col p {
+      font-size: 0.875rem; line-height: 1.7;
+      color: rgba(255,255,255,0.5);
+      max-width: 240px;
+    }
+    .footer-col h3 {
+      font-size: 0.875rem; font-weight: 700;
+      color: white; text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 18px;
+    }
+    .footer-links {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .footer-links a {
+      font-size: 0.875rem; color: rgba(255,255,255,0.5);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 20px 0;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p {
+      font-size: 0.8125rem; color: rgba(255,255,255,0.35);
+    }
+    .footer-tagline {
+      font-size: 0.75rem; color: rgba(255,255,255,0.25);
+      font-style: italic;
+    }
 
-                <a href="#" data-i18n="nav_athletes"> Athletes </a>
+    /* ===================================================
+       BACK TO TOP
+    =================================================== */
+    .back-to-top {
+      position: fixed; bottom: 32px; right: 32px; z-index: 50;
+      width: 46px; height: 46px;
+      background: var(--primary);
+      color: white; border: none; cursor: pointer;
+      border-radius: 50%; box-shadow: var(--shadow-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.125rem;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; }
+    .back-to-top:hover { transform: translateY(-3px); }
 
-                <a href="#" data-i18n="nav_conditions"> Health Conditions </a>
-              </div>
-            </div>
+    /* ===================================================
+       RESPONSIVE
+    =================================================== */
+    @media (max-width: 1024px) {
+      .topic-grid, .featured-grid, .health-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-inner { gap: 40px; }
+      .cta-banner { flex-direction: column; text-align: center; padding: 48px 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu, .lang-switch { display: none; }
+      .hamburger { display: flex; margin-left: auto; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-image-wrap { order: -1; max-width: 320px; margin: 0 auto; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-badge-1, .hero-badge-2 { display: none; }
+      .topic-grid, .featured-grid, .health-grid {
+        grid-template-columns: 1fr;
+      }
+      .section-heading h2 { font-size: 1.625rem; }
+      .cta-banner { padding: 40px 28px; border-radius: var(--radius-lg); }
+      .cta-banner h2 { font-size: 1.5rem; }
+      .cta-actions { flex-direction: column; width: 100%; }
+      .btn-white { justify-content: center; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .back-to-top { bottom: 20px; right: 20px; }
+      .mega-menu { min-width: 280px; flex-direction: column; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 1.75rem; }
+      .hero-stats { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+  <div class="loading-logo">🌿 Nutri<span>Wise</span></div>
+  <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+</div>
+
+<!-- BACKGROUND BLOBS -->
+<div class="bg-canvas" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Lên đầu trang">↑</button>
+
+<!-- =====================
+     HEADER
+===================== -->
+<header id="site-header">
+  <div class="container navbar">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <svg class="logo-icon" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="17" cy="17" r="16" fill="rgba(58,95,77,0.1)" stroke="rgba(58,95,77,0.2)" stroke-width="1"/>
+        <path d="M17 8c0 0-6 4-6 10a6 6 0 0012 0c0-6-6-10-6-10z" fill="#3A5F4D" opacity="0.8"/>
+        <path d="M17 12c0 0 3 2.5 3 5.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Nutri<span>Wise</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="nav-menu">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="aboutus.html" data-i18n="nav_about">About Us</a>
+
+      <div class="nav-dropdown">
+        <a href="basic-nutrition.html" data-i18n="nav_topics">Topics</a>
+        <div class="dropdown-menu mega-menu">
+          <div class="dropdown-group">
+            <a href="basic-nutrition.html" class="group-title" data-i18n="nav_basic_nutrition">Basic Nutrition</a>
+            <a href="protein.html" data-i18n="topic_protein">Protein</a>
+            <a href="carbohydrates.html" data-i18n="topic_carbs">Carbohydrates</a>
+            <a href="healthy-fats.html" data-i18n="topic_fats">Healthy Fats</a>
+            <a href="vitamins.html" data-i18n="topic_vitamins">Vitamins</a>
+            <a href="minerals.html" data-i18n="topic_minerals">Minerals</a>
+            <a href="water.html" data-i18n="topic_water">Water</a>
           </div>
-
-          <!-- FOOD & DIETS -->
-          <div class="nav-dropdown">
-            <a href="food-diets.html" data-i18n="nav_food"> Food & Diets </a>
-
-            <div class="dropdown-menu">
-              <a href="food-diets.html" data-i18n="food_groups_title">
-                Food Groups
-              </a>
-
-              <a href="food-diets.html" data-i18n="balanced_diet_title">
-                Balanced Diet
-              </a>
-
-              <a href="food-diets.html" data-i18n="healthy_food_choices_title">
-                Healthy Food Choices
-              </a>
-            </div>
+          <div class="dropdown-group">
+            <span class="group-title" data-i18n="nav_nutrition_needs">Nutrition Needs</span>
+            <a href="nutrition-needs.html" data-i18n="nutrition_age_title">Age & Development</a>
+            <a href="nutrition-needs.html" data-i18n="nutrition_activity_title">Physical Activity</a>
+            <a href="nutrition-needs.html" data-i18n="nutrition_lifestyle_title">Lifestyle</a>
           </div>
-
-          <!-- HEALTH -->
-          <div class="nav-dropdown">
-            <a href="#" data-i18n="nav_health"> Health </a>
-
-            <div class="dropdown-menu">
-              <a href="#" data-i18n="nav_heart"> Heart Health </a>
-
-              <a href="#" data-i18n="nav_diabetes"> Diabetes </a>
-
-              <a href="#" data-i18n="nav_bone"> Bone Health </a>
-            </div>
+          <div class="dropdown-group">
+            <span class="group-title" data-i18n="nav_special_needs">Special Needs</span>
+            <a href="special-nutrition-needs.html#pregnancy" data-i18n="nav_pregnancy">Pregnancy</a>
+            <a href="special-nutrition-needs.html#athletes" data-i18n="nav_athletes">Athletes</a>
+            <a href="special-nutrition-needs.html#conditions" data-i18n="nav_conditions">Health Conditions</a>
           </div>
-
-          <!-- TOOLS -->
-          <div class="nav-dropdown">
-            <a href="#" data-i18n="nav_tools"> Tools </a>
-
-            <div class="dropdown-menu">
-              <a href="bmi.html" data-i18n="tool_bmi_title"> BMI Calculator </a>
-            </div>
-          </div>
-        </nav>
-        <!-- Language Switch -->
-        <div class="lang-switch">
-          <button
-            id="btn-vi"
-            class="lang-btn active"
-            onclick="setLanguage('vi')"
-          >
-            🇻🇳 VI
-          </button>
-
-          <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">
-            🇬🇧 EN
-          </button>
         </div>
       </div>
-    </header>
 
-    <!-- =========================
-       MAIN CONTENT
-  ========================== -->
+      <div class="nav-dropdown">
+        <a href="food-diets.html" data-i18n="nav_food">Food & Diets</a>
+        <div class="dropdown-menu">
+          <a href="food-diets.html" data-i18n="food_groups_title">Food Groups</a>
+          <a href="food-diets.html" data-i18n="balanced_diet_title">Balanced Diet</a>
+          <a href="food-diets.html" data-i18n="healthy_food_choices_title">Healthy Food Choices</a>
+        </div>
+      </div>
 
-    <main class="container">
-      <!-- HERO -->
+      <div class="nav-dropdown">
+        <a href="health.html" data-i18n="nav_health">Health</a>
+        <div class="dropdown-menu">
+          <a href="health.html#heart" data-i18n="nav_heart">Heart Health</a>
+          <a href="health.html#diabetes" data-i18n="nav_diabetes">Diabetes</a>
+          <a href="health.html#bone" data-i18n="nav_bone">Bone Health</a>
+        </div>
+      </div>
+    </nav>
 
-      <section class="hero">
+    <!-- Language switch (desktop) -->
+    <div class="lang-switch">
+      <button id="btn-vi" class="lang-btn active" onclick="setLanguage('vi')">🇻🇳 VI</button>
+      <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">🇬🇧 EN</button>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Mở menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="aboutus.html" data-i18n="nav_about">About Us</a>
+    <span class="group-title" data-i18n="nav_basic_nutrition">Basic Nutrition</span>
+    <a href="protein.html" data-i18n="topic_protein">Protein</a>
+    <a href="carbohydrates.html" data-i18n="topic_carbs">Carbohydrates</a>
+    <a href="healthy-fats.html" data-i18n="topic_fats">Healthy Fats</a>
+    <a href="vitamins.html" data-i18n="topic_vitamins">Vitamins</a>
+    <a href="minerals.html" data-i18n="topic_minerals">Minerals</a>
+    <a href="water.html" data-i18n="topic_water">Water</a>
+    <span class="group-title" data-i18n="nav_food">Food & Diets</span>
+    <a href="food-diets.html" data-i18n="food_groups_title">Food Groups</a>
+    <a href="food-diets.html" data-i18n="balanced_diet_title">Balanced Diet</a>
+    <span class="group-title" data-i18n="nav_health">Health</span>
+    <a href="health.html#heart" data-i18n="nav_heart">Heart Health</a>
+    <a href="health.html#diabetes" data-i18n="nav_diabetes">Diabetes</a>
+    <a href="health.html#bone" data-i18n="nav_bone">Bone Health</a>
+    <div class="mobile-lang">
+      <button class="lang-btn active" onclick="setLanguage('vi')">🇻🇳 VI</button>
+      <button class="lang-btn" onclick="setLanguage('en')">🇬🇧 EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- =====================
+     MAIN CONTENT
+===================== -->
+<main>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="leaf-deco" style="top:60px; left:-40px; transform:rotate(-30deg);">
+      <svg width="120" height="140" viewBox="0 0 120 140"><path d="M60 10 C20 40 10 80 20 110 C35 140 85 140 100 110 C110 80 100 40 60 10Z" /></svg>
+    </div>
+    <div class="leaf-deco" style="bottom:-30px; right:-20px; transform:rotate(150deg) scale(0.7);">
+      <svg width="120" height="140" viewBox="0 0 120 140"><path d="M60 10 C20 40 10 80 20 110 C35 140 85 140 100 110 C110 80 100 40 60 10Z" /></svg>
+    </div>
+
+    <div class="container">
+      <div class="hero-inner">
+        <!-- Content -->
         <div class="hero-content">
-          <p class="hero-label" data-i18n="hero_label">HIỂU VỀ DINH DƯỠNG</p>
-
-          <h1 data-i18n="hero_title">
-            Kiến Thức Dinh Dưỡng & Lối Sống Khỏe Mạnh
+          <div class="hero-label reveal" data-i18n="hero_label">HIỂU VỀ DINH DƯỠNG</div>
+          <h1 class="hero-title reveal reveal-delay-1" data-i18n="hero_title_html">
+            Kiến Thức <span class="highlight">Dinh Dưỡng</span> & Lối Sống Khỏe Mạnh
           </h1>
-
-          <p class="hero-description" data-i18n="hero_desc">
-            Khám phá nguồn dinh dưỡng thiết yếu và theo dõi chỉ số cơ thể chuẩn
-            khoa học.
+          <p class="hero-desc reveal reveal-delay-2" data-i18n="hero_desc">
+            Khám phá nguồn dinh dưỡng thiết yếu và theo dõi chỉ số cơ thể chuẩn khoa học.
           </p>
-
-          <a href="#topics" class="hero-btn" data-i18n="hero_button">
-            Khám phá chủ đề
-          </a>
-        </div>
-
-        <div class="hero-image">
-          <img src="images/hero_food.jpg" alt="Healthy nutritious food" />
-        </div>
-      </section>
-      <section class="topics" id="topics">
-        <div class="section-heading">
-          <p class="section-label" data-i18n="topics_label">EXPLORE TOPICS</p>
-
-          <h2 data-i18n="topics_title">Khám phá các chủ đề dinh dưỡng</h2>
-
-          <p data-i18n="topics_desc">
-            Tìm hiểu những nhóm chất dinh dưỡng cơ bản và vai trò của chúng đối
-            với cơ thể.
-          </p>
-        </div>
-
-        <div class="topic-grid">
-          <!-- Protein -->
-          <div class="topic-card">
-            <img src="images/protein.jpg" alt="Protein foods" />
-
-            <div class="topic-card-content">
-              <h3 data-i18n="topic_protein">Protein</h3>
-
-              <p data-i18n="topic_protein_desc">
-                Tìm hiểu về protein và các nguồn thực phẩm giàu đạm.
-              </p>
-
-              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
-            </div>
+          <div class="hero-actions reveal reveal-delay-3">
+            <a href="#topics" class="btn-primary" data-i18n="hero_button">Khám phá chủ đề →</a>
           </div>
-
-          <!-- Carbohydrates -->
-          <div class="topic-card">
-            <img src="images/carbohydrates.jpg" alt="Carbohydrate foods" />
-
-            <div class="topic-card-content">
-              <h3 data-i18n="topic_carbs">Carbohydrates</h3>
-
-              <p data-i18n="topic_carbs_desc">
-                Tìm hiểu về carbohydrate và vai trò cung cấp năng lượng.
-              </p>
-
-              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
+          <div class="hero-stats reveal reveal-delay-4">
+            <div class="hero-stat">
+              <strong>6+</strong>
+              <span data-i18n="stat_topics">Chủ đề dinh dưỡng</span>
             </div>
-          </div>
-
-          <!-- Healthy Fats -->
-          <div class="topic-card">
-            <img src="images/healthy_fats.jpg" alt="Healthy fats foods" />
-
-            <div class="topic-card-content">
-              <h3 data-i18n="topic_fats">Healthy Fats</h3>
-
-              <p data-i18n="topic_fats_desc">
-                Tìm hiểu về chất béo lành mạnh và nguồn thực phẩm phù hợp.
-              </p>
-
-              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
-            </div>
-          </div>
-
-          <!-- Vitamins -->
-          <div class="topic-card">
-            <img src="images/vitamins.jpg" alt="Vitamins foods" />
-
-            <div class="topic-card-content">
-              <h3 data-i18n="topic_vitamins">Vitamins</h3>
-
-              <p data-i18n="topic_vitamins_desc">
-                Tìm hiểu về vitamin và vai trò của chúng trong cơ thể.
-              </p>
-
-              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
-            </div>
-          </div>
-
-          <!-- Minerals -->
-          <div class="topic-card">
-            <img src="images/minerals.jpg" alt="Mineral rich foods" />
-
-            <div class="topic-card-content">
-              <h3 data-i18n="topic_minerals">Minerals</h3>
-
-              <p data-i18n="topic_minerals_desc">
-                Tìm hiểu về các khoáng chất thiết yếu trong chế độ ăn.
-              </p>
-
-              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
-            </div>
-          </div>
-
-          <!-- Water -->
-          <div class="topic-card">
-            <img src="images/water.jpg" alt="Water and hydration" />
-
-            <div class="topic-card-content">
-              <h3 data-i18n="topic_water">Water</h3>
-
-              <p data-i18n="topic_water_desc">
-                Tìm hiểu về nước và vai trò của việc duy trì đủ nước.
-              </p>
-
-              <a href="#" data-i18n="learn_more"> Tìm hiểu thêm → </a>
+            <div class="hero-stat">
+              <strong>2</strong>
+              <span data-i18n="stat_langs">Ngôn ngữ</span>
             </div>
           </div>
         </div>
-      </section>
-      <!-- =========================
-   FEATURED NUTRITION
-========================== -->
 
-      <section class="featured-nutrition">
-        <div class="section-heading">
-          <p class="section-label" data-i18n="featured_label">
-            FEATURED NUTRITION
-          </p>
-
-          <h2 data-i18n="featured_title">Kiến thức dinh dưỡng nổi bật</h2>
-
-          <p data-i18n="featured_desc">
-            Khám phá những kiến thức cơ bản giúp bạn hiểu rõ hơn về dinh dưỡng
-            và sức khỏe.
-          </p>
+        <!-- Image -->
+        <div class="hero-image-wrap reveal reveal-delay-2">
+          <div class="hero-image-frame">
+            <img src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_ad342019-dc9d-479f-a9d2-68acc1cdb9d8.jpg" alt="Healthy nutritious food" />
+          </div>
+          <div class="hero-badge hero-badge-1">
+            <div class="hero-badge-icon">🥗</div>
+            <div class="hero-badge-text">
+              <strong data-i18n="badge1_title">Dinh dưỡng cân bằng</strong>
+              <span data-i18n="badge1_sub">Khoa học & tự nhiên</span>
+            </div>
+          </div>
+          <div class="hero-badge hero-badge-2">
+            <div class="hero-badge-icon">💚</div>
+            <div class="hero-badge-text">
+              <strong data-i18n="badge2_title">Lối sống lành mạnh</strong>
+              <span data-i18n="badge2_sub">Từng ngày một</span>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="featured-grid">
-          <!-- Card 1 -->
-          <article class="featured-card">
-            <div class="featured-icon">🥗</div>
+  <!-- TOPICS -->
+  <section class="topics-section" id="topics">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-label" data-i18n="topics_label">EXPLORE TOPICS</p>
+        <h2 data-i18n="topics_title">Khám phá các chủ đề dinh dưỡng</h2>
+        <p data-i18n="topics_desc">Tìm hiểu những nhóm chất dinh dưỡng cơ bản và vai trò của chúng đối với cơ thể.</p>
+      </div>
 
-            <h3 data-i18n="featured_1_title">Ăn uống cân bằng</h3>
-
-            <p data-i18n="featured_1_desc">
-              Tìm hiểu cách xây dựng một chế độ ăn đa dạng với nhiều nhóm thực
-              phẩm.
-            </p>
-
-            <a href="#" data-i18n="featured_read_more"> Đọc thêm → </a>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="featured-card">
-            <div class="featured-icon">🍎</div>
-
-            <h3 data-i18n="featured_2_title">Hiểu về chất dinh dưỡng</h3>
-
-            <p data-i18n="featured_2_desc">
-              Khám phá vai trò của các chất dinh dưỡng thiết yếu đối với cơ thể.
-            </p>
-
-            <a href="#" data-i18n="featured_read_more"> Đọc thêm → </a>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="featured-card">
-            <div class="featured-icon">💡</div>
-
-            <h3 data-i18n="featured_3_title">Thói quen lành mạnh</h3>
-
-            <p data-i18n="featured_3_desc">
-              Tìm hiểu những thói quen đơn giản có thể hỗ trợ một lối sống lành
-              mạnh.
-            </p>
-
-            <a href="#" data-i18n="featured_read_more"> Đọc thêm → </a>
-          </article>
+      <div class="topic-grid">
+        <!-- Protein -->
+        <div class="topic-card reveal reveal-delay-1">
+          <div class="topic-card-img">
+            <img src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_a5483017-21c1-4ac8-a903-cd482122aba4.jpg" alt="Protein foods" />
+          </div>
+          <div class="topic-card-body">
+            <h3 data-i18n="topic_protein">Protein</h3>
+            <p data-i18n="topic_protein_desc">Tìm hiểu về protein và các nguồn thực phẩm giàu đạm.</p>
+            <a href="protein.html" data-i18n="learn_more">Tìm hiểu thêm →</a>
+          </div>
         </div>
-      </section>
-      <!-- =========================
-   HEALTH & LIFESTYLE
-========================== -->
-
-      <section class="health-lifestyle">
-        <div class="section-heading">
-          <p class="section-label" data-i18n="health_label">
-            HEALTH & LIFESTYLE
-          </p>
-
-          <h2 data-i18n="health_title">Dinh dưỡng & Lối sống lành mạnh</h2>
-
-          <p data-i18n="health_desc">
-            Tìm hiểu cách dinh dưỡng có thể đồng hành cùng sức khỏe và lối sống
-            hàng ngày.
-          </p>
+        <!-- Carbohydrates -->
+        <div class="topic-card reveal reveal-delay-2">
+          <div class="topic-card-img">
+            <img src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_7cb083bb-50c1-4c7a-a97e-ad5af09749f1.jpg" alt="Carbohydrate foods" />
+          </div>
+          <div class="topic-card-body">
+            <h3 data-i18n="topic_carbs">Carbohydrates</h3>
+            <p data-i18n="topic_carbs_desc">Tìm hiểu về carbohydrate và vai trò cung cấp năng lượng.</p>
+            <a href="carbohydrates.html" data-i18n="learn_more">Tìm hiểu thêm →</a>
+          </div>
         </div>
-
-        <div class="health-grid">
-          <!-- Heart Health -->
-          <article class="health-card">
-            <div class="health-icon">❤️</div>
-
-            <h3 data-i18n="health_heart_title">Sức khỏe tim mạch</h3>
-
-            <p data-i18n="health_heart_desc">
-              Tìm hiểu những kiến thức dinh dưỡng liên quan đến sức khỏe tim
-              mạch.
-            </p>
-
-            <a href="#" data-i18n="health_read_more"> Tìm hiểu thêm → </a>
-          </article>
-
-          <!-- Bone Health -->
-          <article class="health-card">
-            <div class="health-icon">🦴</div>
-
-            <h3 data-i18n="health_bone_title">Sức khỏe xương</h3>
-
-            <p data-i18n="health_bone_desc">
-              Khám phá vai trò của các chất dinh dưỡng đối với xương và cơ thể.
-            </p>
-
-            <a href="#" data-i18n="health_read_more"> Tìm hiểu thêm → </a>
-          </article>
-
-          <!-- Healthy Lifestyle -->
-          <article class="health-card">
-            <div class="health-icon">🌱</div>
-
-            <h3 data-i18n="health_lifestyle_title">Lối sống lành mạnh</h3>
-
-            <p data-i18n="health_lifestyle_desc">
-              Tìm hiểu những thói quen đơn giản giúp xây dựng lối sống cân bằng.
-            </p>
-
-            <a href="#" data-i18n="health_read_more"> Tìm hiểu thêm → </a>
-          </article>
+        <!-- Healthy Fats -->
+        <div class="topic-card reveal reveal-delay-3">
+          <div class="topic-card-img">
+            <img src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_38c0965b-b68d-46e1-b0f7-0fec15483e58.jpg" alt="Healthy fats foods" />
+          </div>
+          <div class="topic-card-body">
+            <h3 data-i18n="topic_fats">Healthy Fats</h3>
+            <p data-i18n="topic_fats_desc">Tìm hiểu về chất béo lành mạnh và nguồn thực phẩm phù hợp.</p>
+            <a href="healthy-fats.html" data-i18n="learn_more">Tìm hiểu thêm →</a>
+          </div>
         </div>
-      </section>
-      <!-- =========================
-   TOOLS
-========================== -->
-
-      <section class="tools-section">
-        <div class="section-heading">
-          <p class="section-label" data-i18n="tools_label">NUTRIWISE TOOLS</p>
-
-          <h2 data-i18n="tools_title">Công cụ dinh dưỡng</h2>
-
-          <p data-i18n="tools_desc">
-            Sử dụng các công cụ đơn giản để tìm hiểu thêm về sức khỏe và dinh
-            dưỡng.
-          </p>
+        <!-- Vitamins -->
+        <div class="topic-card reveal reveal-delay-1">
+          <div class="topic-card-img">
+            <img src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_eaf0ecd8-7ffd-471f-9bf0-93cbb31761ef.jpg" alt="Vitamins foods" />
+          </div>
+          <div class="topic-card-body">
+            <h3 data-i18n="topic_vitamins">Vitamins</h3>
+            <p data-i18n="topic_vitamins_desc">Tìm hiểu về vitamin và vai trò của chúng trong cơ thể.</p>
+            <a href="vitamins.html" data-i18n="learn_more">Tìm hiểu thêm →</a>
+          </div>
         </div>
-
-        <div class="tools-grid">
-          <!-- BMI -->
-          <article class="tool-card">
-            <div class="tool-icon">📊</div>
-
-            <h3 data-i18n="tool_bmi_title">BMI Calculator</h3>
-
-            <p data-i18n="tool_bmi_desc">
-              Tìm hiểu chỉ số BMI dựa trên chiều cao và cân nặng.
-            </p>
-
-            <a href="bmi.html" data-i18n="tool_use"> Sử dụng công cụ → </a>
-          </article>
-
-          <!-- Nutrition Calculator -->
-          <article class="tool-card">
-            <div class="tool-icon">🧮</div>
-
-            <h3 data-i18n="tool_nutrition_title">Nutrition Calculator</h3>
-
-            <p data-i18n="tool_nutrition_desc">
-              Công cụ giúp bạn khám phá thông tin dinh dưỡng của thực phẩm.
-            </p>
-
-            <a href="#" data-i18n="tool_coming_soon"> Sắp ra mắt </a>
-          </article>
-
-          <!-- Food Guide -->
-          <article class="tool-card">
-            <div class="tool-icon">🍽️</div>
-
-            <h3 data-i18n="tool_food_title">Food Guide</h3>
-
-            <p data-i18n="tool_food_desc">
-              Khám phá các nhóm thực phẩm và lựa chọn thực phẩm đa dạng.
-            </p>
-
-            <a href="#" data-i18n="tool_explore"> Khám phá → </a>
-          </article>
+        <!-- Minerals -->
+        <div class="topic-card reveal reveal-delay-2">
+          <div class="topic-card-img">
+            <img src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_77892751-4596-4a5c-a4f5-2077dc827caa.jpg" alt="Mineral rich foods" />
+          </div>
+          <div class="topic-card-body">
+            <h3 data-i18n="topic_minerals">Minerals</h3>
+            <p data-i18n="topic_minerals_desc">Tìm hiểu về các khoáng chất thiết yếu trong chế độ ăn.</p>
+            <a href="minerals.html" data-i18n="learn_more">Tìm hiểu thêm →</a>
+          </div>
         </div>
-      </section>
-    </main>
-    <!-- =========================
-   FOOTER
-========================== -->
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <!-- About -->
-        <div class="footer-column">
-          <a href="#" class="footer-logo"> 🌿 Nutri<span>Wise</span> </a>
-
-          <p data-i18n="footer_desc">
-            Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh.
-          </p>
+        <!-- Water -->
+        <div class="topic-card reveal reveal-delay-3">
+          <div class="topic-card-img">
+            <img src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_5d20352d-2108-4362-b3da-f679e3b20c6b.jpg" alt="Water and hydration" />
+          </div>
+          <div class="topic-card-body">
+            <h3 data-i18n="topic_water">Water</h3>
+            <p data-i18n="topic_water_desc">Tìm hiểu về nước và vai trò của việc duy trì đủ nước.</p>
+            <a href="water.html" data-i18n="learn_more">Tìm hiểu thêm →</a>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Quick Links -->
-        <div class="footer-column">
-          <h3 data-i18n="footer_quick_links">Quick Links</h3>
+  <!-- FEATURED NUTRITION -->
+  <section class="featured-section" id="featured">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-label" data-i18n="featured_label">FEATURED NUTRITION</p>
+        <h2 data-i18n="featured_title">Kiến thức dinh dưỡng nổi bật</h2>
+        <p data-i18n="featured_desc">Khám phá những kiến thức cơ bản giúp bạn hiểu rõ hơn về dinh dưỡng và sức khỏe.</p>
+      </div>
+      <div class="featured-grid">
+        <article class="featured-card reveal reveal-delay-1">
+          <div class="featured-card-bg"></div>
+          <div class="featured-icon-wrap">🥗</div>
+          <h3 data-i18n="featured_1_title">Ăn uống cân bằng</h3>
+          <p data-i18n="featured_1_desc">Tìm hiểu cách xây dựng một chế độ ăn đa dạng với nhiều nhóm thực phẩm.</p>
+          <a href="food-diets.html" data-i18n="featured_read_more">Đọc thêm →</a>
+        </article>
+        <article class="featured-card reveal reveal-delay-2">
+          <div class="featured-card-bg"></div>
+          <div class="featured-icon-wrap">🍎</div>
+          <h3 data-i18n="featured_2_title">Hiểu về chất dinh dưỡng</h3>
+          <p data-i18n="featured_2_desc">Khám phá vai trò của các chất dinh dưỡng thiết yếu đối với cơ thể.</p>
+          <a href="basic-nutrition.html" data-i18n="featured_read_more">Đọc thêm →</a>
+        </article>
+        <article class="featured-card reveal reveal-delay-3">
+          <div class="featured-card-bg"></div>
+          <div class="featured-icon-wrap">💡</div>
+          <h3 data-i18n="featured_3_title">Thói quen lành mạnh</h3>
+          <p data-i18n="featured_3_desc">Tìm hiểu những thói quen đơn giản có thể hỗ trợ một lối sống lành mạnh.</p>
+          <a href="health.html" data-i18n="featured_read_more">Đọc thêm →</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-          <a href="#" data-i18n="nav_home">Home</a>
-          <a href="#" data-i18n="nav_about">About Us</a>
+  <!-- HEALTH & LIFESTYLE -->
+  <section class="health-section" id="health">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-label" data-i18n="health_label">HEALTH & LIFESTYLE</p>
+        <h2 data-i18n="health_title">Dinh dưỡng & Lối sống lành mạnh</h2>
+        <p data-i18n="health_desc">Tìm hiểu cách dinh dưỡng có thể đồng hành cùng sức khỏe và lối sống hàng ngày.</p>
+      </div>
+      <div class="health-grid">
+        <article class="health-card reveal reveal-delay-1">
+          <div class="health-card-number">01</div>
+          <div class="health-icon-wrap">❤️</div>
+          <h3 data-i18n="health_heart_title">Sức khỏe tim mạch</h3>
+          <p data-i18n="health_heart_desc">Tìm hiểu những kiến thức dinh dưỡng liên quan đến sức khỏe tim mạch.</p>
+          <a href="health.html#heart" data-i18n="health_read_more">Tìm hiểu thêm →</a>
+        </article>
+        <article class="health-card reveal reveal-delay-2">
+          <div class="health-card-number">02</div>
+          <div class="health-icon-wrap">🦴</div>
+          <h3 data-i18n="health_bone_title">Sức khỏe xương</h3>
+          <p data-i18n="health_bone_desc">Khám phá vai trò của các chất dinh dưỡng đối với xương và cơ thể.</p>
+          <a href="health.html#bone" data-i18n="health_read_more">Tìm hiểu thêm →</a>
+        </article>
+        <article class="health-card reveal reveal-delay-3">
+          <div class="health-card-number">03</div>
+          <div class="health-icon-wrap">🌱</div>
+          <h3 data-i18n="health_lifestyle_title">Lối sống lành mạnh</h3>
+          <p data-i18n="health_lifestyle_desc">Tìm hiểu những thói quen đơn giản giúp xây dựng lối sống cân bằng.</p>
+          <a href="nutrition-needs.html" data-i18n="health_read_more">Tìm hiểu thêm →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div class="cta-content">
+          <h2 data-i18n="cta_title">Bắt đầu hành trình sức khỏe của bạn ngay hôm nay</h2>
+          <p data-i18n="cta_desc">Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh cùng NutriWise.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="#topics" class="btn-white" data-i18n="cta_btn1">Khám phá ngay</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- =====================
+     FOOTER
+===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <!-- About -->
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">🌿 Nutri<span>Wise</span></a>
+        <p data-i18n="footer_desc">Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh.</p>
+      </div>
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3 data-i18n="footer_quick_links">Quick Links</h3>
+        <div class="footer-links">
+          <a href="index.html" data-i18n="nav_home">Home</a>
+          <a href="aboutus.html" data-i18n="nav_about">About Us</a>
           <a href="#topics" data-i18n="nav_topics">Topics</a>
-          <a href="#" data-i18n="nav_resources">Resources</a>
-        </div>
-
-        <!-- Topics -->
-        <div class="footer-column">
-          <h3 data-i18n="footer_topics">Topics</h3>
-
-          <a href="#" data-i18n="topic_protein">Protein</a>
-          <a href="#" data-i18n="topic_carbs">Carbohydrates</a>
-          <a href="#" data-i18n="topic_vitamins">Vitamins</a>
-          <a href="#" data-i18n="topic_minerals">Minerals</a>
-        </div>
-
-        <!-- Tools -->
-        <div class="footer-column">
-          <h3 data-i18n="footer_tools">Tools</h3>
-
-          <a href="bmi.html" data-i18n="tool_bmi_title"> BMI Calculator </a>
-
-          <a href="#" data-i18n="tool_nutrition_title">
-            Nutrition Calculator
-          </a>
-
-          <a href="#" data-i18n="tool_food_title"> Food Guide </a>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p data-i18n="footer_copyright">
-          © 2026 NutriWise. All rights reserved.
-        </p>
+      <!-- Topics -->
+      <div class="footer-col">
+        <h3 data-i18n="footer_topics">Topics</h3>
+        <div class="footer-links">
+          <a href="protein.html" data-i18n="topic_protein">Protein</a>
+          <a href="carbohydrates.html" data-i18n="topic_carbs">Carbohydrates</a>
+          <a href="vitamins.html" data-i18n="topic_vitamins">Vitamins</a>
+          <a href="minerals.html" data-i18n="topic_minerals">Minerals</a>
+        </div>
       </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer_copyright">© 2026 NutriWise. All rights reserved.</p>
+      <p class="footer-tagline">Dinh dưỡng cân bằng • Lối sống lành mạnh</p>
+    </div>
+  </div>
+</footer>
 
-    <script src="script.js"></script>
-  </body>
+<script>
+/* ========================================
+   TRANSLATIONS
+======================================== */
+const translations = {
+  vi: {
+    nav_home: 'Trang chủ',
+    nav_about: 'Về chúng tôi',
+    nav_topics: 'Chủ đề',
+    nav_basic_nutrition: 'Dinh dưỡng cơ bản',
+    topic_protein: 'Protein',
+    topic_carbs: 'Carbohydrate',
+    topic_fats: 'Chất béo lành mạnh',
+    topic_vitamins: 'Vitamin',
+    topic_minerals: 'Khoáng chất',
+    topic_water: 'Nước',
+    nav_nutrition_needs: 'Nhu cầu dinh dưỡng',
+    nutrition_age_title: 'Độ tuổi & Phát triển',
+    nutrition_activity_title: 'Vận động thể chất',
+    nutrition_lifestyle_title: 'Lối sống',
+    nav_special_needs: 'Nhu cầu đặc biệt',
+    nav_pregnancy: 'Thai kỳ',
+    nav_athletes: 'Vận động viên',
+    nav_conditions: 'Bệnh lý',
+    nav_food: 'Thực phẩm & Chế độ ăn',
+    food_groups_title: 'Nhóm thực phẩm',
+    balanced_diet_title: 'Chế độ ăn cân bằng',
+    healthy_food_choices_title: 'Lựa chọn thực phẩm lành mạnh',
+    nav_health: 'Sức khỏe',
+    nav_heart: 'Sức khỏe tim mạch',
+    nav_diabetes: 'Tiểu đường',
+    nav_bone: 'Sức khỏe xương',
+    nav_tools: 'Công cụ',
+    nav_resources: 'Tài nguyên',
+    hero_label: 'HIỂU VỀ DINH DƯỠNG',
+    hero_title: 'Kiến Thức Dinh Dưỡng & Lối Sống Khỏe Mạnh',
+    hero_desc: 'Khám phá nguồn dinh dưỡng thiết yếu và theo dõi chỉ số cơ thể chuẩn khoa học.',
+    hero_button: 'Khám phá chủ đề →',
+    stat_topics: 'Chủ đề dinh dưỡng',
+    stat_langs: 'Ngôn ngữ',
+    badge1_title: 'Dinh dưỡng cân bằng',
+    badge1_sub: 'Khoa học & tự nhiên',
+    badge2_title: 'Lối sống lành mạnh',
+    badge2_sub: 'Từng ngày một',
+    topics_label: 'KHÁM PHÁ CHỦ ĐỀ',
+    topics_title: 'Khám phá các chủ đề dinh dưỡng',
+    topics_desc: 'Tìm hiểu những nhóm chất dinh dưỡng cơ bản và vai trò của chúng đối với cơ thể.',
+    topic_protein_desc: 'Tìm hiểu về protein và các nguồn thực phẩm giàu đạm.',
+    topic_carbs_desc: 'Tìm hiểu về carbohydrate và vai trò cung cấp năng lượng.',
+    topic_fats_desc: 'Tìm hiểu về chất béo lành mạnh và nguồn thực phẩm phù hợp.',
+    topic_vitamins_desc: 'Tìm hiểu về vitamin và vai trò của chúng trong cơ thể.',
+    topic_minerals_desc: 'Tìm hiểu về các khoáng chất thiết yếu trong chế độ ăn.',
+    topic_water_desc: 'Tìm hiểu về nước và vai trò của việc duy trì đủ nước.',
+    learn_more: 'Tìm hiểu thêm →',
+    featured_label: 'KIẾN THỨC NỔI BẬT',
+    featured_title: 'Kiến thức dinh dưỡng nổi bật',
+    featured_desc: 'Khám phá những kiến thức cơ bản giúp bạn hiểu rõ hơn về dinh dưỡng và sức khỏe.',
+    featured_1_title: 'Ăn uống cân bằng',
+    featured_1_desc: 'Tìm hiểu cách xây dựng một chế độ ăn đa dạng với nhiều nhóm thực phẩm.',
+    featured_2_title: 'Hiểu về chất dinh dưỡng',
+    featured_2_desc: 'Khám phá vai trò của các chất dinh dưỡng thiết yếu đối với cơ thể.',
+    featured_3_title: 'Thói quen lành mạnh',
+    featured_3_desc: 'Tìm hiểu những thói quen đơn giản có thể hỗ trợ một lối sống lành mạnh.',
+    featured_read_more: 'Đọc thêm →',
+    health_label: 'SỨC KHỎE & LỐI SỐNG',
+    health_title: 'Dinh dưỡng & Lối sống lành mạnh',
+    health_desc: 'Tìm hiểu cách dinh dưỡng có thể đồng hành cùng sức khỏe và lối sống hàng ngày.',
+    health_heart_title: 'Sức khỏe tim mạch',
+    health_heart_desc: 'Tìm hiểu những kiến thức dinh dưỡng liên quan đến sức khỏe tim mạch.',
+    health_bone_title: 'Sức khỏe xương',
+    health_bone_desc: 'Khám phá vai trò của các chất dinh dưỡng đối với xương và cơ thể.',
+    health_lifestyle_title: 'Lối sống lành mạnh',
+    health_lifestyle_desc: 'Tìm hiểu những thói quen đơn giản giúp xây dựng lối sống cân bằng.',
+    health_read_more: 'Tìm hiểu thêm →',
+    cta_title: 'Bắt đầu hành trình sức khỏe của bạn ngay hôm nay',
+    cta_desc: 'Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh cùng NutriWise.',
+    cta_btn1: 'Khám phá ngay',
+    footer_desc: 'Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh.',
+    footer_quick_links: 'Liên kết nhanh',
+    footer_topics: 'Chủ đề',
+    footer_copyright: '© 2026 NutriWise. Bảo lưu mọi quyền.',
+  },
+  en: {
+    nav_home: 'Home',
+    nav_about: 'About Us',
+    nav_topics: 'Topics',
+    nav_basic_nutrition: 'Basic Nutrition',
+    topic_protein: 'Protein',
+    topic_carbs: 'Carbohydrates',
+    topic_fats: 'Healthy Fats',
+    topic_vitamins: 'Vitamins',
+    topic_minerals: 'Minerals',
+    topic_water: 'Water',
+    nav_nutrition_needs: 'Nutrition Needs',
+    nutrition_age_title: 'Age & Development',
+    nutrition_activity_title: 'Physical Activity',
+    nutrition_lifestyle_title: 'Lifestyle',
+    nav_special_needs: 'Special Nutrition Needs',
+    nav_pregnancy: 'Pregnancy',
+    nav_athletes: 'Athletes',
+    nav_conditions: 'Health Conditions',
+    nav_food: 'Food & Diets',
+    food_groups_title: 'Food Groups',
+    balanced_diet_title: 'Balanced Diet',
+    healthy_food_choices_title: 'Healthy Food Choices',
+    nav_health: 'Health',
+    nav_heart: 'Heart Health',
+    nav_diabetes: 'Diabetes',
+    nav_bone: 'Bone Health',
+    nav_tools: 'Tools',
+    nav_resources: 'Resources',
+    hero_label: 'UNDERSTAND NUTRITION',
+    hero_title: 'Nutrition Knowledge & Healthy Lifestyle',
+    hero_desc: 'Explore essential nutrients and track your body metrics with science-backed insights.',
+    hero_button: 'Explore Topics →',
+    stat_topics: 'Nutrition Topics',
+    stat_langs: 'Languages',
+    badge1_title: 'Balanced Nutrition',
+    badge1_sub: 'Science & Nature',
+    badge2_title: 'Healthy Lifestyle',
+    badge2_sub: 'One day at a time',
+    topics_label: 'EXPLORE TOPICS',
+    topics_title: 'Explore Nutrition Topics',
+    topics_desc: 'Learn about essential nutrient groups and their role in keeping your body healthy.',
+    topic_protein_desc: 'Learn about protein and protein-rich food sources.',
+    topic_carbs_desc: 'Understand carbohydrates and their role in providing energy.',
+    topic_fats_desc: 'Discover healthy fats and appropriate food sources.',
+    topic_vitamins_desc: 'Learn about vitamins and their importance in the body.',
+    topic_minerals_desc: 'Explore essential minerals in a healthy diet.',
+    topic_water_desc: 'Understand water and the importance of staying hydrated.',
+    learn_more: 'Learn more →',
+    featured_label: 'FEATURED NUTRITION',
+    featured_title: 'Featured Nutrition Knowledge',
+    featured_desc: 'Discover fundamental knowledge to better understand nutrition and health.',
+    featured_1_title: 'Balanced Eating',
+    featured_1_desc: 'Learn how to build a diverse diet with a variety of food groups.',
+    featured_2_title: 'Understanding Nutrients',
+    featured_2_desc: 'Explore the role of essential nutrients in your body.',
+    featured_3_title: 'Healthy Habits',
+    featured_3_desc: 'Discover simple habits that can support a healthy lifestyle.',
+    featured_read_more: 'Read more →',
+    health_label: 'HEALTH & LIFESTYLE',
+    health_title: 'Nutrition & Healthy Lifestyle',
+    health_desc: 'Learn how nutrition can support your health and daily lifestyle.',
+    health_heart_title: 'Heart Health',
+    health_heart_desc: 'Learn about nutrition knowledge related to heart health.',
+    health_bone_title: 'Bone Health',
+    health_bone_desc: 'Explore the role of nutrients in bones and the body.',
+    health_lifestyle_title: 'Healthy Lifestyle',
+    health_lifestyle_desc: 'Discover simple habits that help build a balanced lifestyle.',
+    health_read_more: 'Learn more →',
+    cta_title: 'Start Your Health Journey Today',
+    cta_desc: 'Explore nutrition knowledge and build a healthy lifestyle with NutriWise.',
+    cta_btn1: 'Explore Now',
+    footer_desc: 'Explore nutrition knowledge and build a healthy lifestyle.',
+    footer_quick_links: 'Quick Links',
+    footer_topics: 'Topics',
+    footer_copyright: '© 2026 NutriWise. All rights reserved.',
+  }
+};
+
+let currentLang = 'vi';
+
+function setLanguage(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      el.textContent = t[key];
+    }
+  });
+  // Update lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active',
+      (lang === 'vi' && btn.textContent.includes('VI')) ||
+      (lang === 'en' && btn.textContent.includes('EN'))
+    );
+  });
+  document.documentElement.lang = lang;
+}
+
+/* ========================================
+   HEADER SCROLL
+======================================== */
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+/* ========================================
+   BACK TO TOP
+======================================== */
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ========================================
+   HAMBURGER MENU
+======================================== */
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+hamburgerBtn.addEventListener('click', () => {
+  hamburgerBtn.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+});
+// Close when clicking a link
+mobileNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburgerBtn.classList.remove('open');
+    mobileNav.classList.remove('open');
+  });
+});
+
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ========================================
+   LOADING SCREEN
+======================================== */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loading-screen').classList.add('hidden');
+  }, 1400);
+});
+</script>
+</body>
 </html>

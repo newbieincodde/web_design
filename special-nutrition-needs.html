@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Special Nutrition Needs - NutriWise</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+    <div class="container">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                Nutri<span>Wise</span>
+            </a>
+
+            <div class="nav-menu">
+
+                <a href="index.html" data-i18n="nav_home">
+                    Home
+                </a>
+
+                <a href="#" data-i18n="nav_about">
+                    About Us
+                </a>
+
+
+                <!-- TOPICS -->
+
+                <div class="nav-dropdown">
+
+                    <a href="#" data-i18n="nav_topics">
+                        Topics
+                    </a>
+
+                    <div class="dropdown-menu mega-menu">
+
+                        <!-- BASIC NUTRITION -->
+
+                        <div class="dropdown-group">
+
+                            <a href="basic-nutrition.html"
+                               class="group-title"
+                               data-i18n="nav_basic_nutrition">
+                                Basic Nutrition
+                            </a>
+
+                            <a href="protein.html"
+                               data-i18n="topic_protein">
+                                Protein
+                            </a>
+
+                            <a href="carbohydrates.html"
+                               data-i18n="topic_carbs">
+                                Carbohydrates
+                            </a>
+
+                            <a href="healthy-fats.html"
+                               data-i18n="topic_fats">
+                                Healthy Fats
+                            </a>
+
+                            <a href="vitamins.html"
+                               data-i18n="topic_vitamins">
+                                Vitamins
+                            </a>
+
+                            <a href="minerals.html"
+                               data-i18n="topic_minerals">
+                                Minerals
+                            </a>
+
+                            <a href="water.html"
+                               data-i18n="topic_water">
+                                Water
+                            </a>
+
+                        </div>
+
+
+                        <!-- NUTRITION NEEDS -->
+
+                        <div class="dropdown-group">
+
+                            <a href="nutrition-needs.html"
+                               class="group-title"
+                               data-i18n="nav_nutrition_needs">
+                                Nutrition Needs
+                            </a>
+
+                            <a href="nutrition-needs.html#age"
+                               data-i18n="nutrition_age_title">
+                                Age & Development
+                            </a>
+
+                            <a href="nutrition-needs.html#activity"
+                               data-i18n="nutrition_activity_title">
+                                Physical Activity
+                            </a>
+
+                            <a href="nutrition-needs.html#lifestyle"
+                               data-i18n="nutrition_lifestyle_title">
+                                Lifestyle
+                            </a>
+
+                        </div>
+
+
+                        <!-- SPECIAL NUTRITION -->
+
+                        <div class="dropdown-group">
+
+                            <a href="special-nutrition-needs.html"
+                               class="group-title"
+                               data-i18n="nav_special_needs">
+                                Special Nutrition Needs
+                            </a>
+
+                            <a href="#pregnancy"
+                               data-i18n="nav_pregnancy">
+                                Pregnancy
+                            </a>
+
+                            <a href="#athletes"
+                               data-i18n="nav_athletes">
+                                Athletes
+                            </a>
+
+                            <a href="#health-conditions"
+                               data-i18n="nav_conditions">
+                                People with Health Conditions
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FOOD & DIETS -->
+
+                <div class="nav-dropdown">
+
+                    <a href="food-diets.html"
+                       data-i18n="nav_food">
+                        Food & Diets
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="food-diets.html"
+                           data-i18n="nav_food_groups">
+                            Food Groups
+                        </a>
+
+                        <a href="food-diets.html"
+                           data-i18n="nav_balanced_diet">
+                            Balanced Diet
+                        </a>
+
+                        <a href="food-diets.html"
+                           data-i18n="nav_healthy_choices">
+                            Healthy Food Choices
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HEALTH -->
+
+                <div class="nav-dropdown">
+
+                    <a href="#" data-i18n="nav_health">
+                        Health
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="#" data-i18n="nav_heart">
+                            Heart Health
+                        </a>
+
+                        <a href="#" data-i18n="nav_diabetes">
+                            Diabetes
+                        </a>
+
+                        <a href="#" data-i18n="nav_bone">
+                            Bone Health
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOOLS -->
+
+                <div class="nav-dropdown">
+
+                    <a href="#" data-i18n="nav_tools">
+                        Tools
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="bmi.html">
+                            BMI Calculator
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LANGUAGE -->
+
+                <div class="lang-switch">
+
+                    <button class="lang-btn active"
+                            onclick="setLanguage('vi')">
+                        VI
+                    </button>
+
+                    <button class="lang-btn"
+                            onclick="setLanguage('en')">
+                        EN
+                    </button>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </div>
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="special-hero">
+
+    <div class="container special-hero-grid">
+
+        <div class="special-hero-content">
+
+            <span class="special-eyebrow"
+                  data-i18n="special_needs_label">
+                SPECIAL NUTRITION
+            </span>
+
+            <h1 data-i18n="special_needs_title">
+                Nutrition that adapts to different needs.
+            </h1>
+
+            <p data-i18n="special_needs_desc">
+                Nutrition needs can vary depending on life stage,
+                physical activity, and health conditions.
+            </p>
+
+            <a href="#special-groups"
+               class="special-hero-button">
+                <span data-i18n="special_explore_button">
+                    Explore Topics
+                </span>
+
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <div class="special-hero-image">
+
+            <img src="images/special_pregnancy.jpg"
+                 alt="Nutrition and special nutrition needs">
+
+            <div class="hero-floating-card">
+
+                <span class="floating-number">
+                    03
+                </span>
+
+                <span data-i18n="special_groups_short">
+                    Key nutrition groups
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="special-intro">
+
+    <div class="container">
+
+        <div class="special-intro-heading">
+
+            <span class="special-eyebrow"
+                  data-i18n="special_needs_what_label">
+                OVERVIEW
+            </span>
+
+            <h2 data-i18n="special_needs_what_title">
+                What are special nutrition needs?
+            </h2>
+
+            <p data-i18n="special_needs_what_desc">
+                Special nutrition needs refer to situations where
+                nutritional requirements may differ because of a
+                particular stage of life, physical activity, or
+                health condition.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     THREE FEATURE CARDS
+===================================================== -->
+
+<section class="special-groups"
+         id="special-groups">
+
+    <div class="container">
+
+        <div class="special-section-header">
+
+            <div>
+
+                <span class="special-eyebrow"
+                      data-i18n="special_needs_groups_label">
+                    KEY GROUPS
+                </span>
+
+                <h2 data-i18n="special_needs_groups_title">
+                    Who may have special nutrition needs?
+                </h2>
+
+            </div>
+
+            <p data-i18n="special_needs_groups_desc">
+                Different situations can influence the way
+                nutrition needs are understood and managed.
+            </p>
+
+        </div>
+
+
+        <div class="special-feature-grid">
+
+
+            <!-- PREGNANCY -->
+
+            <article class="special-feature-card"
+                     id="pregnancy">
+
+                <div class="special-feature-image">
+
+                    <img src="images/special_pregnancy.jpg"
+                         alt="Nutrition during pregnancy">
+
+                    <span class="special-card-number">
+                        01
+                    </span>
+
+                </div>
+
+                <div class="special-feature-content">
+
+                    <span class="special-card-label">
+                        LIFE STAGE
+                    </span>
+
+                    <h3 data-i18n="special_pregnancy_title">
+                        Pregnancy
+                    </h3>
+
+                    <p data-i18n="special_pregnancy_desc">
+                        Pregnancy is a period when nutritional
+                        needs change to support the health and
+                        development of both the mother and baby.
+                    </p>
+
+                    <a href="#"
+                       class="special-text-link">
+                        <span data-i18n="special_learn_more">
+                            Learn more
+                        </span>
+                        →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ATHLETES -->
+
+            <article class="special-feature-card"
+                     id="athletes">
+
+                <div class="special-feature-image">
+
+                    <img src="images/special_athletes.jpg"
+                         alt="Nutrition for athletes">
+
+                    <span class="special-card-number">
+                        02
+                    </span>
+
+                </div>
+
+                <div class="special-feature-content">
+
+                    <span class="special-card-label">
+                        ACTIVITY
+                    </span>
+
+                    <h3 data-i18n="special_athletes_title">
+                        Athletes
+                    </h3>
+
+                    <p data-i18n="special_athletes_desc">
+                        People who participate in regular or
+                        intensive physical activity may have
+                        different nutrition and hydration needs.
+                    </p>
+
+                    <a href="#"
+                       class="special-text-link">
+                        <span data-i18n="special_learn_more">
+                            Learn more
+                        </span>
+                        →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- HEALTH CONDITIONS -->
+
+            <article class="special-feature-card"
+                     id="health-conditions">
+
+                <div class="special-feature-image">
+
+                    <img src="images/special_health_conditions.jpg"
+                         alt="Nutrition and health conditions">
+
+                    <span class="special-card-number">
+                        03
+                    </span>
+
+                </div>
+
+                <div class="special-feature-content">
+
+                    <span class="special-card-label">
+                        HEALTH
+                    </span>
+
+                    <h3 data-i18n="special_conditions_title">
+                        Health Conditions
+                    </h3>
+
+                    <p data-i18n="special_conditions_desc">
+                        Some health conditions can affect dietary
+                        needs. Nutrition advice for these situations
+                        should be based on reliable information and,
+                        when appropriate, professional guidance.
+                    </p>
+
+                    <a href="#"
+                       class="special-text-link">
+                        <span data-i18n="special_learn_more">
+                            Learn more
+                        </span>
+                        →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY IT MATTERS
+===================================================== -->
+
+<section class="special-why">
+
+    <div class="container special-why-grid">
+
+        <div class="special-why-image">
+
+            <img src="images/special_balanced_diet.jpg"
+                 alt="Balanced nutrition">
+
+        </div>
+
+
+        <div class="special-why-content">
+
+            <span class="special-eyebrow"
+                  data-i18n="special_needs_importance_label">
+                WHY IT MATTERS
+            </span>
+
+            <h2 data-i18n="special_needs_importance_title">
+                Nutrition is not one-size-fits-all.
+            </h2>
+
+            <p data-i18n="special_needs_importance_desc">
+                Recognizing different nutrition needs helps us
+                understand that one approach may not work equally
+                well for everyone.
+            </p>
+
+
+            <div class="special-benefits">
+
+                <div class="special-benefit">
+
+                    <span class="benefit-icon">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3 data-i18n="special_life_stage_title">
+                            Different Life Stages
+                        </h3>
+
+                        <p data-i18n="special_life_stage_desc">
+                            Nutrition needs can change throughout
+                            life as the body grows and develops.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="special-benefit">
+
+                    <span class="benefit-icon">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3 data-i18n="special_activity_title">
+                            Physical Activity
+                        </h3>
+
+                        <p data-i18n="special_activity_desc">
+                            Physical activity affects how the body
+                            uses energy and nutrients.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="special-benefit">
+
+                    <span class="benefit-icon">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3 data-i18n="special_individual_title">
+                            Individual Needs
+                        </h3>
+
+                        <p data-i18n="special_individual_desc">
+                            Many factors influence nutrition needs,
+                            so individual differences matter.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GENERAL PRINCIPLES
+===================================================== -->
+
+<section class="special-principles">
+
+    <div class="container">
+
+        <div class="special-principles-heading">
+
+            <span class="special-eyebrow"
+                  data-i18n="special_principles_label">
+                GENERAL PRINCIPLES
+            </span>
+
+            <h2 data-i18n="special_principles_title">
+                Start with the basics.
+            </h2>
+
+            <p data-i18n="special_principles_desc">
+                Although nutritional needs vary, several general
+                principles can support healthy eating patterns.
+            </p>
+
+        </div>
+
+
+        <div class="principles-grid">
+
+
+            <!-- BALANCED -->
+
+            <div class="principle-card">
+
+                <div class="principle-image">
+
+                    <img src="images/special_balanced_diet.jpg"
+                         alt="Balanced diet">
+
+                </div>
+
+                <div class="principle-content">
+
+                    <span class="principle-number">
+                        01
+                    </span>
+
+                    <h3 data-i18n="special_balanced_title">
+                        Balanced Diet
+                    </h3>
+
+                    <p data-i18n="special_balanced_desc">
+                        A varied and balanced diet can help provide
+                        a range of nutrients needed for normal body
+                        functions and overall health.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HYDRATION -->
+
+            <div class="principle-card">
+
+                <div class="principle-image">
+
+                    <img src="images/special_hydration.jpg"
+                         alt="Hydration">
+
+                </div>
+
+                <div class="principle-content">
+
+                    <span class="principle-number">
+                        02
+                    </span>
+
+                    <h3 data-i18n="special_hydration_title">
+                        Adequate Hydration
+                    </h3>
+
+                    <p data-i18n="special_hydration_desc">
+                        Water is an essential part of nutrition.
+                        Hydration needs can vary depending on
+                        activity and environment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GUIDANCE -->
+
+            <div class="principle-card">
+
+                <div class="principle-image">
+
+                    <img src="images/special_professional_guidance.jpg"
+                         alt="Professional nutrition guidance">
+
+                </div>
+
+                <div class="principle-content">
+
+                    <span class="principle-number">
+                        03
+                    </span>
+
+                    <h3 data-i18n="special_guidance_title">
+                        Professional Guidance
+                    </h3>
+
+                    <p data-i18n="special_guidance_desc">
+                        People with specific health or nutritional
+                        concerns may benefit from guidance from
+                        qualified professionals.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="special-cta">
+
+    <div class="container">
+
+        <div class="special-cta-box">
+
+            <div>
+
+                <span class="special-eyebrow">
+                    NUTRIWISE
+                </span>
+
+                <h2 data-i18n="special_takeaways_title">
+                    Understand your nutrition.
+                </h2>
+
+                <p data-i18n="special_takeaways_desc">
+                    Special nutrition needs can arise from
+                    different life stages, activity levels,
+                    or health conditions.
+                </p>
+
+            </div>
+
+            <a href="basic-nutrition.html"
+               class="special-cta-button">
+
+                <span data-i18n="special_cta_button">
+                    Explore Nutrition
+                </span>
+
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 NutriWise. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

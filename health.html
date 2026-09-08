@@ -1,0 +1,298 @@
+ <!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NutriWise - Dinh Dưỡng & Sức Khỏe</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- =========================
+       HEADER
+  ========================== -->
+
+    <header>
+      <div class="container navbar">
+        <!-- Logo -->
+        <a href="#" class="logo"> 🌿 Nutri<span>Wise</span> </a>
+
+        <!-- Navigation -->
+        <nav class="nav-menu">
+          <!-- HOME -->
+          <a href="index.html" data-i18n="nav_home"> Home </a>
+
+          <!-- ABOUT US -->
+          <a href="#" data-i18n="nav_about"> About Us </a>
+
+          <!-- TOPICS -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_topics"> Topics </a>
+
+            <div class="dropdown-menu mega-menu">
+              <!-- BASIC NUTRITION -->
+              <div class="dropdown-group">
+                <a
+                  href="basic-nutrition.html"
+                  class="group-title"
+                  data-i18n="nav_basic_nutrition"
+                >
+                  Basic Nutrition
+                </a>
+
+                <a href="protein.html" data-i18n="topic_protein"> Protein </a>
+
+                <a href="carbohydrates.html" data-i18n="topic_carbs">
+                  Carbohydrates
+                </a>
+
+                <a href="healthy-fats.html" data-i18n="topic_fats">
+                  Healthy Fats
+                </a>
+
+                <a href="vitamins.html" data-i18n="topic_vitamins">
+                  Vitamins
+                </a>
+
+                <a href="minerals.html" data-i18n="topic_minerals">
+                  Minerals
+                </a>
+
+                <a href="water.html" data-i18n="topic_water"> Water </a>
+              </div>
+
+              <!-- NUTRITION NEEDS -->
+              <div class="dropdown-group">
+                <span class="group-title" data-i18n="nav_nutrition_needs">
+                  Nutrition Needs
+                </span>
+
+                <a href="nutrition-needs.html" data-i18n="nutrition_age_title">
+                  Age & Development
+                </a>
+
+                <a
+                  href="nutrition-needs.html"
+                  data-i18n="nutrition_activity_title"
+                >
+                  Physical Activity
+                </a>
+
+                <a
+                  href="nutrition-needs.html"
+                  data-i18n="nutrition_lifestyle_title"
+                >
+                  Lifestyle
+                </a>
+              </div>
+
+              <!-- SPECIAL NUTRITION NEEDS -->
+              <div class="dropdown-group">
+                <span class="group-title" data-i18n="nav_special_needs">
+                  Special Nutrition Needs
+                </span>
+
+                <a href="special-nutrition-needs.html#pregnancy" data-i18n="nav_pregnancy"> Pregnancy </a>
+
+                <a href="special-nutrition-needs.html#athletes" data-i18n="nav_athletes"> Athletes </a>
+
+                <a href="special-nutrition-needs.html#conditions" data-i18n="nav_conditions"> Health Conditions </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOD & DIETS -->
+          <div class="nav-dropdown">
+            <a href="food-diets.html" data-i18n="nav_food"> Food & Diets </a>
+
+            <div class="dropdown-menu">
+              <a href="food-diets.html" data-i18n="food_groups_title">
+                Food Groups
+              </a>
+
+              <a href="food-diets.html" data-i18n="balanced_diet_title">
+                Balanced Diet
+              </a>
+
+              <a href="food-diets.html" data-i18n="healthy_food_choices_title">
+                Healthy Food Choices
+              </a>
+            </div>
+          </div>
+
+          <!-- HEALTH -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_health"> Health </a>
+
+            <div class="dropdown-menu">
+              <a href="#" data-i18n="nav_heart"> Heart Health </a>
+
+              <a href="#" data-i18n="nav_diabetes"> Diabetes </a>
+
+              <a href="#" data-i18n="nav_bone"> Bone Health </a>
+            </div>
+          </div>
+
+          <!-- TOOLS -->
+          <div class="nav-dropdown">
+            <a href="#" data-i18n="nav_tools"> Tools </a>
+
+            <div class="dropdown-menu">
+              <a href="bmi.html" data-i18n="tool_bmi_title"> BMI Calculator </a>
+            </div>
+          </div>
+        </nav>
+        <!-- Language Switch -->
+        <div class="lang-switch">
+          <button
+            id="btn-vi"
+            class="lang-btn active"
+            onclick="setLanguage('vi')"
+          >
+            🇻🇳 VI
+          </button>
+
+          <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">
+            🇬🇧 EN
+          </button>
+        </div>
+      </div>
+    </header>
+<!-- =========================
+   HEALTH MAIN CONTENT
+========================== -->
+<main class="container">
+  
+  <!-- HERO SECTION -->
+  <section class="hero health-hero">
+    <div class="hero-content">
+      <p class="hero-label" data-i18n="health_hero_label">HEALTH & LIFESTYLE</p>
+      <h1 data-i18n="health_hero_title">Understand your health. Learn how nutrition supports it.</h1>
+      <p class="hero-description" data-i18n="health_hero_desc">Khám phá mối liên hệ giữa thói quen ăn uống và sức khỏe tổng thể theo góc nhìn khoa học.</p>
+    </div>
+    <div class="hero-image">
+      <img src="images/health_hero.jpg" alt="Healthy Lifestyle" />
+    </div>
+  </section>
+
+  <!-- WHY HEALTH MATTERS -->
+  <section class="health-intro section-heading">
+    <h2 data-i18n="health_intro_title">Tại sao sức khỏe tổng thể lại quan trọng?</h2>
+    <p data-i18n="health_intro_desc">Dinh dưỡng, vận động và lối sống không hoạt động độc lập. Chúng là những bánh răng liên kết chặt chẽ giúp cơ thể bạn duy trì trạng thái cân bằng và phòng ngừa rủi ro lâu dài.</p>
+  </section>
+
+  <!-- HEART HEALTH (Ảnh Trái - Chữ Phải) -->
+  <section class="topic-zigzag">
+    <div class="zigzag-image">
+      <img src="images/heart_health.jpg" alt="Heart Health" />
+    </div>
+    <div class="zigzag-content">
+      <h2 data-i18n="heart_title">Heart Health</h2>
+      <p data-i18n="heart_desc">Sức khỏe tim mạch chịu ảnh hưởng lớn từ lượng chất béo, muối và chất xơ bạn nạp vào mỗi ngày. Tìm hiểu cách các dưỡng chất này hỗ trợ hệ tuần hoàn hoạt động bền bỉ.</p>
+      <a href="#" class="hero-btn" data-i18n="learn_more">Tìm hiểu thêm</a>
+    </div>
+  </section>
+
+  <!-- DIABETES (Chữ Trái - Ảnh Phải) -->
+  <section class="topic-zigzag reverse">
+    <div class="zigzag-content">
+      <h2 data-i18n="diabetes_title">Diabetes Awareness</h2>
+      <p data-i18n="diabetes_desc">Quản lý lượng đường huyết không chỉ là việc kiêng đồ ngọt. Khám phá cách carbohydrate phức tạp và protein giúp ổn định năng lượng mà không làm tăng vọt đường huyết.</p>
+      <a href="#" class="hero-btn" data-i18n="learn_more">Tìm hiểu thêm</a>
+    </div>
+    <div class="zigzag-image">
+      <img src="images/diabetes.jpg" alt="Diabetes Management" />
+    </div>
+  </section>
+
+  <!-- BONE HEALTH (Ảnh Trái - Chữ Phải) -->
+  <section class="topic-zigzag">
+    <div class="zigzag-image">
+      <img src="images/bone_health.jpg" alt="Bone Health" />
+    </div>
+    <div class="zigzag-content">
+      <h2 data-i18n="bone_title">Bone Strength</h2>
+      <p data-i18n="bone_desc">Xương cần nhiều hơn là chỉ Canxi. Vitamin D, Magie và các bài tập chịu lực (weight-bearing exercises) là chìa khóa để duy trì khung xương chắc khỏe qua từng độ tuổi.</p>
+      <a href="#" class="hero-btn" data-i18n="learn_more">Tìm hiểu thêm</a>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE & TAKEAWAYS -->
+  <section class="health-takeaways">
+    <div class="takeaway-box">
+      <h2 data-i18n="takeaway_title">Key Takeaways</h2>
+      <ul class="takeaway-list">
+        <li data-i18n="takeaway_1">Dinh dưỡng đóng vai trò hỗ trợ, không phải phương thuốc thay thế điều trị y tế.</li>
+        <li data-i18n="takeaway_2">Sự cân bằng trong dài hạn quan trọng hơn việc kiêng khem khắc nghiệt trong ngắn hạn.</li>
+        <li data-i18n="takeaway_3">Kết hợp chế độ ăn lành mạnh với vận động đều đặn là công thức tốt nhất.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+ <!-- =========================
+   FOOTER
+========================== -->
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <!-- About -->
+        <div class="footer-column">
+          <a href="#" class="footer-logo"> 🌿 Nutri<span>Wise</span> </a>
+
+          <p data-i18n="footer_desc">
+            Khám phá kiến thức dinh dưỡng và xây dựng lối sống lành mạnh.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h3 data-i18n="footer_quick_links">Quick Links</h3>
+
+          <a href="#" data-i18n="nav_home">Home</a>
+          <a href="#" data-i18n="nav_about">About Us</a>
+          <a href="#topics" data-i18n="nav_topics">Topics</a>
+          <a href="#" data-i18n="nav_resources">Resources</a>
+        </div>
+
+        <!-- Topics -->
+        <div class="footer-column">
+          <h3 data-i18n="footer_topics">Topics</h3>
+
+          <a href="#" data-i18n="topic_protein">Protein</a>
+          <a href="#" data-i18n="topic_carbs">Carbohydrates</a>
+          <a href="#" data-i18n="topic_vitamins">Vitamins</a>
+          <a href="#" data-i18n="topic_minerals">Minerals</a>
+        </div>
+
+        <!-- Tools -->
+        <div class="footer-column">
+          <h3 data-i18n="footer_tools">Tools</h3>
+
+          <a href="bmi.html" data-i18n="tool_bmi_title"> BMI Calculator </a>
+
+          <a href="#" data-i18n="tool_nutrition_title">
+            Nutrition Calculator
+          </a>
+
+          <a href="#" data-i18n="tool_food_title"> Food Guide </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer_copyright">
+          © 2026 NutriWise. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

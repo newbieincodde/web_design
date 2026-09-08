@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NutriWise - Age & Development</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <div class="container navbar">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <span>Nutri</span>Wise
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu">
+
+        <a href="index.html" data-i18n="nav_home">Home</a>
+
+        <a href="aboutus.html" data-i18n="nav_about">About Us</a>
+
+        <!-- TOPICS -->
+        <div class="nav-dropdown">
+
+          <a href="basic-nutrition.html" data-i18n="nav_topics">
+            Topics
+          </a>
+
+          <div class="dropdown-menu mega-menu">
+
+            <!-- Basic Nutrition -->
+            <div class="dropdown-group">
+
+              <a href="basic-nutrition.html"
+                 class="group-title"
+                 data-i18n="nav_basic_nutrition">
+                Basic Nutrition
+              </a>
+
+              <a href="protein.html" data-i18n="topic_protein">
+                Protein
+              </a>
+
+              <a href="carbohydrates.html" data-i18n="topic_carbs">
+                Carbohydrates
+              </a>
+
+              <a href="healthy-fats.html" data-i18n="topic_fats">
+                Healthy Fats
+              </a>
+
+              <a href="vitamins.html" data-i18n="topic_vitamins">
+                Vitamins
+              </a>
+
+              <a href="minerals.html" data-i18n="topic_minerals">
+                Minerals
+              </a>
+
+              <a href="water.html" data-i18n="topic_water">
+                Water
+              </a>
+
+            </div>
+
+
+            <!-- Nutrition Needs -->
+            <div class="dropdown-group">
+
+              <span class="group-title"
+                    data-i18n="nav_nutrition_needs">
+                Nutrition Needs
+              </span>
+
+              <a href="age-development.html"
+                 data-i18n="nutrition_age_title">
+                Age & Development
+              </a>
+
+              <a href="physical-activity.html"
+                 data-i18n="nutrition_activity_title">
+                Physical Activity
+              </a>
+
+              <a href="lifestyle.html"
+                 data-i18n="nutrition_lifestyle_title">
+                Lifestyle
+              </a>
+
+            </div>
+
+
+            <!-- Special Needs -->
+            <div class="dropdown-group">
+
+              <span class="group-title"
+                    data-i18n="nav_special_needs">
+                Special Needs
+              </span>
+
+              <a href="special-nutrition-needs.html#pregnancy"
+                 data-i18n="nav_pregnancy">
+                Pregnancy
+              </a>
+
+              <a href="special-nutrition-needs.html#athletes"
+                 data-i18n="nav_athletes">
+                Athletes
+              </a>
+
+              <a href="special-nutrition-needs.html#conditions"
+                 data-i18n="nav_conditions">
+                Health Conditions
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- FOOD & DIETS -->
+        <div class="nav-dropdown">
+
+          <a href="food-diets.html" data-i18n="nav_food_diets">
+            Food & Diets
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="food-diets.html#food-groups"
+               data-i18n="food_groups_title">
+              Food Groups
+            </a>
+
+            <a href="food-diets.html#balanced-diet"
+               data-i18n="balanced_diet_title">
+              Balanced Diet
+            </a>
+
+            <a href="food-diets.html#healthy-choices"
+               data-i18n="healthy_choices_title">
+              Healthy Food Choices
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- HEALTH -->
+        <div class="nav-dropdown">
+
+          <a href="#" data-i18n="nav_health">
+            Health
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="#" data-i18n="health_heart">
+              Heart Health
+            </a>
+
+            <a href="#" data-i18n="health_diabetes">
+              Diabetes
+            </a>
+
+            <a href="#" data-i18n="health_bone">
+              Bone Health
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOOLS -->
+        <div class="nav-dropdown">
+
+          <a href="#" data-i18n="nav_tools">
+            Tools
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="bmi.html" data-i18n="tool_bmi_title">
+              BMI Calculator
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- Language -->
+        <div class="lang-switch">
+
+  <button
+    id="btn-vi"
+    class="lang-btn active"
+    onclick="setLanguage('vi')">
+    🇻🇳 VI
+  </button>
+
+  <button
+    id="btn-en"
+    class="lang-btn"
+    onclick="setLanguage('en')">
+    🇬🇧 EN
+  </button>
+
+</div>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <!-- HERO -->
+    <section class="age-hero">
+
+      <div class="container age-hero-grid">
+
+        <div class="age-hero-content">
+
+          <span class="age-hero-label"
+                data-i18n="age_development_label">
+            NUTRITION BY AGE
+          </span>
+
+          <h1 data-i18n="age_development_title">
+            Age & Development
+          </h1>
+
+          <p data-i18n="age_development_desc">
+            Nutritional needs change throughout life. Understanding
+            these changes can help support healthy growth, development,
+            energy, and overall well-being at every stage of life.
+          </p>
+
+        </div>
+
+
+        <div class="age-hero-image">
+
+          <img src="images/age_development_hero.jpg"
+               alt="Healthy foods representing nutrition throughout life">
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="age-intro">
+
+      <div class="container">
+
+        <div class="age-section-heading">
+
+          <span data-i18n="age_intro_label">
+            UNDERSTANDING NUTRITION NEEDS
+          </span>
+
+          <h2 data-i18n="age_intro_title">
+            Nutrition Changes as We Grow
+          </h2>
+
+        </div>
+
+
+        <div class="age-intro-card">
+
+          <div class="age-intro-icon">
+            🥗
+          </div>
+
+          <div>
+
+            <h3 data-i18n="age_intro_card_title">
+              Different stages, different needs
+            </h3>
+
+            <p data-i18n="age_intro_desc_1">
+              Our bodies go through many changes as we grow and age.
+              Because of this, the amount and types of nutrients we
+              need can also change.
+            </p>
+
+            <p data-i18n="age_intro_desc_2">
+              A balanced and varied diet can provide important
+              nutrients that support growth, maintain the body,
+              and promote healthy development.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LIFE STAGES -->
+    <section class="age-stages">
+
+      <div class="container">
+
+        <div class="age-section-heading">
+
+          <span data-i18n="age_stages_label">
+            LIFE STAGES
+          </span>
+
+          <h2 data-i18n="age_stages_title">
+            Nutrition Through Different Stages of Life
+          </h2>
+
+          <p data-i18n="age_stages_desc">
+            Each stage of life has different nutritional priorities.
+            Learning about these differences can help us make informed
+            food choices.
+          </p>
+
+        </div>
+
+
+        <div class="age-stage-grid">
+
+
+          <!-- INFANCY -->
+          <article class="age-stage-card">
+
+            <img src="images/age_infant.jpg"
+                 alt="Nutrition for infants">
+
+            <div class="age-stage-content">
+
+              <span class="age-stage-number">
+                01
+              </span>
+
+              <h3 data-i18n="age_infant_title">
+                Infancy
+              </h3>
+
+              <p data-i18n="age_infant_desc">
+                Infancy is a period of rapid growth and development.
+                Adequate nutrition supports physical growth,
+                brain development, and a healthy immune system.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- CHILDHOOD -->
+          <article class="age-stage-card">
+
+            <img src="images/age_children.jpg"
+                 alt="Nutrition for children">
+
+            <div class="age-stage-content">
+
+              <span class="age-stage-number">
+                02
+              </span>
+
+              <h3 data-i18n="age_children_title">
+                Childhood
+              </h3>
+
+              <p data-i18n="age_children_desc">
+                Children need a variety of nutrients to support
+                continued growth, strong bones, learning, and
+                everyday physical activity.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- ADOLESCENCE -->
+          <article class="age-stage-card">
+
+            <img src="images/age_teenagers.jpg"
+                 alt="Nutrition for teenagers">
+
+            <div class="age-stage-content">
+
+              <span class="age-stage-number">
+                03
+              </span>
+
+              <h3 data-i18n="age_teenagers_title">
+                Adolescence
+              </h3>
+
+              <p data-i18n="age_teenagers_desc">
+                During adolescence, the body experiences significant
+                growth and development. Nutrients such as protein,
+                calcium, iron, and vitamins are especially important.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- ADULTHOOD -->
+          <article class="age-stage-card">
+
+            <img src="images/age_adults.jpg"
+                 alt="Nutrition for adults">
+
+            <div class="age-stage-content">
+
+              <span class="age-stage-number">
+                04
+              </span>
+
+              <h3 data-i18n="age_adults_title">
+                Adulthood
+              </h3>
+
+              <p data-i18n="age_adults_desc">
+                During adulthood, nutrition focuses on maintaining
+                health, supporting daily activities, and providing
+                essential nutrients for the body's normal functions.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- OLDER ADULTHOOD -->
+          <article class="age-stage-card">
+
+            <img src="images/age_older_adults.jpg"
+                 alt="Nutrition for older adults">
+
+            <div class="age-stage-content">
+
+              <span class="age-stage-number">
+                05
+              </span>
+
+              <h3 data-i18n="age_older_adults_title">
+                Older Adulthood
+              </h3>
+
+              <p data-i18n="age_older_adults_desc">
+                As people age, nutritional priorities may change.
+                Adequate protein, vitamins, minerals, fiber, and
+                fluids can help support healthy aging.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHY IT MATTERS -->
+    <section class="age-why">
+
+      <div class="container">
+
+        <div class="age-section-heading">
+
+          <span data-i18n="age_why_label">
+            WHY IT MATTERS
+          </span>
+
+          <h2 data-i18n="age_why_title">
+            Why Nutrition Matters at Every Age
+          </h2>
+
+        </div>
+
+
+        <div class="age-why-grid">
+
+
+          <div class="age-simple-card">
+
+            <div class="age-simple-icon">
+              🌱
+            </div>
+
+            <h3 data-i18n="age_growth_title">
+              Growth & Development
+            </h3>
+
+            <p data-i18n="age_growth_desc">
+              Nutrients provide the building blocks needed for growth
+              and normal development, especially during childhood and
+              adolescence.
+            </p>
+
+          </div>
+
+
+          <div class="age-simple-card">
+
+            <div class="age-simple-icon">
+              ⚡
+            </div>
+
+            <h3 data-i18n="age_energy_title">
+              Energy & Activity
+            </h3>
+
+            <p data-i18n="age_energy_desc">
+              Food provides energy that the body uses for everyday
+              activities, learning, movement, and other functions.
+            </p>
+
+          </div>
+
+
+          <div class="age-simple-card">
+
+            <div class="age-simple-icon">
+              🧬
+            </div>
+
+            <h3 data-i18n="age_body_title">
+              Body Functions
+            </h3>
+
+            <p data-i18n="age_body_desc">
+              Vitamins, minerals, protein, fats, carbohydrates,
+              and water all contribute to normal body functions.
+            </p>
+
+          </div>
+
+
+          <div class="age-simple-card">
+
+            <div class="age-simple-icon">
+              ❤️
+            </div>
+
+            <h3 data-i18n="age_health_title">
+              Long-Term Health
+            </h3>
+
+            <p data-i18n="age_health_desc">
+              Healthy eating habits developed throughout life can
+              contribute to overall health and well-being.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- KEY TAKEAWAYS -->
+    <section class="age-takeaway">
+
+      <div class="container">
+
+        <div class="age-takeaway-box">
+
+          <span data-i18n="age_takeaway_label">
+            KEY TAKEAWAYS
+          </span>
+
+          <h2 data-i18n="age_takeaway_title">
+            Nutrition Needs Change With Age
+          </h2>
+
+          <p data-i18n="age_takeaway_desc">
+            There is no single approach to nutrition that works
+            exactly the same way for everyone. Age, growth,
+            development, activity, and lifestyle can all influence
+            nutritional needs.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-column">
+
+          <div class="footer-logo">
+            <span>Nutri</span>Wise
+          </div>
+
+          <p>
+            <span data-i18n="footer_desc">
+              Learn about nutrition and build healthier habits
+              through reliable, easy-to-understand information.
+            </span>
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4 data-i18n="footer_explore">
+            Explore
+          </h4>
+
+          <a href="index.html" data-i18n="nav_home">
+            Home
+          </a>
+
+          <a href="basic-nutrition.html"
+             data-i18n="nav_basic_nutrition">
+            Basic Nutrition
+          </a>
+
+          <a href="nutrition-needs.html"
+             data-i18n="nav_nutrition_needs">
+            Nutrition Needs
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4 data-i18n="footer_tools">
+            Tools
+          </h4>
+
+          <a href="bmi.html"
+             data-i18n="tool_bmi_title">
+            BMI Calculator
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <p>
+          © 2026 NutriWise. All rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>

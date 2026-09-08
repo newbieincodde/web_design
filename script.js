@@ -398,6 +398,83 @@ const translations = {
     nutrition_takeaways_title: "Điểm cần nhớ",
     nutrition_takeaways_desc:
       "Nhu cầu dinh dưỡng có thể thay đổi theo tuổi, mức độ hoạt động và lối sống. Thay vì tập trung vào một chất dinh dưỡng duy nhất, hãy hướng đến sự đa dạng và cân bằng trong chế độ ăn.",
+    food_explore_button: "Khám phá Thực phẩm & Chế độ ăn",
+    food_floating_title: "Lựa chọn thực phẩm tốt hơn",
+    food_floating_desc: "Tìm hiểu. Hiểu rõ. Lựa chọn.",
+
+    food_basics_label: "NỀN TẢNG THỰC PHẨM",
+    food_balance_label: "CÂN BẰNG & ĐA DẠNG",
+    food_choices_label: "LỰA CHỌN HẰNG NGÀY",
+
+    food_explore_groups: "Khám phá Nhóm thực phẩm",
+    food_explore_balanced: "Khám phá Chế độ ăn cân bằng",
+    food_explore_choices: "Khám phá Lựa chọn lành mạnh",
+
+    food_cta_label: "TIẾP TỤC HỌC",
+    food_cta_title: "Xây dựng kiến thức dinh dưỡng",
+    food_cta_desc:
+      "Khám phá các chủ đề dinh dưỡng cơ bản để hiểu rõ hơn về những dưỡng chất cơ thể cần.",
+    food_cta_button: "Khám phá Dinh dưỡng cơ bản",
+    health_hero_label: "SỨC KHỎE & LỐI SỐNG",
+    health_hero_title:
+      "Hiểu về sức khỏe. Khám phá cách dinh dưỡng hỗ trợ cơ thể.",
+    health_hero_desc:
+      "Khám phá mối liên hệ giữa thói quen ăn uống và sức khỏe tổng thể theo góc nhìn khoa học.",
+    health_intro_title: "Tại sao sức khỏe tổng thể lại quan trọng?",
+    health_intro_desc:
+      "Dinh dưỡng, vận động và lối sống không hoạt động độc lập. Chúng là những bánh răng liên kết chặt chẽ giúp cơ thể bạn duy trì trạng thái cân bằng và phòng ngừa rủi ro lâu dài.",
+    heart_title: "Sức khỏe Tim mạch",
+    heart_desc:
+      "Sức khỏe tim mạch chịu ảnh hưởng lớn từ lượng chất béo, muối và chất xơ bạn nạp vào mỗi ngày. Tìm hiểu cách các dưỡng chất này hỗ trợ hệ tuần hoàn hoạt động bền bỉ.",
+    diabetes_title: "Nhận thức về Đường huyết",
+    diabetes_desc:
+      "Quản lý lượng đường huyết không chỉ là việc kiêng đồ ngọt. Khám phá cách carbohydrate phức tạp và protein giúp ổn định năng lượng mà không làm tăng vọt đường huyết.",
+    bone_title: "Sức mạnh của Xương",
+    bone_desc:
+      "Xương cần nhiều hơn là chỉ Canxi. Vitamin D, Magie và các bài tập chịu lực (weight-bearing exercises) là chìa khóa để duy trì khung xương chắc khỏe qua từng độ tuổi.",
+    takeaway_title: "Những điểm cốt lõi",
+    takeaway_1:
+      "Dinh dưỡng đóng vai trò hỗ trợ, không phải phương thuốc thay thế điều trị y tế.",
+    takeaway_2:
+      "Sự cân bằng trong dài hạn quan trọng hơn việc kiêng khem khắc nghiệt trong ngắn hạn.",
+    takeaway_3:
+      "Kết hợp chế độ ăn lành mạnh với vận động đều đặn là công thức tốt nhất.",
+    about_story_title: "Câu chuyện của NutriWise",
+    about_story_1:
+      "Giữa thời đại bùng nổ thông tin, việc tìm kiếm một chế độ ăn phù hợp thường đi kèm với sự hoang mang. Các trào lưu ăn kiêng xuất hiện chớp nhoáng, những lời khuyên mâu thuẫn nhau tràn lan trên mạng xã hội khiến việc hiểu đúng về dinh dưỡng trở nên khó khăn hơn bao giờ hết.",
+    about_story_2:
+      "Đó là lý do NutriWise ra đời. Chúng tôi đóng vai trò là một 'bộ lọc' thông tin, dọn dẹp những thuật ngữ y khoa phức tạp và loại bỏ những lầm tưởng tai hại. Mục tiêu của dự án là xây dựng một từ điển dinh dưỡng số — nơi mọi kiến thức đều minh bạch, dễ hiểu và hoàn toàn miễn phí cho cộng đồng.",
+    sources_label: "TIÊU CHUẨN NỘI DUNG",
+    sources_title: "Nền tảng dữ liệu đáng tin cậy",
+    sources_desc:
+      "Chúng tôi không tự tạo ra lời khuyên y tế. Mọi thông tin trên NutriWise đều được tham chiếu từ các nguồn chuẩn mực.",
+    source_1_title: "Tổ chức Y tế Toàn cầu",
+    source_1_desc:
+      "Dữ liệu tiêu chuẩn được cập nhật từ Tổ chức Y tế Thế giới (WHO) và Tổ chức Lương thực & Nông nghiệp Liên Hợp Quốc (FAO).",
+    source_2_title: "Nghiên cứu Lâm sàng",
+    source_2_desc:
+      "Tham chiếu các bài báo cáo khoa học từ những tạp chí y khoa và viện dinh dưỡng quốc gia.",
+    source_3_title: "Tính Khách quan",
+    source_3_desc:
+      "Website hoạt động độc lập, phi lợi nhuận và không bị chi phối bởi bất kỳ nhãn hàng thực phẩm chức năng nào.",
+      about_title: "Biến kiến thức dinh dưỡng trở nên đơn giản.",
+    about_subtitle: "Chúng tôi xây dựng NutriWise để giúp bạn vượt qua 'ma trận' thông tin sức khỏe bằng những kiến thức đã được chọn lọc và kiểm chứng.",
+    
+    bento_mission: "Our Mission",
+    bento_mission_desc: "Cung cấp một nền tảng giáo dục sức khỏe hoàn toàn miễn phí, trực quan và an toàn. NutriWise tin rằng một lối sống lành mạnh bắt đầu từ sự thấu hiểu cơ thể chính mình.",
+    
+    bento_science: "Chuẩn khoa học",
+    bento_science_desc: "Nội dung xây dựng dựa trên nền tảng nghiên cứu y khoa, không cung cấp lời khuyên vô căn cứ.",
+    
+    bento_practical: "Tính thực tiễn",
+    bento_practical_desc: "Cung cấp công cụ đo lường BMI và tính toán dinh dưỡng để bạn áp dụng ngay vào đời sống.",
+    
+    about_creator: "Meet the Creator",
+    about_creator_desc: "Được phát triển với niềm đam mê kết hợp giữa lập trình Web và sức khỏe cộng đồng. NutriWise là một dự án tâm huyết nhằm mang lại giá trị thực cho người dùng.",
+    about_contact: "Liên hệ với chúng tôi",
+
+    about_process_title: "Quy trình biên tập chuẩn khoa học",
+    about_process_desc: "Mọi bài viết trên NutriWise không dựa trên xu hướng mạng xã hội hay các chế độ ăn kiêng truyền miệng. Chúng tôi tổng hợp dữ liệu từ các tổ chức y tế uy tín (như WHO, FAO) và được rà soát chéo bởi các chuyên gia có chuyên môn. Mục tiêu của chúng tôi là dịch những thuật ngữ y khoa phức tạp thành ngôn ngữ dễ hiểu, giúp bạn tự tin đưa ra quyết định cho bữa ăn hàng ngày.",
 
     // Đánh giá BMI (Chuẩn Châu Á - IDI & WPRO)
     bmi_underweight: "Gầy / Thiếu cân",
@@ -805,6 +882,83 @@ const translations = {
     nutrition_takeaways_title: "Key Takeaways",
     nutrition_takeaways_desc:
       "Nutrition needs can change with age, activity level, and lifestyle. Instead of focusing on one nutrient alone, aim for variety and balance in the diet.",
+    food_explore_button: "Explore Food & Diets",
+    food_floating_title: "Better Food Choices",
+    food_floating_desc: "Learn. Understand. Choose.",
+
+    food_basics_label: "FOOD BASICS",
+    food_balance_label: "BALANCE & VARIETY",
+    food_choices_label: "EVERYDAY CHOICES",
+
+    food_explore_groups: "Explore Food Groups",
+    food_explore_balanced: "Explore Balanced Diet",
+    food_explore_choices: "Explore Healthy Choices",
+
+    food_cta_label: "KEEP LEARNING",
+    food_cta_title: "Build Your Nutrition Knowledge",
+    food_cta_desc:
+      "Explore basic nutrition topics to better understand the nutrients your body needs.",
+    food_cta_button: "Explore Basic Nutrition",
+    health_hero_label: "HEALTH & LIFESTYLE",
+    health_hero_title:
+      "Understand your health. Learn how nutrition supports it.",
+    health_hero_desc:
+      "Explore the connection between eating habits and overall health from a scientific perspective.",
+    health_intro_title: "Why does overall health matter?",
+    health_intro_desc:
+      "Nutrition, exercise, and lifestyle do not work independently. They are interconnected gears that help your body maintain balance and prevent long-term risks.",
+    heart_title: "Heart Health",
+    heart_desc:
+      "Cardiovascular health is greatly influenced by the fat, salt, and fiber you consume daily. Learn how these nutrients support a resilient circulatory system.",
+    diabetes_title: "Diabetes Awareness",
+    diabetes_desc:
+      "Managing blood sugar isn't just about avoiding sweets. Discover how complex carbohydrates and protein help stabilize energy without blood sugar spikes.",
+    bone_title: "Bone Strength",
+    bone_desc:
+      "Bones need more than just Calcium. Vitamin D, Magnesium, and weight-bearing exercises are key to maintaining strong bones at every age.",
+    takeaway_title: "Key Takeaways",
+    takeaway_1:
+      "Nutrition plays a supportive role, not a substitute for medical treatment.",
+    takeaway_2:
+      "Long-term balance is more important than strict, short-term dieting.",
+    takeaway_3:
+      "Combining a healthy diet with regular physical activity is the best formula.",
+    about_story_title: "The NutriWise Story",
+    about_story_1:
+      "In an era of information overload, finding the right diet often comes with confusion. Fleeting diet trends and contradictory advice on social media make understanding true nutrition harder than ever.",
+    about_story_2:
+      "That is why NutriWise was created. We act as an information 'filter', clearing away complex medical jargon and dispelling harmful myths. Our goal is to build a digital nutrition dictionary—where knowledge is transparent, easy to understand, and completely free for the community.",
+    sources_label: "CONTENT STANDARDS",
+    sources_title: "Reliable Data Foundations",
+    sources_desc:
+      "We do not invent medical advice. All information on NutriWise is referenced from standardized sources.",
+    source_1_title: "Global Health Organizations",
+    source_1_desc:
+      "Standardized data is updated from the World Health Organization (WHO) and the Food and Agriculture Organization (FAO).",
+    source_2_title: "Clinical Research",
+    source_2_desc:
+      "We reference scientific reports from leading medical journals and national nutrition institutes.",
+    source_3_title: "Objectivity & Independence",
+    source_3_desc:
+      "The website operates independently, non-profit, and is not influenced by any dietary supplement brands.",
+      about_title: "Making nutrition knowledge simple.",
+    about_subtitle: "We built NutriWise to help you navigate the 'maze' of health information with curated and verified knowledge.",
+    
+    bento_mission: "Our Mission",
+    bento_mission_desc: "Providing a completely free, intuitive, and safe health education platform. NutriWise believes a healthy lifestyle starts with understanding your own body.",
+    
+    bento_science: "Science-Backed",
+    bento_science_desc: "Content is built on a foundation of medical research, never offering baseless advice.",
+    
+    bento_practical: "Practicality",
+    bento_practical_desc: "Providing BMI measurement and nutrition calculation tools for you to apply immediately to your daily life.",
+    
+    about_creator: "Meet the Creator",
+    about_creator_desc: "Developed with a passion for combining Web programming and public health. NutriWise is a passion project aimed at bringing real value to users.",
+    about_contact: "Contact Us",
+
+    about_process_title: "Science-Based Editorial Process",
+    about_process_desc: "Every article on NutriWise is not based on social media trends or word-of-mouth diets. We synthesize data from reputable health organizations (like WHO, FAO) and cross-review it with qualified experts. Our goal is to translate complex medical jargon into easy-to-understand language, helping you confidently make decisions for your daily meals.",
     // BMI Evaluation
     bmi_underweight: "Underweight",
     bmi_normal: "Normal weight",
@@ -914,3 +1068,173 @@ function updateBMIResultUI(bmi) {
 document.addEventListener("DOMContentLoaded", () => {
   setLanguage(currentLang);
 });
+/* =========================================================
+   AGE & DEVELOPMENT TRANSLATIONS
+   ========================================================= */
+
+if (typeof translations !== "undefined") {
+
+  /* ---------- ENGLISH ---------- */
+
+  Object.assign(translations.en, {
+
+    age_development_label: "NUTRITION BY AGE",
+    age_development_title: "Age & Development",
+    age_development_desc:
+      "Nutritional needs change throughout life. Understanding these changes can help support healthy growth, development, energy, and overall well-being at every stage of life.",
+
+    age_intro_label: "UNDERSTANDING NUTRITION NEEDS",
+    age_intro_title: "Nutrition Changes as We Grow",
+    age_intro_card_title: "Different stages, different needs",
+
+    age_intro_desc_1:
+      "Our bodies go through many changes as we grow and age. Because of this, the amount and types of nutrients we need can also change.",
+
+    age_intro_desc_2:
+      "A balanced and varied diet can provide important nutrients that support growth, maintain the body, and promote healthy development.",
+
+    age_stages_label: "LIFE STAGES",
+    age_stages_title:
+      "Nutrition Through Different Stages of Life",
+
+    age_stages_desc:
+      "Each stage of life has different nutritional priorities. Learning about these differences can help us make informed food choices.",
+
+    age_infant_title: "Infancy",
+    age_infant_desc:
+      "Infancy is a period of rapid growth and development. Adequate nutrition supports physical growth, brain development, and a healthy immune system.",
+
+    age_children_title: "Childhood",
+    age_children_desc:
+      "Children need a variety of nutrients to support continued growth, strong bones, learning, and everyday physical activity.",
+
+    age_teenagers_title: "Adolescence",
+    age_teenagers_desc:
+      "During adolescence, the body experiences significant growth and development. Nutrients such as protein, calcium, iron, and vitamins are especially important.",
+
+    age_adults_title: "Adulthood",
+    age_adults_desc:
+      "During adulthood, nutrition focuses on maintaining health, supporting daily activities, and providing essential nutrients for the body's normal functions.",
+
+    age_older_adults_title: "Older Adulthood",
+    age_older_adults_desc:
+      "As people age, nutritional priorities may change. Adequate protein, vitamins, minerals, fiber, and fluids can help support healthy aging.",
+
+    age_why_label: "WHY IT MATTERS",
+    age_why_title: "Why Nutrition Matters at Every Age",
+
+    age_growth_title: "Growth & Development",
+    age_growth_desc:
+      "Nutrients provide the building blocks needed for growth and normal development, especially during childhood and adolescence.",
+
+    age_energy_title: "Energy & Activity",
+    age_energy_desc:
+      "Food provides energy that the body uses for everyday activities, learning, movement, and other functions.",
+
+    age_body_title: "Body Functions",
+    age_body_desc:
+      "Vitamins, minerals, protein, fats, carbohydrates, and water all contribute to normal body functions.",
+
+    age_health_title: "Long-Term Health",
+    age_health_desc:
+      "Healthy eating habits developed throughout life can contribute to overall health and well-being.",
+
+    age_takeaway_label: "KEY TAKEAWAYS",
+    age_takeaway_title: "Nutrition Needs Change With Age",
+
+    age_takeaway_desc:
+      "There is no single approach to nutrition that works exactly the same way for everyone. Age, growth, development, activity, and lifestyle can all influence nutritional needs."
+
+  });
+
+
+  /* ---------- VIETNAMESE ---------- */
+
+  Object.assign(translations.vi, {
+
+    age_development_label: "DINH DƯỠNG THEO ĐỘ TUỔI",
+    age_development_title: "Độ tuổi & Phát triển",
+
+    age_development_desc:
+      "Nhu cầu dinh dưỡng thay đổi trong suốt cuộc đời. Hiểu được những thay đổi này giúp hỗ trợ sự tăng trưởng, phát triển, năng lượng và sức khỏe tổng thể ở từng giai đoạn.",
+
+    age_intro_label: "HIỂU VỀ NHU CẦU DINH DƯỠNG",
+    age_intro_title: "Nhu Cầu Dinh Dưỡng Thay Đổi Khi Chúng Ta Lớn Lên",
+
+    age_intro_card_title:
+      "Mỗi giai đoạn có những nhu cầu khác nhau",
+
+    age_intro_desc_1:
+      "Cơ thể trải qua nhiều thay đổi khi chúng ta lớn lên và già đi. Vì vậy, lượng và loại chất dinh dưỡng mà cơ thể cần cũng có thể thay đổi.",
+
+    age_intro_desc_2:
+      "Một chế độ ăn đa dạng và cân bằng có thể cung cấp các chất dinh dưỡng quan trọng, hỗ trợ tăng trưởng, duy trì hoạt động của cơ thể và thúc đẩy sự phát triển khỏe mạnh.",
+
+    age_stages_label: "CÁC GIAI ĐOẠN CUỘC ĐỜI",
+
+    age_stages_title:
+      "Dinh Dưỡng Qua Các Giai Đoạn Khác Nhau Của Cuộc Sống",
+
+    age_stages_desc:
+      "Mỗi giai đoạn của cuộc đời có những ưu tiên dinh dưỡng khác nhau. Tìm hiểu những khác biệt này giúp chúng ta đưa ra lựa chọn thực phẩm phù hợp.",
+
+    age_infant_title: "Trẻ sơ sinh",
+
+    age_infant_desc:
+      "Trẻ sơ sinh trải qua giai đoạn tăng trưởng và phát triển nhanh chóng. Dinh dưỡng đầy đủ hỗ trợ sự phát triển thể chất, não bộ và hệ miễn dịch khỏe mạnh.",
+
+    age_children_title: "Trẻ em",
+
+    age_children_desc:
+      "Trẻ em cần nhiều loại chất dinh dưỡng để hỗ trợ sự tăng trưởng, xương chắc khỏe, khả năng học tập và các hoạt động thể chất hằng ngày.",
+
+    age_teenagers_title: "Thanh thiếu niên",
+
+    age_teenagers_desc:
+      "Trong giai đoạn thanh thiếu niên, cơ thể có nhiều thay đổi đáng kể về tăng trưởng và phát triển. Các chất dinh dưỡng như protein, canxi, sắt và vitamin đặc biệt quan trọng.",
+
+    age_adults_title: "Người trưởng thành",
+
+    age_adults_desc:
+      "Ở tuổi trưởng thành, dinh dưỡng tập trung vào việc duy trì sức khỏe, hỗ trợ các hoạt động hằng ngày và cung cấp các chất dinh dưỡng cần thiết cho những chức năng bình thường của cơ thể.",
+
+    age_older_adults_title: "Người lớn tuổi",
+
+    age_older_adults_desc:
+      "Khi tuổi tác tăng lên, các ưu tiên về dinh dưỡng có thể thay đổi. Việc cung cấp đủ protein, vitamin, khoáng chất, chất xơ và nước có thể hỗ trợ quá trình lão hóa khỏe mạnh.",
+
+    age_why_label: "TẠI SAO ĐIỀU NÀY QUAN TRỌNG",
+
+    age_why_title:
+      "Tại Sao Dinh Dưỡng Quan Trọng Ở Mọi Độ Tuổi",
+
+    age_growth_title: "Tăng trưởng & Phát triển",
+
+    age_growth_desc:
+      "Các chất dinh dưỡng cung cấp những thành phần cần thiết cho sự tăng trưởng và phát triển bình thường, đặc biệt trong thời thơ ấu và thanh thiếu niên.",
+
+    age_energy_title: "Năng lượng & Hoạt động",
+
+    age_energy_desc:
+      "Thực phẩm cung cấp năng lượng mà cơ thể sử dụng cho các hoạt động hằng ngày, học tập, vận động và nhiều chức năng khác.",
+
+    age_body_title: "Chức năng cơ thể",
+
+    age_body_desc:
+      "Vitamin, khoáng chất, protein, chất béo, carbohydrate và nước đều đóng góp vào các chức năng bình thường của cơ thể.",
+
+    age_health_title: "Sức khỏe lâu dài",
+
+    age_health_desc:
+      "Những thói quen ăn uống lành mạnh được hình thành trong suốt cuộc đời có thể góp phần vào sức khỏe và sự khỏe mạnh tổng thể.",
+
+    age_takeaway_label: "ĐIỂM CẦN NHỚ",
+
+    age_takeaway_title:
+      "Nhu Cầu Dinh Dưỡng Thay Đổi Theo Độ Tuổi",
+
+    age_takeaway_desc:
+      "Không có một cách tiếp cận dinh dưỡng duy nhất phù hợp hoàn toàn với tất cả mọi người. Độ tuổi, sự tăng trưởng, phát triển, hoạt động thể chất và lối sống đều có thể ảnh hưởng đến nhu cầu dinh dưỡng."
+  });
+
+}
